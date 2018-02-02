@@ -11,4 +11,28 @@
         <servlet-name>ConnectServlet</servlet-name>
         <url-pattern>/connect</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>StationServlet</servlet-name>
+        <servlet-class>com.servlet.StationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StationServlet</servlet-name>
+        <url-pattern>/station</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>VehicleServlet</servlet-name>
+        <servlet-class>com.servlet.VehicleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VehicleServlet</servlet-name>
+        <url-pattern>/vehicle</url-pattern>
+    </servlet-mapping>
 </web-app>

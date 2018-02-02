@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2018-01-31 15:12:15
+Date: 2018-02-02 23:05:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -90,12 +90,13 @@ CREATE TABLE `station` (
   `longitude` double DEFAULT NULL,
   `latitude` double DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of station
 -- ----------------------------
 INSERT INTO `station` VALUES ('1', '四川省成都市天府广场', '104.06', '30.67');
+INSERT INTO `station` VALUES ('2', '四川省成都犀浦地铁站', '103.52', '31.01');
 
 -- ----------------------------
 -- Table structure for user
@@ -112,14 +113,14 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', '18402884427', '123456', '0');
+INSERT INTO `user` VALUES ('1', '18402884427', '123456', '200');
 INSERT INTO `user` VALUES ('2', '15280830189', '123456', '500');
 
 -- ----------------------------
--- Table structure for user-station
+-- Table structure for user_station
 -- ----------------------------
-DROP TABLE IF EXISTS `user-station`;
-CREATE TABLE `user-station` (
+DROP TABLE IF EXISTS `user_station`;
+CREATE TABLE `user_station` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `user_id` int(255) DEFAULT NULL,
   `station_id` int(255) DEFAULT NULL,
@@ -127,16 +128,16 @@ CREATE TABLE `user-station` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of user-station
+-- Records of user_station
 -- ----------------------------
-INSERT INTO `user-station` VALUES ('1', '1', '1');
-INSERT INTO `user-station` VALUES ('2', '2', '1');
+INSERT INTO `user_station` VALUES ('1', '1', '1');
+INSERT INTO `user_station` VALUES ('2', '2', '1');
 
 -- ----------------------------
--- Table structure for user-vehicle
+-- Table structure for user_vehicle
 -- ----------------------------
-DROP TABLE IF EXISTS `user-vehicle`;
-CREATE TABLE `user-vehicle` (
+DROP TABLE IF EXISTS `user_vehicle`;
+CREATE TABLE `user_vehicle` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `user_id` int(255) DEFAULT NULL,
   `vehicle_id` int(255) DEFAULT NULL,
@@ -145,11 +146,11 @@ CREATE TABLE `user-vehicle` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of user-vehicle
+-- Records of user_vehicle
 -- ----------------------------
-INSERT INTO `user-vehicle` VALUES ('1', '1', '1', '1');
-INSERT INTO `user-vehicle` VALUES ('2', '2', '2', '1');
-INSERT INTO `user-vehicle` VALUES ('3', '1', '2', '0');
+INSERT INTO `user_vehicle` VALUES ('1', '1', '1', '1');
+INSERT INTO `user_vehicle` VALUES ('2', '2', '2', '1');
+INSERT INTO `user_vehicle` VALUES ('3', '1', '2', '0');
 
 -- ----------------------------
 -- Table structure for vehicle
@@ -161,7 +162,7 @@ CREATE TABLE `vehicle` (
   `brand` varchar(255) DEFAULT NULL,
   `model` varchar(255) DEFAULT NULL,
   `plate` varchar(255) DEFAULT NULL,
-  `user-id` int(255) DEFAULT NULL,
+  `user_id` int(255) DEFAULT NULL,
   `longitude` double DEFAULT NULL,
   `latitude` double DEFAULT NULL,
   `date` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
@@ -171,5 +172,5 @@ CREATE TABLE `vehicle` (
 -- ----------------------------
 -- Records of vehicle
 -- ----------------------------
-INSERT INTO `vehicle` VALUES ('1', 'V1000001', '特斯拉', 'Model-s', '川A88888', '1', '104.07', '30.7', '2018-01-01 14:58:26');
+INSERT INTO `vehicle` VALUES ('1', 'V1000001', '特斯拉', 'Model-s', '川A88888', '1', '104.07145', '30.75413', '2018-02-02 22:27:50');
 INSERT INTO `vehicle` VALUES ('2', 'V1000002', '凯迪拉克', 'CT6', '川A12345', '2', '104.05', '30.6', '2018-01-01 15:00:21');
