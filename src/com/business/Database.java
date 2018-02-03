@@ -66,6 +66,7 @@ public class Database {
             ResultSet resultSet = statement.executeQuery(sql);
             while (resultSet.next()) {
                 Station station = new Station(resultSet.getInt("id"),
+                        resultSet.getString("name"),
                         resultSet.getString("address"),
                         resultSet.getDouble("longitude"),
                         resultSet.getDouble("latitude"));
@@ -112,5 +113,37 @@ public class Database {
             resultSet1.close();
             connection1.close();
         }
+    }
+
+    /**
+     * 根据车辆id在数据库battery数据表中查找对应的电池数据
+     * @param vehicleId 车辆id
+     * @return 查找到的电池对象
+     */
+    public static Battery findBattery(String vehicleId) {
+        Battery battery = null;
+        String sql = "select * from battery where vehicle_id=" + vehicleId;
+        Connection connection = getConnection();
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            resultSet.next();
+            battery = new Battery();
+            battery.setId(resultSet.getInt("id"));
+            battery.setNumber(resultSet.getString("number"));
+            battery.setModel(resultSet.getString("model"));
+            battery.setVehicleId(resultSet.getInt("vehicle_id"));
+            battery.setStationId(resultSet.getInt("station_id"));
+            battery.setElectricity(resultSet.getDouble("electricity"));
+            battery.setRatedCapacity(resultSet.getDouble("rated_capacity"));
+            battery.setActualCapacity(resultSet.getDouble("actual_capacity"));
+            battery.setResidualCapacity(resultSet.getDouble("residual_capacity"));
+            resultSet.close();
+            connection.close();
+            return battery;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return battery;
     }
 }

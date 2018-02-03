@@ -1,12 +1,26 @@
 package com.business;
 
+/**
+ * 电站信息
+ * 对应数据库中的station数据表
+ * 注释带星号*的表示在数据库中有对应字段
+ */
 public class Station {
-    private int id;
-    private String address;
-    private double longitude;
-    private double latitude;
-    private double distance;
-    private double queueTime;
+    private int id; // 数据库自增id *
+    private String name; // 电站名称 *
+    private String address; // 电站具体地址 *
+    private double longitude; // 经度 *
+    private double latitude; // 纬度 *
+    private double distance; // 距离某辆车的距离
+    private double queueTime; // 预约后所需要的排队时间
+
+    public Station(int id, String name, String address, double longitude, double latitude) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.longitude = longitude;
+        this.latitude = latitude;
+    }
 
     public Station(int id, String address, double longitude, double latitude) {
         this.id = id;
@@ -61,5 +75,13 @@ public class Station {
 
     public void setQueueTime(double queueTime) {
         this.queueTime = queueTime;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

@@ -1,16 +1,16 @@
 package com.business;
 
-import javax.xml.crypto.Data;
-
 /**
+ * 用户信息
  * 对应数据库中user表
+ * 注释带星号*的表示在数据库中有对应字段
  */
 
 public class User {
-    private int id;
-    private String phone;
-    private String password;
-    private double balance;
+    private int id; // 数据库自增id *
+    private String phone; // 用户手机号码 *
+    private String password; // 用户密码 *
+    private double balance; // 余额 *
 
     public User(String phone, String password) {
         this.phone = phone;

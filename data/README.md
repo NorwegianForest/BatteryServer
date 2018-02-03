@@ -18,6 +18,7 @@
 |字段名|类型|主键|说明|
 |---|---|:---:|---|
 |id|int|主键|数据库自增id|
+|name|varchar| |电站名称|
 |address|varchar| | 电站具体地址|
 |longitude|double| |经度|
 |latitude|double| |纬度|
@@ -78,7 +79,7 @@
 |date|datetime| |预约时间和日期，格式为yyyy-mm-dd hh:mm:ss|
 |complete|smallint| |表示预约是否完成换电，0表示已预约且未完成，1表示预约后已完成，-1表示预约后取消|
 
-## 表：user-vehicle
+## 表：user_vehicle
 - 保存用户与硬件设备的关系，一位用户可以拥有多个硬件，一个硬件可以被多个用户使用，但只有一位管理员用户
 
 |字段名|类型|主键|说明|
@@ -88,7 +89,7 @@
 |vehicle_id|int| |硬件设备id|
 |admin|smallint| |表示该用户是否为该设备的管理员，1表示是，0表示不是|
 
-## 表：user-station
+## 表：user_station
 - 保存用户的收藏电站
 
 |字段名|类型|主键|说明|

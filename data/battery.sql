@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2018-02-02 23:05:58
+Date: 2018-02-03 23:22:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -86,6 +86,7 @@ INSERT INTO `record` VALUES ('1', '1', '1', '60', '4', '1', '2018-01-01 14:08:56
 DROP TABLE IF EXISTS `station`;
 CREATE TABLE `station` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
   `longitude` double DEFAULT NULL,
   `latitude` double DEFAULT NULL,
@@ -95,8 +96,8 @@ CREATE TABLE `station` (
 -- ----------------------------
 -- Records of station
 -- ----------------------------
-INSERT INTO `station` VALUES ('1', '四川省成都市天府广场', '104.06', '30.67');
-INSERT INTO `station` VALUES ('2', '四川省成都犀浦地铁站', '103.52', '31.01');
+INSERT INTO `station` VALUES ('1', '天府广场换电站', '四川省成都市天府广场', '104.06', '30.67');
+INSERT INTO `station` VALUES ('2', '犀浦地铁站换电站', '四川省成都犀浦地铁站', '103.52', '31.01');
 
 -- ----------------------------
 -- Table structure for user
@@ -172,5 +173,5 @@ CREATE TABLE `vehicle` (
 -- ----------------------------
 -- Records of vehicle
 -- ----------------------------
-INSERT INTO `vehicle` VALUES ('1', 'V1000001', '特斯拉', 'Model-s', '川A88888', '1', '104.07145', '30.75413', '2018-02-02 22:27:50');
+INSERT INTO `vehicle` VALUES ('1', 'V1000001', '特斯拉', 'Model-s', '川A88888', '1', '103.57145', '31.05413', '2018-02-03 22:27:21');
 INSERT INTO `vehicle` VALUES ('2', 'V1000002', '凯迪拉克', 'CT6', '川A12345', '2', '104.05', '30.6', '2018-01-01 15:00:21');

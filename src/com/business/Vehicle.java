@@ -2,16 +2,21 @@ package com.business;
 
 import java.sql.Timestamp;
 
+/**
+ * 汽车(即硬件设备)信息
+ * 对应数据库中的vehicle数据表
+ * 注释带星号*的表示在数据库中有对应字段
+ */
 public class Vehicle {
-    private int id;
-    private String number;
-    private String brand;
-    private String model;
-    private String plate;
-    private int userId;
-    private double longitude;
-    private double latitude;
-    private Timestamp date;
+    private int id; // 数据库自增id *
+    private String number; // 硬件设备唯一标识编号 *
+    private String brand; // 汽车品牌 *
+    private String model; // 汽车型号 *
+    private String plate; // 车牌号码 *
+    private int userId; // 管理员用户id *
+    private double longitude; // 经度 *
+    private double latitude; // 纬度 *
+    private Timestamp date; // 硬件设备投入使用的日期 *
 
     public Vehicle(int id, String number, String brand, String model, String plate, int userId, double longitude, double latitude) {
         this.id = id;

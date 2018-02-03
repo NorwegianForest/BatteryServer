@@ -35,4 +35,12 @@
         <servlet-name>VehicleServlet</servlet-name>
         <url-pattern>/vehicle</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>BatteryServlet</servlet-name>
+        <servlet-class>com.servlet.BatteryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BatteryServlet</servlet-name>
+        <url-pattern>/battery</url-pattern>
+    </servlet-mapping>
 </web-app>
