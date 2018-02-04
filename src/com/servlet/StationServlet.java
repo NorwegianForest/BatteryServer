@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -25,17 +24,11 @@ public class StationServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
 
-        String userId = request.getParameter("id");
-        System.out.println("StationServlet" + userId + "请求电站数据");
+        String userId = request.getParameter("user_id");
+        String vehicleId = request.getParameter("vehicle_id");
+        System.out.println("StationServlet" + userId + "请求电站数据，参考车辆id:" + vehicleId);
 
-        List<Vehicle> vehicleList = new ArrayList<>();
-        try {
-            Database.loadVehicle(userId, vehicleList);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        Vehicle vehicle = vehicleList.get(0); // 默认取用户的第一辆车来计算距离
+        Vehicle vehicle = Database.findVehicle(vehicleId); // 默认取用户的第一辆车来计算距离
         List<Station> stationList = new ArrayList<>();
         Database.loadStation(stationList);
         for (Station station : stationList) {
@@ -65,7 +58,7 @@ public class StationServlet extends HttpServlet {
      * @param station 电站对象
      * @return 距离，单位km
      */
-    private double getDistance(Vehicle vehicle, Station station) {
+    public static double getDistance(Vehicle vehicle, Station station) {
         return getDistance(vehicle.getLatitude(), vehicle.getLongitude(), station.getLatitude()
             , station.getLongitude());
     }
@@ -78,7 +71,7 @@ public class StationServlet extends HttpServlet {
      * @param lng2 乙的经度
      * @return 距离，单位为km
      */
-    public double getDistance(double lat1, double lng1, double lat2, double lng2) {
+    public static double getDistance(double lat1, double lng1, double lat2, double lng2) {
         double radLat1 = rad(lat1);
         double radLat2 = rad(lat2);
         double difference = radLat1 - radLat2;
@@ -96,7 +89,7 @@ public class StationServlet extends HttpServlet {
      * @param d 角度数
      * @return 弧度数
      */
-    private double rad(double d) {
+    public static double rad(double d) {
         return d * Math.PI / 180.0;
     }
 }

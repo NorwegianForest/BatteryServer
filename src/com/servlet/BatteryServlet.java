@@ -21,10 +21,9 @@ public class BatteryServlet extends HttpServlet {
 
         String vehicleId = request.getParameter("id");
         System.out.println("BatteryServlet:" + vehicleId + "请求电池数据");
+        Battery battery = Database.findBattery(Database.VEHICLEID, vehicleId);
 
-        Battery battery = Database.findBattery(vehicleId);
         String jsonData = new Gson().toJson(battery);
-
         out.println(jsonData);
         System.out.println("BatteryServlet:" + vehicleId + "请求电池数据响应完成");
     }

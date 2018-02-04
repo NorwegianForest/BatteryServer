@@ -1,6 +1,6 @@
 package com.business;
 
-import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * 换电记录
@@ -10,11 +10,33 @@ import java.sql.Timestamp;
 public class Record {
     private int id; // 数据库自增id *
     private int userId; // 执行换电的用户id *
+    private int vehicleId; // 被换电的车辆id *
     private int stationId; // 提供换电的电站id *
     private double money; // 费用 *
     private int oldBatteryId; // 旧电池id *
     private int newBatteryId; // 新电池id *
-    private Timestamp date; // 完成时间 *
+    private String date; // 完成时间 *
+
+    public Record(int id, int userId, int stationId, double money, int oldBatteryId, int newBatteryId, String date) {
+        this.id = id;
+        this.userId = userId;
+        this.stationId = stationId;
+        this.money = money;
+        this.oldBatteryId = oldBatteryId;
+        this.newBatteryId = newBatteryId;
+        this.date = date;
+    }
+
+    public Record(int id, int userId, int vehicleId, int stationId, double money, int oldBatteryId, int newBatteryId, String date) {
+        this.id = id;
+        this.userId = userId;
+        this.vehicleId = vehicleId;
+        this.stationId = stationId;
+        this.money = money;
+        this.oldBatteryId = oldBatteryId;
+        this.newBatteryId = newBatteryId;
+        this.date = date;
+    }
 
     public int getId() {
         return id;
@@ -64,11 +86,19 @@ public class Record {
         this.newBatteryId = newBatteryId;
     }
 
-    public Timestamp getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Timestamp date) {
+    public void setDate(String date) {
         this.date = date;
+    }
+
+    public int getVehicleId() {
+        return vehicleId;
+    }
+
+    public void setVehicleId(int vehicleId) {
+        this.vehicleId = vehicleId;
     }
 }

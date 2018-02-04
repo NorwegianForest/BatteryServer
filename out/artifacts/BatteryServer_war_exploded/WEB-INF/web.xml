@@ -4,14 +4,6 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
     <servlet>
-        <servlet-name>ConnectServlet</servlet-name>
-        <servlet-class>com.servlet.ConnectServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ConnectServlet</servlet-name>
-        <url-pattern>/connect</url-pattern>
-    </servlet-mapping>
-    <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.servlet.LoginServlet</servlet-class>
     </servlet>
@@ -42,5 +34,69 @@
     <servlet-mapping>
         <servlet-name>BatteryServlet</servlet-name>
         <url-pattern>/battery</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>RecordServlet</servlet-name>
+        <servlet-class>com.servlet.RecordServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RecordServlet</servlet-name>
+        <url-pattern>/record</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>StationByIdServlet</servlet-name>
+        <servlet-class>com.servlet.StationByIdServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StationByIdServlet</servlet-name>
+        <url-pattern>/station_by_id</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>BatteryByIdServlet</servlet-name>
+        <servlet-class>com.servlet.BatteryByIdServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BatteryByIdServlet</servlet-name>
+        <url-pattern>/battery_by_id</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AppointmentServlet</servlet-name>
+        <servlet-class>com.servlet.AppointmentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AppointmentServlet</servlet-name>
+        <url-pattern>/appointment</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>CollectionServlet</servlet-name>
+        <servlet-class>com.servlet.CollectionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CollectionServlet</servlet-name>
+        <url-pattern>/collection</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>HandleAppointmentServlet</servlet-name>
+        <servlet-class>com.servlet.HandleAppointmentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HandleAppointmentServlet</servlet-name>
+        <url-pattern>/handle_appointment</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>CompleteServlet</servlet-name>
+        <servlet-class>com.servlet.CompleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CompleteServlet</servlet-name>
+        <url-pattern>/complete</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>HardwareCompleteServlet</servlet-name>
+        <servlet-class>com.servlet.HardwareCompleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HardwareCompleteServlet</servlet-name>
+        <url-pattern>/hardware_complete</url-pattern>
     </servlet-mapping>
 </web-app>

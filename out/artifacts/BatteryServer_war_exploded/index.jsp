@@ -3,7 +3,7 @@
   User: szl
   Date: 2018/1/31
   Time: 11:27
-  To change this template use File | Settings | File Templates.
+  主页不改，转跳到hardware.jsp
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -11,6 +11,6 @@
     <title>Battery Server</title>
   </head>
   <body>
-
+    <a href="hardware.jsp">Hardware</a>
   </body>
 </html>

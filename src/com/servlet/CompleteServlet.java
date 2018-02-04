@@ -1,8 +1,6 @@
 package com.servlet;
 
 import com.business.Database;
-import com.business.Vehicle;
-import com.google.gson.Gson;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,26 +9,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
-@WebServlet(name = "VehicleServlet")
-public class VehicleServlet extends HttpServlet {
+@WebServlet(name = "CompleteServlet")
+public class CompleteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
 
         String userId = request.getParameter("id");
-        System.out.println("VehicleServlet:" + userId + "请求车辆数据");
+        System.out.println("CompleteServlet:" + userId + "询问预约是否已完成");
 
-        List<Vehicle> vehicleList = new ArrayList<>();
-        Database.loadVehicle(userId, vehicleList);
+        if (Database.hasAppointment(Database.USERID, userId)) {
+            out.print("未完成");
+            System.out.println("CompleteServlet:" + userId + "预约未完成");
+        } else {
+            out.print("已完成");
+            System.out.println("CompleteServlet:" + userId + "预约已完成");
+        }
 
-        String jsonData = new Gson().toJson(vehicleList);
-        out.println(jsonData);
-        System.out.println("VehicleServlet:" + userId + "请求车辆数据响应完成");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

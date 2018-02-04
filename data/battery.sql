@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2018-02-03 23:22:01
+Date: 2018-02-04 23:01:46
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -22,17 +22,19 @@ DROP TABLE IF EXISTS `appointment`;
 CREATE TABLE `appointment` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `user_id` int(255) DEFAULT NULL,
+  `vehicle_id` int(255) DEFAULT NULL,
   `station_id` int(255) DEFAULT NULL,
   `new_battery_id` int(255) DEFAULT NULL,
   `date` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `complete` smallint(6) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of appointment
 -- ----------------------------
-INSERT INTO `appointment` VALUES ('1', '1', '1', '1', '2018-01-01 13:09:27', '1');
+INSERT INTO `appointment` VALUES ('1', '1', '1', '1', '1', '2018-02-04 19:01:03', '1');
+INSERT INTO `appointment` VALUES ('3', '1', '1', '1', '3', '2018-02-04 22:40:08', '0');
 
 -- ----------------------------
 -- Table structure for battery
@@ -55,9 +57,9 @@ CREATE TABLE `battery` (
 -- ----------------------------
 -- Records of battery
 -- ----------------------------
-INSERT INTO `battery` VALUES ('1', 'B1000001', 'NCR18650A', '1', '-1', '100', '85', '85', '85', '2018-01-01 15:04:06');
+INSERT INTO `battery` VALUES ('1', 'B1000001', 'NCR18650A', '1', '-1', '100', '85', '85', '85', '2018-02-04 22:40:15');
 INSERT INTO `battery` VALUES ('2', 'B1000002', 'NCR18650A', '2', '-1', '70.6', '85', '85', '60', '2018-01-01 15:05:29');
-INSERT INTO `battery` VALUES ('3', 'B1000003', 'NCR18650A', '-1', '1', '100', '85', '85', '85', '2018-01-01 15:06:12');
+INSERT INTO `battery` VALUES ('3', 'B1000003', 'NCR18650A', '-1', '1', '100', '85', '85', '85', '2018-02-04 22:40:23');
 INSERT INTO `battery` VALUES ('4', 'B1000004', 'NCR18650A', '-1', '1', '50', '85', '85', '42.5', '2018-01-01 15:06:56');
 
 -- ----------------------------
@@ -67,18 +69,19 @@ DROP TABLE IF EXISTS `record`;
 CREATE TABLE `record` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `user_id` int(255) DEFAULT NULL,
+  `vehicle_id` int(11) DEFAULT NULL,
   `station_id` int(255) DEFAULT NULL,
   `money` double DEFAULT NULL,
   `old_battery_id` int(255) DEFAULT NULL,
   `new_battery_id` int(255) DEFAULT NULL,
   `date` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of record
 -- ----------------------------
-INSERT INTO `record` VALUES ('1', '1', '1', '60', '4', '1', '2018-01-01 14:08:56');
+INSERT INTO `record` VALUES ('1', '1', '1', '1', '60', '4', '1', '2018-02-04 19:01:10');
 
 -- ----------------------------
 -- Table structure for station

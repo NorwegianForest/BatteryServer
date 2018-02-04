@@ -61,6 +61,7 @@
 |---|---|:---:|---|
 |id|int|主键|数据库自增id|
 |user_id|int| |执行换电的用户id|
+|vehicle_id|int| |被换电的车辆的id|
 |station_id|int| |提供换电服务的电站id|
 |money|double| |换电产生的费用|
 |old_battery_id|int| |被换下的电池的id|
@@ -74,6 +75,7 @@
 |---|---|:---:|---|
 |id|int|主键|数据库自增id|
 |user_id|int| |预约的用户的id|
+|vehicle_id|int| |将要被换电的车辆的id|
 |station_id|int| |接受预约的电站的id|
 |new_battery_id|int| |电站为用户准备的电池的id|
 |date|datetime| |预约时间和日期，格式为yyyy-mm-dd hh:mm:ss|

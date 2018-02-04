@@ -14,6 +14,9 @@ public class Station {
     private double distance; // 距离某辆车的距离
     private double queueTime; // 预约后所需要的排队时间
 
+    public Station() {
+    }
+
     public Station(int id, String name, String address, double longitude, double latitude) {
         this.id = id;
         this.name = name;

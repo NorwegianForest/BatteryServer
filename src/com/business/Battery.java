@@ -1,7 +1,5 @@
 package com.business;
 
-import java.sql.Timestamp;
-
 /**
  * 与数据库中的battery数据表对应
  * 注释带星号*的表示在数据库中有对应字段
@@ -16,7 +14,7 @@ public class Battery {
     private double ratedCapacity; // 额定容量 *
     private double actualCapacity; // 实际容量 *
     private double residualCapacity; // 剩余容量 *
-    private Timestamp date; // 电池投入使用的日期 *
+    private String date; // 电池投入使用的日期 *
 
     public int getId() {
         return id;
@@ -90,11 +88,11 @@ public class Battery {
         this.residualCapacity = residualCapacity;
     }
 
-    public Timestamp getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Timestamp date) {
+    public void setDate(String date) {
         this.date = date;
     }
 }

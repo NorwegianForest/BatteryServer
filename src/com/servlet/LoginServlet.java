@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
             String jsonData = new Gson().toJson(user);
             out.println(jsonData);
         } else {
-            out.println("illegal");
+            out.print("illegal");
         }
 
     }

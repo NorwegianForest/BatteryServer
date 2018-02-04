@@ -18,3 +18,14 @@
 ### 2月3日更新
 - 数据库station表中添加了name字段，表示电站的名称，有别于电站的详细地址address字段
 - 增加了响应车辆请求电池数据的Servlet
+
+### 2月4日更新
+- 考虑到数据的完整，数据库appointment数据表和record数据表添加了vehicle_id字段，详见/data/README.md
+- 删除了创建项目时创建的用于测试APP与服务器连接的ConnectionServlet类
+- 各实体类中用于表示时间的属性Timestemp对象更换为String对象，值由Date类和SimpleDateFormat类构造生成
+- 增加了响应APP对预约信息、换电记录、收藏电站的请求
+- 增加了响应APP进行预约业务操作的请求，并更新数据库，增加了AppointmentJson类来向APP返回特殊结构的数据
+- 增加了响应APP询问预约是否已完成的请求
+- 增加了hardware.jsp页面，用来模拟硬件设备向服务器发送post，从index.jsp页面转跳
+- 增加了响应硬件post换电完成，并更新数据库
+- Database类中的函数结构和关系略显混乱，有待改善

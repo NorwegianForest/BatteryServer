@@ -1,7 +1,5 @@
 package com.business;
 
-import java.sql.Timestamp;
-
 /**
  * 预约信息
  * 与数据库中的appointment数据表对应
@@ -10,9 +8,10 @@ import java.sql.Timestamp;
 public class Appointment {
     private int id; // 数据库自增id *
     private int userId; // 预约用户id *
+    private int vehicleId; // 将要被换电的车辆id *
     private int stationId; // 预约电站id *
     private int newBatteryId; // 新电池id *
-    private Timestamp date; // 预约时间 *
+    private String date; // 预约时间 *
     private int complete; // 是否完成状态 *
 
     public int getId() {
@@ -47,11 +46,11 @@ public class Appointment {
         this.newBatteryId = newBatteryId;
     }
 
-    public Timestamp getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Timestamp date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -61,5 +60,13 @@ public class Appointment {
 
     public void setComplete(int complete) {
         this.complete = complete;
+    }
+
+    public int getVehicleId() {
+        return vehicleId;
+    }
+
+    public void setVehicleId(int vehicleId) {
+        this.vehicleId = vehicleId;
     }
 }

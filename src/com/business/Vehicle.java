@@ -1,7 +1,5 @@
 package com.business;
 
-import java.sql.Timestamp;
-
 /**
  * 汽车(即硬件设备)信息
  * 对应数据库中的vehicle数据表
@@ -16,22 +14,7 @@ public class Vehicle {
     private int userId; // 管理员用户id *
     private double longitude; // 经度 *
     private double latitude; // 纬度 *
-    private Timestamp date; // 硬件设备投入使用的日期 *
-
-    public Vehicle(int id, String number, String brand, String model, String plate, int userId, double longitude, double latitude) {
-        this.id = id;
-        this.number = number;
-        this.brand = brand;
-        this.model = model;
-        this.plate = plate;
-        this.userId = userId;
-        this.longitude = longitude;
-        this.latitude = latitude;
-    }
-
-    public String getNumber() {
-        return number;
-    }
+    private String date; // 硬件设备投入使用的日期 *
 
     public int getId() {
         return id;
@@ -39,6 +22,10 @@ public class Vehicle {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getNumber() {
+        return number;
     }
 
     public void setNumber(String number) {
@@ -93,11 +80,11 @@ public class Vehicle {
         this.latitude = latitude;
     }
 
-    public Timestamp getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Timestamp date) {
+    public void setDate(String date) {
         this.date = date;
     }
 }
