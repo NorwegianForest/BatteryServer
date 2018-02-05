@@ -19,7 +19,7 @@ public class BatteryByIdServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
 
-        String batteryId = request.getParameter("id");
+        String batteryId = request.getParameter("battery_id");
         System.out.println("BatteryByIdServlet:请求" + batteryId + "号电池数据");
         Battery battery = Database.findBattery(Database.ID, batteryId);
 

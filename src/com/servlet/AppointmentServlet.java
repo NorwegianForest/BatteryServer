@@ -21,7 +21,7 @@ public class AppointmentServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
 
-        String userId = request.getParameter("id");
+        String userId = request.getParameter("user_id");
         System.out.println("AppointmentServlet:" + userId + "请求预约数据");
         List<Appointment> appointmentList = new ArrayList<>();
         Database.loadAppointment(userId, appointmentList);

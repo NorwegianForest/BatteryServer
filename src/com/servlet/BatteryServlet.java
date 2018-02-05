@@ -19,13 +19,18 @@ public class BatteryServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
 
-        String vehicleId = request.getParameter("id");
+        String vehicleId = request.getParameter("vehicle_id");
         System.out.println("BatteryServlet:" + vehicleId + "请求电池数据");
         Battery battery = Database.findBattery(Database.VEHICLEID, vehicleId);
 
-        String jsonData = new Gson().toJson(battery);
-        out.println(jsonData);
-        System.out.println("BatteryServlet:" + vehicleId + "请求电池数据响应完成");
+        if (battery == null) {
+            out.print("无结果");
+            System.out.println("BatteryServlet:" + vehicleId + "请求电池数据无结果");
+        } else {
+            String jsonData = new Gson().toJson(battery);
+            out.print(jsonData);
+            System.out.println("BatteryServlet:" + vehicleId + "请求电池数据响应完成");
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

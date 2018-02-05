@@ -19,13 +19,18 @@ public class StationByIdServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
 
-        String stationId = request.getParameter("id");
+        String stationId = request.getParameter("station_id");
         System.out.println("StationByIdServlet:请求" + stationId + "号电站数据");
         Station station = Database.findStation(stationId);
 
-        String jsonData = new Gson().toJson(station);
-        out.println(jsonData);
-        System.out.println("StationByIdServlet:请求" + stationId + "号电站数据响应完成");
+        if (station == null) {
+            out.print("无结果");
+            System.out.println("StationByIdServlet:请求" + stationId + "号电站数据无结果");
+        } else {
+            String jsonData = new Gson().toJson(station);
+            out.print(jsonData);
+            System.out.println("StationByIdServlet:请求" + stationId + "号电站数据响应完成");
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

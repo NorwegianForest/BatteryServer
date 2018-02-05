@@ -22,15 +22,19 @@ public class VehicleServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
 
-        String userId = request.getParameter("id");
-        System.out.println("VehicleServlet:" + userId + "请求车辆数据");
+        String vehicleId = request.getParameter("vehicle_id");
+        System.out.println("VehicleServlet:" + vehicleId + "请求该车辆数据");
 
-        List<Vehicle> vehicleList = new ArrayList<>();
-        Database.loadVehicle(userId, vehicleList);
+        Vehicle vehicle = Database.findVehicle(vehicleId);
 
-        String jsonData = new Gson().toJson(vehicleList);
-        out.println(jsonData);
-        System.out.println("VehicleServlet:" + userId + "请求车辆数据响应完成");
+        if (vehicle == null) {
+            out.print("无结果");
+            System.out.println("VehicleServlet:" + vehicleId + "请求该车辆数据无结果");
+        } else {
+            String jsonData = new Gson().toJson(vehicle);
+            out.print(jsonData);
+            System.out.println("VehicleServlet:" + vehicleId + "请求该车辆数据响应完成");
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

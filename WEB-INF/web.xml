@@ -99,4 +99,12 @@
         <servlet-name>HardwareCompleteServlet</servlet-name>
         <url-pattern>/hardware_complete</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>UserVehicleServlet</servlet-name>
+        <servlet-class>com.servlet.UserVehicleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserVehicleServlet</servlet-name>
+        <url-pattern>/user_vehicle</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -29,3 +29,9 @@
 - 增加了hardware.jsp页面，用来模拟硬件设备向服务器发送post，从index.jsp页面转跳
 - 增加了响应硬件post换电完成，并更新数据库
 - Database类中的函数结构和关系略显混乱，有待改善
+
+### 2月5日更新
+- 规范了Servlet中获取参数的键名
+- 增加了UserVehicle类对应数据库中的user_vehicle数据表，同时增加了UserVehicleServlet，以使APP中发送HTTP请求的代码更通顺
+- 增加了部分Servlet中，在查找无结果后的响应
+- 由于APP请求结构的变动，删除了Database类中不必要的查询方法，提高复用率

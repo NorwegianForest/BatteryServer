@@ -12,7 +12,6 @@ public class Database {
 
     public static final String USERID = "user_id";
     public static final String VEHICLEID = "vehicle_id";
-    public static final String NEWBATTERYID = "new_battery_id";
     public static final String ID = "id";
 
     /**
@@ -84,33 +83,6 @@ public class Database {
             connection.close();
         } catch (SQLException e) {
             e.getErrorCode();
-        }
-    }
-
-    /**
-     * 根据用户id搜索该用户的所有汽车
-     * @param userId 用户id
-     * @param vehicleList 汽车列表
-     */
-    public static void loadVehicle(String userId, List<Vehicle> vehicleList) {
-        String sql = "select * from user_vehicle where user_id=" + userId;
-        List<Integer> vehicleIdList = new ArrayList<>();
-        Connection connection = getConnection();
-        try {
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(sql);
-            while (resultSet.next()) {
-                vehicleIdList.add(new Integer(resultSet.getInt("vehicle_id")));
-            }
-            resultSet.close();
-            statement.close();
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        for (Integer integer : vehicleIdList) {
-            vehicleList.add(findVehicle(integer.toString()));
         }
     }
 
@@ -217,14 +189,13 @@ public class Database {
      * @return Station对象
      */
     public static Station findStation(String stationId) {
-        Station station = null;
         String sql = "select * from station where id=" + stationId;
         Connection connection = getConnection();
         try {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             resultSet.next();
-            station = new Station();
+            Station station = new Station();
             station.setId(resultSet.getInt("id"));
             station.setName(resultSet.getString("name"));
             station.setAddress(resultSet.getString("address"));
@@ -237,7 +208,7 @@ public class Database {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return station;
+        return null;
     }
 
     /**
@@ -412,40 +383,69 @@ public class Database {
         updateDatabase(sql);
     }
 
-    public static int findNewBatteryId(String vehicleId) {
-        int batteryId = -1;
-        String sql = "select * from appointment where complate=0 and vehicle_id=" + vehicleId;
-        Connection connection = getConnection();
-        try {
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(sql);
-            resultSet.next();
-            batteryId = resultSet.getInt("new_battery_id");
-            resultSet.close();
-            statement.close();
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return batteryId;
-    }
-
+    /**
+     * 电池位置发生变化：从车辆里换下到电站、从电站换上车辆时，更新电池记录
+     * @param batteryId 电池id
+     * @param vehicleId 车辆id
+     * @param stationId 电站id
+     */
     public static void updateBattery(String batteryId, String vehicleId, String stationId) {
         String sql = "update battery set vehicle_id=" + vehicleId + ",station_id=" + stationId + " where id="
                 + batteryId;
         updateDatabase(sql);
     }
 
+    /**
+     * 由硬件设备post预约完成信息，预约完成后，将预约状态更新为已完成
+     * @param vehicle_id 车辆id
+     */
     public static void completeAppointment(String vehicle_id) {
         String sql = "update appointment set complete=1 where complete=0 and vehicle_id=" + vehicle_id;
         updateDatabase(sql);
     }
 
+    /**
+     * 预约完成后，新增换电记录
+     * @param userId 用户id
+     * @param vehicleId 车辆id
+     * @param stationId 电站id
+     * @param money 费用
+     * @param oldBatteryId 旧电池id
+     * @param newBatteryId 新电池id
+     * @param date 日期
+     */
     public static void insertRecord(String userId, String vehicleId, String stationId, double money, String oldBatteryId,
                                     String newBatteryId, String date) {
         String sql = "insert into record(user_id,vehicle_id,station_id,money,old_battery_id,new_battery_id,date)values" +
                 "(" + userId + "," + vehicleId + "," + stationId + ",'" + Double.toString(money) + "'," + oldBatteryId +
                 "," + newBatteryId + ",'" + date + "')";
         updateDatabase(sql);
+    }
+
+    /**
+     * 根据用户id，查询与用户有关的所有车辆id
+     * @param userId 用户id
+     * @param uvList 返回在user_vehicle数据表中的查找结果
+     */
+    public static void loadUVList(String userId, List<UserVehicle> uvList) {
+        String sql = "select * from user_vehicle where user_id=" + userId;
+        Connection connection = getConnection();
+        try {
+            Statement statement = connection != null ? connection.createStatement() : null;
+            ResultSet resultSet = statement != null ? statement.executeQuery(sql) : null;
+            while (resultSet.next()) {
+                UserVehicle uv = new UserVehicle();
+                uv.setId(resultSet.getInt("id"));
+                uv.setUserId(resultSet.getInt("user_id"));
+                uv.setVehicleId(resultSet.getInt("vehicle_id"));
+                uv.setAdmin(resultSet.getInt("admin"));
+                uvList.add(uv);
+            }
+            resultSet.close();
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
