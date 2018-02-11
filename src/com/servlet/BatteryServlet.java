@@ -21,7 +21,7 @@ public class BatteryServlet extends HttpServlet {
 
         String vehicleId = request.getParameter("vehicle_id");
         System.out.println("BatteryServlet:" + vehicleId + "请求电池数据");
-        Battery battery = Database.findBattery(Database.VEHICLEID, vehicleId);
+        Battery battery = Database.findBattery(Database.VEHICLE_ID, vehicleId);
 
         if (battery == null) {
             out.print("无结果");

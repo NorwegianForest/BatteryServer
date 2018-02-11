@@ -35,3 +35,9 @@
 - 增加了UserVehicle类对应数据库中的user_vehicle数据表，同时增加了UserVehicleServlet，以使APP中发送HTTP请求的代码更通顺
 - 增加了部分Servlet中，在查找无结果后的响应
 - 由于APP请求结构的变动，删除了Database类中不必要的查询方法，提高复用率
+
+### 2月11日更新
+- 尝试使用Kotlin失败
+- 删除了常量类Constants类，将常量整合到Database类中
+- 删除了User类中的check方法，采用在LoginServlet中调用Database类的checkUser方法代替
+- 基础的响应数据请求和处理预约功能已经完善

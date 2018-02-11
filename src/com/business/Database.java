@@ -3,6 +3,7 @@ package com.business;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 数据库相关操作
@@ -10,22 +11,27 @@ import java.util.List;
 
 public class Database {
 
-    public static final String USERID = "user_id";
-    public static final String VEHICLEID = "vehicle_id";
+    private static final String FOR_NAME = "com.mysql.jdbc.Driver";
+    private static final String DATABASE = "battery";
+    private static final String USER = "root";
+    private static final String PASSWORD = "root";
+
+    public static final String USER_ID = "user_id";
+    public static final String VEHICLE_ID = "vehicle_id";
     public static final String ID = "id";
 
     /**
-     * 获取数据库连接，数据库名、用户名、密码，详见Constants类
-     * 需要mysql相关jar包支持，详见Constants类
+     * 获取数据库连接，数据库名、用户名、密码
+     * 需要mysql相关jar包支持
      * @return 连接对象Connection，若连接失败，返回null
      */
-    public static Connection getConnection() {
-        String DB = "jdbc:mysql://localhost:3306/" + Constants.DBNAME + "?user=" + Constants.DBUSER + "&password=" +
-                Constants.DBPASSWORD;
+    private static Connection getConnection() {
+        String url = "jdbc:mysql://localhost:3306/" + DATABASE + "?user=" + USER + "&password=" +
+                PASSWORD;
         Connection connection;
         try {
-            Class.forName(Constants.CLASSFORNAME);
-            connection = DriverManager.getConnection(DB);
+            Class.forName(FOR_NAME);
+            connection = DriverManager.getConnection(url);
             return connection;
         } catch (Exception e) {
             e.printStackTrace();
@@ -35,29 +41,31 @@ public class Database {
 
     /**
      * 根据手机号和密码验证登录
-     * @param user 用户对象，只有手机和密码两项属性
-     * @return 登录成功返回true，登录失败返回false
+     * @param phone 手机号
+     * @param password 密码
+     * @return 登录成功返回User对象，登录失败返回null
      */
-    public static boolean checkUser(User user) {
-        String sql = "select * from user where phone='" + user.getPhone() + "' and password='" + user.getPassword() + "'";
+    public static User checkUser(String phone, String password) {
+        String sql = "select * from user where phone='" + phone + "' and password='" + password + "'";
         Connection connection = getConnection();
+        User user = null;
         try {
+            assert connection != null;
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             if (resultSet.next()) {
-                user.setId(resultSet.getInt("id"));
-                user.setBalance(resultSet.getDouble("balance"));
-                resultSet.close();
-                statement.close();
-                connection.close();
-                return true;
-            } else {
-                return false;
+                user = new User(resultSet.getInt("id"),
+                        resultSet.getString("phone"),
+                        resultSet.getString("password"),
+                        resultSet.getDouble("balance"));
             }
+            resultSet.close();
+            statement.close();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         }
+        return user;
     }
 
     /**
@@ -68,6 +76,7 @@ public class Database {
         String sql = "select * from station";
         Connection connection = getConnection();
         try {
+            assert connection != null;
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             while (resultSet.next()) {
@@ -96,6 +105,7 @@ public class Database {
         String sql = "select * from battery where " + column + "=" + value;
         Connection connection = getConnection();
         try {
+            assert connection != null;
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             resultSet.next();
@@ -130,6 +140,7 @@ public class Database {
         String sql = "select * from appointment where complete=0 and " + column + "=" + value;
         Connection connection = getConnection();
         try {
+            assert connection != null;
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             resultSet.next();
@@ -160,6 +171,7 @@ public class Database {
         String sql = "select * from record where user_id=" + userId;
         Connection connection = getConnection();
         try {
+            assert connection != null;
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             while (resultSet.next()) {
@@ -184,7 +196,7 @@ public class Database {
     }
 
     /**
-     * 通过station的id查找对应的station对象
+     * 通过id查找对应的station对象
      * @param stationId station数据表中的id
      * @return Station对象
      */
@@ -192,6 +204,7 @@ public class Database {
         String sql = "select * from station where id=" + stationId;
         Connection connection = getConnection();
         try {
+            assert connection != null;
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             resultSet.next();
@@ -220,6 +233,7 @@ public class Database {
         String sql = "select * from appointment where user_id=" + userId;
         Connection connection = getConnection();
         try {
+            assert connection != null;
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             while (resultSet.next()) {
@@ -241,7 +255,7 @@ public class Database {
     }
 
     /**
-     * 通过vehicle的id查询Vehicle对象
+     * 通过id查询Vehicle对象
      * @param vehicleId 在vehicle数据表中对应的id
      * @return Vehicle对象
      */
@@ -249,6 +263,7 @@ public class Database {
         String sql = "select * from vehicle where id=" + vehicleId;
         Connection connection = getConnection();
         try {
+            assert connection != null;
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             resultSet.next();
@@ -282,6 +297,7 @@ public class Database {
         Connection connection = getConnection();
         List<Integer> idList = new ArrayList<>();
         try {
+            assert connection != null;
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             while (resultSet.next()) {
@@ -309,6 +325,7 @@ public class Database {
         String sql = "select * from appointment where complete=0 and " + column + "=" + value;
         Connection connection = getConnection();
         try {
+            assert connection != null;
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             if (resultSet.next()) {
@@ -337,6 +354,7 @@ public class Database {
         String sql = "select * from battery where station_id=" + stationId + " order by electricity desc";
         Connection connection = getConnection();
         try {
+            assert connection != null;
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             if (resultSet.next()) {
@@ -356,10 +374,12 @@ public class Database {
      * 执行一次sql更新语句
      * @param sql 要执行的语句
      */
-    public static void updateDatabase(String sql) {
+    private static void updateDatabase(String sql) {
         Connection con = getConnection();
         try {
-            Statement state = con.createStatement();
+            assert con != null;
+            Statement state;
+            state = con.createStatement();
             state.executeUpdate(sql);
             state.close();
             con.close();
@@ -397,10 +417,10 @@ public class Database {
 
     /**
      * 由硬件设备post预约完成信息，预约完成后，将预约状态更新为已完成
-     * @param vehicle_id 车辆id
+     * @param vehicleId 车辆id
      */
-    public static void completeAppointment(String vehicle_id) {
-        String sql = "update appointment set complete=1 where complete=0 and vehicle_id=" + vehicle_id;
+    public static void completeAppointment(String vehicleId) {
+        String sql = "update appointment set complete=1 where complete=0 and vehicle_id=" + vehicleId;
         updateDatabase(sql);
     }
 
@@ -433,7 +453,7 @@ public class Database {
         try {
             Statement statement = connection != null ? connection.createStatement() : null;
             ResultSet resultSet = statement != null ? statement.executeQuery(sql) : null;
-            while (resultSet.next()) {
+            while (Objects.requireNonNull(resultSet).next()) {
                 UserVehicle uv = new UserVehicle();
                 uv.setId(resultSet.getInt("id"));
                 uv.setUserId(resultSet.getInt("user_id"));

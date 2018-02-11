@@ -1,7 +1,6 @@
 package com.servlet;
 
 import com.business.Appointment;
-import com.business.Constants;
 import com.business.Database;
 
 import javax.servlet.ServletException;
@@ -9,7 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
@@ -25,11 +23,11 @@ public class HardwareCompleteServlet extends HttpServlet {
         String vehicleId = request.getParameter("vehicle_id");
         System.out.println("HardwareCompleteServlet:" + vehicleId + "表示已完成换电");
 
-        Appointment appointment = Database.findAppointment(Database.VEHICLEID, vehicleId);
+        Appointment appointment = Database.findAppointment(Database.VEHICLE_ID, vehicleId);
         String newBatteryId = Integer.toString(appointment.getNewBatteryId());
         String userId = Integer.toString(appointment.getUserId());
         String stationId = Integer.toString(appointment.getStationId());
-        String oldBatteryId = Integer.toString(Database.findBattery(Database.VEHICLEID, vehicleId).getId());
+        String oldBatteryId = Integer.toString(Database.findBattery(Database.VEHICLE_ID, vehicleId).getId());
 
         Database.updateBattery(oldBatteryId, "-1", stationId);
         Database.updateBattery(newBatteryId, vehicleId, "-1");

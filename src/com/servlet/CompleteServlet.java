@@ -20,7 +20,7 @@ public class CompleteServlet extends HttpServlet {
         String userId = request.getParameter("id");
         System.out.println("CompleteServlet:" + userId + "询问预约是否已完成");
 
-        if (Database.hasAppointment(Database.USERID, userId)) {
+        if (Database.hasAppointment(Database.USER_ID, userId)) {
             out.print("未完成");
             System.out.println("CompleteServlet:" + userId + "预约未完成");
         } else {

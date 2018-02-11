@@ -12,17 +12,11 @@ public class User {
     private String password; // 用户密码 *
     private double balance; // 余额 *
 
-    public User(String phone, String password) {
+    public User(int id, String phone, String password, double balance) {
+        this.id = id;
         this.phone = phone;
         this.password = password;
-    }
-
-    /**
-     * 检查数据库中是否有此账户
-     * @return 有则返回true，无则返回false
-     */
-    public boolean check() {
-        return Database.checkUser(this);
+        this.balance = balance;
     }
 
     public int getId() {

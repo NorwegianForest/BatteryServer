@@ -26,7 +26,7 @@ public class HandleAppointmentServlet extends HttpServlet {
         String stationId = request.getParameter("station_id");
         System.out.println("HandleAppointmentServlet:" + userId + "的" + vehicleId + "请求预约" + stationId);
 
-        if (!Database.hasAppointment(Database.USERID, userId) && !Database.hasAppointment(Database.VEHICLEID, vehicleId)) {
+        if (!Database.hasAppointment(Database.USER_ID, userId) && !Database.hasAppointment(Database.VEHICLE_ID, vehicleId)) {
             AppointmentJson a = new AppointmentJson();
             a.setBatteryId(Database.matchBattery(stationId));
             if (a.getBatteryId() == -1) {
