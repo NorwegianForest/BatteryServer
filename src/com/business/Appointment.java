@@ -11,8 +11,10 @@ public class Appointment {
     private int vehicleId; // 将要被换电的车辆id *
     private int stationId; // 预约电站id *
     private int newBatteryId; // 新电池id *
+    private int time; // 排队需要的时间 *
     private String date; // 预约时间 *
     private int complete; // 是否完成状态 *
+    private Double distance; // 预约的电站与车辆的距离
 
     public int getId() {
         return id;
@@ -68,5 +70,21 @@ public class Appointment {
 
     public void setVehicleId(int vehicleId) {
         this.vehicleId = vehicleId;
+    }
+
+    public int getTime() {
+        return time;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
+
+    public Double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(Double distance) {
+        this.distance = distance;
     }
 }

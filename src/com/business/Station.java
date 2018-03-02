@@ -13,6 +13,8 @@ public class Station {
     private double latitude; // 纬度 *
     private double distance; // 距离某辆车的距离
     private double queueTime; // 预约后所需要的排队时间
+    private boolean isAppointment; // 是否已经被预约，针对于确知用户id的情况
+    private boolean isCollection; // 是否已经收藏，针对于确知用户id的情况
 
     public Station() {
     }
@@ -86,5 +88,21 @@ public class Station {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public boolean isAppointment() {
+        return isAppointment;
+    }
+
+    public void setAppointment(boolean appointment) {
+        isAppointment = appointment;
+    }
+
+    public boolean isCollection() {
+        return isCollection;
+    }
+
+    public void setCollection(boolean collection) {
+        isCollection = collection;
     }
 }

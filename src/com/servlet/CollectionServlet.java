@@ -23,7 +23,7 @@ public class CollectionServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         String userId = request.getParameter("user_id");
-        String vehicleId = request.getParameter("vehicle_id");
+        String vehicleId = Database.getReferenceId(userId);
         System.out.println("StationServlet" + userId + "请求收藏电站数据，参考车辆id:" + vehicleId);
         List<Station> stationList = new ArrayList<>();
         Database.loadCollection(userId, stationList);
@@ -31,7 +31,7 @@ public class CollectionServlet extends HttpServlet {
         Vehicle vehicle = Database.findVehicle(vehicleId); // 默认取用户的第一辆车来计算距离
         for (Station station : stationList) {
             station.setDistance(StationServlet.getDistance(vehicle, station)); // 计算车辆与电站的距离
-            station.setQueueTime(10); // 预设排队时间为10min
+            station.setQueueTime(Database.getAppointmentCount(Integer.toString(station.getId())) * 2); // 排队时间
         }
 
         String jsonData = new Gson().toJson(stationList);

@@ -168,7 +168,7 @@ public class Database {
      * @param recordList 保存换电记录的列表
      */
     public static void loadRecord(String userId, List<Record> recordList) {
-        String sql = "select * from record where user_id=" + userId;
+        String sql = "select * from record where user_id=" + userId + " order by date desc";
         Connection connection = getConnection();
         try {
             assert connection != null;
@@ -243,7 +243,9 @@ public class Database {
                 appointment.setVehicleId(resultSet.getInt("vehicle_id"));
                 appointment.setStationId(resultSet.getInt("station_id"));
                 appointment.setNewBatteryId(resultSet.getInt("new_battery_id"));
+                appointment.setTime(resultSet.getInt("time"));
                 appointment.setDate(resultSet.getString("date"));
+                appointment.setComplete(resultSet.getInt("complete"));
                 appointmentList.add(appointment);
             }
             resultSet.close();
@@ -397,9 +399,9 @@ public class Database {
      * @param date 预约时间
      */
     public static void insertAppointment(String userId, String vehicleId, String stationId, String batteryId,
-                                         String date) {
-        String sql = "insert into appointment(user_id,vehicle_id,station_id,new_battery_id,date,complete)values("
-                + userId + "," + vehicleId + "," + stationId + "," + batteryId + ",'" + date + "',0)";
+                                         String time, String date) {
+        String sql = "insert into appointment(user_id,vehicle_id,station_id,new_battery_id,time,date,complete)values("
+                + userId + "," + vehicleId + "," + stationId + "," + batteryId + "," + time + ",'" + date + "',0)";
         updateDatabase(sql);
     }
 
@@ -467,5 +469,94 @@ public class Database {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public static String getReferenceId(String userId) {
+        String vehicleId = null;
+        String sql = "select * from user where id=" + userId;
+        Connection con = getConnection();
+        try {
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery(sql);
+            rs.next();
+            vehicleId = rs.getString("vehicle_id");
+            rs.close();
+            s.close();
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return  vehicleId;
+    }
+
+    public static int getAppointmentCount(String stationId) {
+        int count = -1;
+        String sql = "select count(*) from appointment where station_id=" + stationId + " and complete=0";
+        Connection con = getConnection();
+        try {
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery(sql);
+            rs.next();
+            count = rs.getInt("count(*)");
+            rs.close();
+            s.close();
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
+
+    public static boolean isAppointment(String userId, String stationId) {
+        boolean isAppointment = false;
+        String sql = "select * from appointment where user_id=" + userId + " and station_id=" + stationId + " and complete=0";
+        Connection con = getConnection();
+        try {
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery(sql);
+            if (rs.next()) {
+                isAppointment = true;
+            }
+            rs.close();
+            s.close();
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return isAppointment;
+    }
+
+    public static void cancelAppointment(String userId) {
+        String sql = "update appointment set complete='-1' where user_id=" + userId + " and complete=0";
+        updateDatabase(sql);
+    }
+
+    public static boolean isCollection(String userId, String stationId) {
+        boolean isCollection = false;
+        String sql = "select * from user_station where user_id=" + userId + " and station_id=" + stationId;
+        Connection con = getConnection();
+        try {
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery(sql);
+            if (rs.next()) {
+                isCollection = true;
+            }
+            rs.close();
+            s.close();
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return isCollection;
+    }
+
+    public static void setCollection(String userId, String stationId) {
+        String sql = "insert into user_station(user_id,station_id)values(" + userId + "," + stationId + ")";
+        updateDatabase(sql);
+    }
+
+    public static void cancelCollection(String userId, String stationId) {
+        String sql = "delete from user_station where user_id=" + userId + " and station_id=" + stationId;
+        updateDatabase(sql);
     }
 }

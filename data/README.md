@@ -11,6 +11,7 @@
 |phone|varchar| |用户手机号|
 |password|varchar| |用户密码|
 |balance|double| |用户的账户余额|
+|vehicle_id|int| |用于计算距离的参考车辆id，-1表示以用户位置为参考|
 
 ## 表：station
 - 保存电站信息
@@ -78,6 +79,7 @@
 |vehicle_id|int| |将要被换电的车辆的id|
 |station_id|int| |接受预约的电站的id|
 |new_battery_id|int| |电站为用户准备的电池的id|
+|time|int| |预计排队需要的时间|
 |date|datetime| |预约时间和日期，格式为yyyy-mm-dd hh:mm:ss|
 |complete|smallint| |表示预约是否完成换电，0表示已预约且未完成，1表示预约后已完成，-1表示预约后取消|
 

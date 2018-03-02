@@ -2,6 +2,8 @@ package com.servlet;
 
 import com.business.Appointment;
 import com.business.Database;
+import com.business.Station;
+import com.business.Vehicle;
 import com.google.gson.Gson;
 
 import javax.servlet.ServletException;
@@ -25,6 +27,11 @@ public class AppointmentServlet extends HttpServlet {
         System.out.println("AppointmentServlet:" + userId + "请求预约数据");
         List<Appointment> appointmentList = new ArrayList<>();
         Database.loadAppointment(userId, appointmentList);
+        for (Appointment appointment : appointmentList) {
+            Station station = Database.findStation(Integer.toString(appointment.getStationId()));
+            Vehicle vehicle = Database.findVehicle(Integer.toString(appointment.getVehicleId()));
+            appointment.setDistance(StationServlet.getDistance(vehicle, station));
+        }
 
         String jsonData = new Gson().toJson(appointmentList);
         out.println(jsonData);

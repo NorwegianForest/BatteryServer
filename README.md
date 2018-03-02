@@ -1,8 +1,11 @@
 # 此项目作为APP的服务器
 ## 说明
+- 为寻电APP提供服务
+- ![](showImages/splash.png)
+- ![](showImages/first.png)
 - 基本上仅通过IP+servlet访问本服务器
 - 仅在本地使用时，IP为http://192.168.0.8:8080
-- 公网IP待定
+- 公网IP为118.24.0.184，项目文件名BatteryServet，使用腾讯云服务器，最低配置+2Mbps带宽，系统为Windows 2012 Server，节点位于成都
 
 ## 更新记录
 ### 1月31日更新
@@ -41,3 +44,19 @@
 - 删除了常量类Constants类，将常量整合到Database类中
 - 删除了User类中的check方法，采用在LoginServlet中调用Database类的checkUser方法代替
 - 基础的响应数据请求和处理预约功能已经完善
+
+### 3月2日更新
+- 数据库user数据表添加vehicle_id字段，表示用户的默认参考车辆，用于计算电站与车辆之间的距离
+- 数据库appointment数据表添加time字段，表示预约后需要的排队时间
+- Station类添加isAppointment和isCollection属性，表示在已知某用户id的情况下，判断该电站是否已经被预约或收藏
+- Appointment类添加distance属性，表示预约的电站距离用户车辆的位置
+- 在AppointmentServlet中增加了，预约的电站距离用户车辆的位置数据
+- 在CollectionServlet中增加了，收藏电站距离用户车辆的位置和所需要的排队时间数据
+- 获取参考车辆的方法由服务器预设用户第一辆车改为在数据库中查找用户的参考车辆
+- 增加了用于取消预约的CancelAppointmentServlet
+- 增加了用于收藏和取消收藏电站的HandleCollectionServlet
+- 增加了用于获取推荐电站的RecommendServlet，推荐距离最近的电站和排队时间最短的电站
+- 增加了用于获取用户参考车辆数据的ReferenceServlet
+- 增加了用于获取指定用户与电站直接的特殊数据的StationToUserServlet，获取距离，是否收藏以及预约
+- 在数据库中appointment数据表增加了无意义的预约数据，以便于计算不同电站的排队时间
+- 公网IP已确定，详见说明

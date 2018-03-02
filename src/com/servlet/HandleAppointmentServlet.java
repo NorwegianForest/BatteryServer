@@ -22,7 +22,8 @@ public class HandleAppointmentServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         String userId = request.getParameter("user_id");
-        String vehicleId = request.getParameter("vehicle_id");
+//        String vehicleId = request.getParameter("vehicle_id");
+        String vehicleId = Database.getReferenceId(userId);
         String stationId = request.getParameter("station_id");
         System.out.println("HandleAppointmentServlet:" + userId + "的" + vehicleId + "请求预约" + stationId);
 
@@ -31,8 +32,9 @@ public class HandleAppointmentServlet extends HttpServlet {
             a.setBatteryId(Database.matchBattery(stationId));
             if (a.getBatteryId() == -1) {
                 out.print("预约失败");
-                System.out.println("HandleAppointmentServlet:" + userId + "的" + vehicleId + "请求预约" + stationId + "失败");
+                System.out.println("HandleAppointmentServlet:" + userId + "的" + vehicleId + "请求预约" + stationId + "失败，无合适电池");
             } else {
+                int time = Database.getAppointmentCount(Integer.toString(Database.findStation(stationId).getId())) * 2;
                 double queueTime = 10.0; // 排队时间，单位min
                 long currentTime = System.currentTimeMillis();
                 long appointmentTime = (long) (currentTime + queueTime * 60 * 1000);
@@ -42,7 +44,7 @@ public class HandleAppointmentServlet extends HttpServlet {
                 a.setDate(sdf.format(appointmentDate));
                 // 插入预约数据到数据库
                 Database.insertAppointment(userId, vehicleId, stationId, Integer.toString(a.getBatteryId()),
-                        sdf.format(currentDate));
+                        Integer.toString(time), sdf.format(currentDate));
 
                 String jsonData = new Gson().toJson(a);
                 out.println(jsonData);

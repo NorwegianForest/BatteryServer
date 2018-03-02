@@ -26,7 +26,7 @@
     <br>
     <p>测试获取车辆数据VehicleServlet类</p>
     <form method="post" action="/vehicle">
-      vehicle id:<<input type="text" name="vehicle_id" id=""><input type="submit">
+      vehicle id:<input type="text" name="vehicle_id" id=""><input type="submit">
     </form>
     <br>
     <p>测试硬件向服务器发送换电完成数据</p>

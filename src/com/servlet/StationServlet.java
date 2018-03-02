@@ -29,7 +29,7 @@ public class StationServlet extends HttpServlet {
         String vehicleId = request.getParameter("vehicle_id");
         System.out.println("StationServlet:" + userId + "请求电站数据，参考车辆id:" + vehicleId);
 
-        Vehicle vehicle = Database.findVehicle(vehicleId); // 默认取用户的第一辆车来计算距离
+        Vehicle vehicle = Database.findVehicle(Database.getReferenceId(userId)); // 用户默认参考车辆来计算距离
         List<Station> stationList = new ArrayList<>();
         Database.loadStation(stationList);
 
@@ -39,7 +39,7 @@ public class StationServlet extends HttpServlet {
             } else {
                 station.setDistance(0.0);
             }
-            station.setQueueTime(10); // 预设排队时间为10min
+            station.setQueueTime(Database.getAppointmentCount(Integer.toString(station.getId())) * 2); // 排队时间
         }
 
         stationList.sort((s1, s2) -> (int) (s1.getDistance() - s2.getDistance())); // 根据距离对车站列表进行排序

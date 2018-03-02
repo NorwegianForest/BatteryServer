@@ -107,4 +107,44 @@
         <servlet-name>UserVehicleServlet</servlet-name>
         <url-pattern>/user_vehicle</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>RecommendServlet</servlet-name>
+        <servlet-class>com.servlet.RecommendServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RecommendServlet</servlet-name>
+        <url-pattern>/recommend</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ReferenceServlet</servlet-name>
+        <servlet-class>com.servlet.ReferenceServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReferenceServlet</servlet-name>
+        <url-pattern>/reference</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>StationToUserServlet</servlet-name>
+        <servlet-class>com.servlet.StationToUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StationToUserServlet</servlet-name>
+        <url-pattern>/station_to_user</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>CancelAppointmentServlet</servlet-name>
+        <servlet-class>com.servlet.CancelAppointmentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CancelAppointmentServlet</servlet-name>
+        <url-pattern>/cancel_appointment</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>HandleCollectionServlet</servlet-name>
+        <servlet-class>com.servlet.HandleCollectionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HandleCollectionServlet</servlet-name>
+        <url-pattern>/handle_collection</url-pattern>
+    </servlet-mapping>
 </web-app>
