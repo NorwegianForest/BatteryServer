@@ -102,3 +102,13 @@
 |user_id|int| |用户id|
 |station_id|int| |电站id|
 
+## 表：login_record
+- 保存用户的登录记录
+
+|字段名|类型|主键|说明|
+|---|---|:---:|---|
+|id|int|主键|数据库自增id|
+|user_id|int| |用户id|
+|phone|varchar| |用户手机号|
+|status|int| |登录状态，1表示登录成功，0表示登录失败|
+|date|datetime| |登录时间|

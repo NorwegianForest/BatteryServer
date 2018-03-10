@@ -31,10 +31,12 @@ public class LoginServlet extends HttpServlet {
         if (user == null) {
             response.getWriter().print("illegal");
             System.out.println("LoginServlet:" + phone + "登录失败");
+            Database.loginRecord(phone, 0);
         } else {
             System.out.println("LoginServlet:" + user.getPhone() + "登录成功");
             String jsonData = new Gson().toJson(user);
             response.getWriter().print(jsonData);
+            Database.loginRecord(phone, 1);
         }
     }
 

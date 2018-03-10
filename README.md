@@ -1,8 +1,8 @@
 # 此项目作为APP的服务器
 ## 说明
 - 为寻电APP提供服务
-- ![](showImages/splash.png)
-- ![](showImages/first.png)
+- <img src="showImages/splash.png" width=360 height=640 />
+- <img src="showImages/first.png" width=360 height=640 />
 - 基本上仅通过IP+servlet访问本服务器
 - 仅在本地使用时，IP为http://192.168.0.8:8080
 - 公网IP为118.24.0.184，项目文件名BatteryServet，使用腾讯云服务器，最低配置+2Mbps带宽，系统为Windows 2012 Server，节点位于成都
@@ -60,3 +60,8 @@
 - 增加了用于获取指定用户与电站直接的特殊数据的StationToUserServlet，获取距离，是否收藏以及预约
 - 在数据库中appointment数据表增加了无意义的预约数据，以便于计算不同电站的排队时间
 - 公网IP已确定，详见说明
+
+### 3月10日更新
+- 数据库新增login_record数据表，表示用户登录记录
+- 新增控制台页面于dashboard目录，显示登录记录、预约记录、换电记录、电站列表、电池列表等信息
+- 完善预约机制：如果电站中的空闲电池都已经被预约，则该电站不能再接受预约

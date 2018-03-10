@@ -1,6 +1,7 @@
 package com.business;
 
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -19,6 +20,7 @@ public class Database {
     public static final String USER_ID = "user_id";
     public static final String VEHICLE_ID = "vehicle_id";
     public static final String ID = "id";
+    public static final String NEW_BATTERY_ID = "new_battery_id";
 
     /**
      * 获取数据库连接，数据库名、用户名、密码
@@ -359,8 +361,11 @@ public class Database {
             assert connection != null;
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
-            if (resultSet.next()) {
-                batteryId = resultSet.getInt("id");
+            while (resultSet.next()) {
+                if (!hasAppointment(NEW_BATTERY_ID, resultSet.getString("id"))) {
+                    batteryId = resultSet.getInt("id");
+                    break;
+                }
             }
             resultSet.close();
             statement.close();
@@ -558,5 +563,165 @@ public class Database {
     public static void cancelCollection(String userId, String stationId) {
         String sql = "delete from user_station where user_id=" + userId + " and station_id=" + stationId;
         updateDatabase(sql);
+    }
+
+    public static void loginRecord(String phone, int status) {
+        long currentTime = System.currentTimeMillis();
+        Date currentDate = new Date(currentTime); // 当前时间
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String sql = "insert into login_record(phone,status,date)values('" + phone + "','" + status + "','" +
+                sdf.format(currentDate) + "')";
+        updateDatabase(sql);
+    }
+
+    public static List<LoginRecord> getAllLoginRecord() {
+        List<LoginRecord> recordList = new ArrayList<>();
+        String sql = "select * from login_record ORDER BY id DESC ";
+        Connection con = getConnection();
+        try {
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery(sql);
+            while (rs.next()) {
+                recordList.add(new LoginRecord(rs.getInt("id"),
+                        rs.getString("phone"),
+                        rs.getInt("status"),
+                        rs.getString("date")));
+            }
+            rs.close();
+            s.close();
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return recordList;
+    }
+
+    public static List<Record> getAllRecord() {
+        List<Record> recordList = new ArrayList<>();
+        String sql = "select * from record order by id desc";
+        Connection con = getConnection();
+        try {
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery(sql);
+            while (rs.next()) {
+                recordList.add(new Record(rs.getInt("id"),
+                        rs.getInt("user_id"),
+                        rs.getInt("vehicle_id"),
+                        rs.getInt("station_id"),
+                        rs.getDouble("money"),
+                        rs.getInt("old_battery_id"),
+                        rs.getInt("new_battery_id"),
+                        rs.getString("date")));
+            }
+            rs.close();
+            s.close();
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return recordList;
+    }
+
+    public static User findUser(String userId) {
+        User user = null;
+        String sql = "select * from user where id=" + userId;
+        Connection con = getConnection();
+        try {
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery(sql);
+            rs.next();
+            user = new User(rs.getInt("id"),
+                    rs.getString("phone"),
+                    rs.getString("password"),
+                    rs.getDouble("balance"));
+            rs.close();
+            s.close();
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
+
+    public static List<Battery> getAllBattery() {
+        List<Battery> batteryList = new ArrayList<>();
+        String sql = "select * from battery";
+        Connection con = getConnection();
+        try {
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery(sql);
+            while (rs.next()) {
+                batteryList.add(new Battery(rs.getInt("id"),
+                        rs.getString("number"),
+                        rs.getString("model"),
+                        rs.getInt("vehicle_id"),
+                        rs.getInt("station_id"),
+                        rs.getDouble("electricity"),
+                        rs.getDouble("rated_capacity"),
+                        rs.getDouble("actual_capacity"),
+                        rs.getDouble("residual_capacity"),
+                        rs.getString("date")));
+            }
+            rs.close();
+            s.close();
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return batteryList;
+    }
+
+    public static List<Appointment> getAllAppointment() {
+        List<Appointment> appointmentList = new ArrayList<>();
+        String sql = "select * from appointment order by date desc";
+        Connection con = getConnection();
+        try {
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery(sql);
+            while (rs.next()) {
+                appointmentList.add(new Appointment(rs.getInt("id"),
+                        rs.getInt("user_id"),
+                        rs.getInt("vehicle_id"),
+                        rs.getInt("station_id"),
+                        rs.getInt("new_battery_id"),
+                        rs.getInt("time"),
+                        rs.getString("date"),
+                        rs.getInt("complete")));
+            }
+            rs.close();
+            s.close();
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return appointmentList;
+    }
+
+    public static int getCount(String sql) {
+        int count = -1;
+        Connection con = getConnection();
+        try {
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery(sql);
+            rs.next();
+            count = rs.getInt("count(*)");
+            rs.close();
+            s.close();
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
+
+    public static int getBatteryAmount(String stationId) {
+        String sql = "select count(*) from battery where station_id=" + stationId;
+        return getCount(sql);
+    }
+
+    public static int getAppointmentBatteryAmount(String stationId) {
+        String sql = "select count(*) from appointment where complete=0 and station_id=" + stationId;
+        return getCount(sql);
     }
 }

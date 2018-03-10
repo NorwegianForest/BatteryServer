@@ -35,13 +35,10 @@ public class HandleAppointmentServlet extends HttpServlet {
                 System.out.println("HandleAppointmentServlet:" + userId + "的" + vehicleId + "请求预约" + stationId + "失败，无合适电池");
             } else {
                 int time = Database.getAppointmentCount(Integer.toString(Database.findStation(stationId).getId())) * 2;
-                double queueTime = 10.0; // 排队时间，单位min
                 long currentTime = System.currentTimeMillis();
-                long appointmentTime = (long) (currentTime + queueTime * 60 * 1000);
                 Date currentDate = new Date(currentTime); // 当前时间
-                Date appointmentDate = new Date(appointmentTime); // 预计可以获得电池的时间
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                a.setDate(sdf.format(appointmentDate));
+                a.setDate(sdf.format(currentDate));
                 // 插入预约数据到数据库
                 Database.insertAppointment(userId, vehicleId, stationId, Integer.toString(a.getBatteryId()),
                         Integer.toString(time), sdf.format(currentDate));

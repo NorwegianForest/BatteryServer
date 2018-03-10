@@ -1,5 +1,7 @@
 package com.business;
 
+import javax.xml.crypto.Data;
+
 /**
  * 与数据库中的battery数据表对应
  * 注释带星号*的表示在数据库中有对应字段
@@ -15,6 +17,38 @@ public class Battery {
     private double actualCapacity; // 实际容量 *
     private double residualCapacity; // 剩余容量 *
     private String date; // 电池投入使用的日期 *
+
+    public Battery() {
+    }
+
+    public Battery(int id, String number, String model, int vehicleId, int stationId, double electricity, double ratedCapacity, double actualCapacity, double residualCapacity, String date) {
+        this.id = id;
+        this.number = number;
+        this.model = model;
+        this.vehicleId = vehicleId;
+        this.stationId = stationId;
+        this.electricity = electricity;
+        this.ratedCapacity = ratedCapacity;
+        this.actualCapacity = actualCapacity;
+        this.residualCapacity = residualCapacity;
+        this.date = date;
+    }
+
+    public String getVehicleNumber() {
+        if (vehicleId == -1) {
+            return "/";
+        } else {
+            return Database.findVehicle(Integer.toString(vehicleId)).getNumber();
+        }
+    }
+
+    public String getStationName() {
+        if (stationId == -1 ) {
+            return "/";
+        } else {
+            return Database.findStation(Integer.toString(stationId)).getName();
+        }
+    }
 
     public int getId() {
         return id;

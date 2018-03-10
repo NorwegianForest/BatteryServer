@@ -1,5 +1,7 @@
 package com.business;
 
+import org.omg.PortableInterceptor.INACTIVE;
+
 import java.util.Date;
 
 /**
@@ -36,6 +38,26 @@ public class Record {
         this.oldBatteryId = oldBatteryId;
         this.newBatteryId = newBatteryId;
         this.date = date;
+    }
+
+    public String getUserPhone() {
+        return Database.findUser(Integer.toString(userId)).getPhone();
+    }
+
+    public String getVehicleNumber() {
+        return Database.findVehicle(Integer.toString(vehicleId)).getNumber();
+    }
+
+    public String getStationName() {
+        return Database.findStation(Integer.toString(stationId)).getName();
+    }
+
+    public String getOldBatteryNumber() {
+        return Database.findBattery(Database.ID, Integer.toString(oldBatteryId)).getNumber();
+    }
+
+    public String getNewBatteryNumber() {
+        return Database.findBattery(Database.ID, Integer.toString(newBatteryId)).getNumber();
     }
 
     public int getId() {
