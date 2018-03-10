@@ -7,44 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea613f5b-98dd-4bec-a867-8340ae299352" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/unnamed.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/business/LoginRecord.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/appointment.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/battery.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/css/styles.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/images/android-desktop.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/images/dog.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/images/favicon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/images/ios-desktop.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/images/user.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/login_record.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/mdl/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/mdl/bower.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/mdl/material.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/mdl/material.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/mdl/material.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/mdl/material.min.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/mdl/material.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/mdl/material.min.js.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/mdl/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/record.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/station.jsp" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/battery.xml" afterPath="" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/vehicle.jsp" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/BatteryServer.iml" afterPath="$PROJECT_DIR$/BatteryServer.iml" />
       <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/WEB-INF/web.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/data/README.md" afterPath="$PROJECT_DIR$/data/README.md" />
-      <change beforePath="$PROJECT_DIR$/data/battery.sql" afterPath="$PROJECT_DIR$/data/battery.sql" />
-      <change beforePath="$PROJECT_DIR$/src/com/business/Appointment.java" afterPath="$PROJECT_DIR$/src/com/business/Appointment.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/business/Battery.java" afterPath="$PROJECT_DIR$/src/com/business/Battery.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/business/Database.java" afterPath="$PROJECT_DIR$/src/com/business/Database.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/business/Record.java" afterPath="$PROJECT_DIR$/src/com/business/Record.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/servlet/HandleAppointmentServlet.java" afterPath="$PROJECT_DIR$/src/com/servlet/HandleAppointmentServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/servlet/LoginServlet.java" afterPath="$PROJECT_DIR$/src/com/servlet/LoginServlet.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,8 +37,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="120">
-                <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <first_editor relative-caret-position="149">
+                <caret line="67" column="51" lean-forward="false" selection-start-line="67" selection-start-column="51" selection-end-line="67" selection-end-column="51" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -81,11 +46,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="vehicle.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/vehicle.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="station.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/dashboard/station.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="125" column="47" lean-forward="true" selection-start-line="125" selection-start-column="47" selection-end-line="125" selection-end-column="47" />
+            <state relative-caret-position="1875">
+              <caret line="125" column="47" lean-forward="false" selection-start-line="125" selection-start-column="47" selection-end-line="125" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -104,7 +79,7 @@
       <file leaf-file-name="Station.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/business/Station.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
+            <state relative-caret-position="510">
               <caret line="34" column="4" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
               <folding />
             </state>
@@ -114,7 +89,7 @@
       <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/business/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
+            <state relative-caret-position="10800">
               <caret line="724" column="28" lean-forward="false" selection-start-line="724" selection-start-column="28" selection-end-line="724" selection-end-column="28" />
               <folding>
                 <marker date="1520676242994" expanded="true" signature="1413:1491" ph="select * fro... user" />
@@ -149,8 +124,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -206,6 +181,7 @@
         <option value="$PROJECT_DIR$/src/com/business/Database.java" />
         <option value="$PROJECT_DIR$/web/dashboard/station.jsp" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/vehicle.jsp" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -269,10 +245,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -331,6 +303,10 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -344,13 +320,14 @@
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\STUDY\Android_program\BatteryServer\web" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\STUDY\Android_program\BatteryServer\web" />
       <recent name="E:\STUDY\Android_program\BatteryServer\web\dashboard\images" />
       <recent name="E:\STUDY\Android_program\BatteryServer\web\dashboard\css" />
       <recent name="E:\STUDY\Android_program\BatteryServer\web\dashboard" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\STUDY\Android_program\BatteryServer\web" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -685,12 +662,13 @@
       <workItem from="1519871271549" duration="4614000" />
       <workItem from="1519958883435" duration="24861000" />
       <workItem from="1520346955228" duration="11000" />
-      <workItem from="1520655738025" duration="17244000" />
+      <workItem from="1520655738025" duration="17285000" />
+      <workItem from="1520689183512" duration="1066000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135108000" />
+    <option name="totallyTimeSpent" value="136215000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -714,7 +692,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1953125" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.56875" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.49707174" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.7791563" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.22084367" order="5" side_tool="true" content_ui="tabs" />
@@ -740,23 +718,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="150">
-            <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/battery.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/servlet/ConnectServlet.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/sql/Timestamp.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -937,7 +898,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -945,7 +905,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1031,9 +990,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
           <caret line="116" column="6" lean-forward="false" selection-start-line="116" selection-start-column="6" selection-end-line="116" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1107,9 +1064,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
           <caret line="98" column="22" lean-forward="false" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1142,7 +1097,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/business/Station.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
+        <state relative-caret-position="510">
           <caret line="34" column="4" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
           <folding />
         </state>
@@ -1150,7 +1105,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/business/Database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
+        <state relative-caret-position="10800">
           <caret line="724" column="28" lean-forward="false" selection-start-line="724" selection-start-column="28" selection-end-line="724" selection-end-column="28" />
           <folding>
             <marker date="1520676242994" expanded="true" signature="1413:1491" ph="select * fro... user" />
@@ -1189,8 +1144,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/dashboard/station.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="125" column="47" lean-forward="true" selection-start-line="125" selection-start-column="47" selection-end-line="125" selection-end-column="47" />
+        <state relative-caret-position="1875">
+          <caret line="125" column="47" lean-forward="false" selection-start-line="125" selection-start-column="47" selection-end-line="125" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/vehicle.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/vehicle.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1198,8 +1169,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="120">
-            <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <first_editor relative-caret-position="149">
+            <caret line="67" column="51" lean-forward="false" selection-start-line="67" selection-start-column="51" selection-end-line="67" selection-end-column="51" />
             <folding />
           </first_editor>
           <second_editor />
