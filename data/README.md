@@ -39,6 +39,7 @@
 |latitude|double| |纬度|
 |date|datetime| |该硬件设备投入使用的日期和时间，格式为yyyy-mm-dd hh:mm:ss|
 |direction|double| |车辆行驶的方向，0-360|
+|speed|double| |车辆行驶的速度，km/h|
 |temperature|double| |温度|
 |humidity|double| |湿度|
 |voltage|double| |电压|

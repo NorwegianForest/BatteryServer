@@ -68,6 +68,7 @@
 - 增加用户测试硬件上传数据的vehicle.jsp页面，在url中加入数据，服务器的控制台将数据输出
 
 ### 3月11日更新
-- 数据库vehicle数据表新增direction,temperature,humidity,voltage,current,update_date字段，详见data/README.md
+- 数据库vehicle数据表新增direction,speed,temperature,humidity,voltage,current,update_date字段，详见data/README.md
 - Vehicle类增加相应属性
 - 硬件可通过url将参数上传至服务器，服务器更新数据库，并反馈success or error
+- 增加硬件上传速度参数，处理不同格式的经纬度

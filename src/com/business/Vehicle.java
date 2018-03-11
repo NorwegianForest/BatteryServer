@@ -16,11 +16,20 @@ public class Vehicle {
     private double latitude; // 纬度 *
     private String date; // 硬件设备投入使用的日期 *
     private double direction; // 行驶方向 *
+    private double speed; // 行驶速度 *
     private double temperature; // 温度 *
     private double humidity; // 湿度 *
     private double voltage; // 电压 *
     private double current; // 电流 *
     private String updateDate; // 更新时间 *
+
+    public double getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(double speed) {
+        this.speed = speed;
+    }
 
     public double getDirection() {
         return direction;

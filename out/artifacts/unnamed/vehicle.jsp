@@ -20,6 +20,7 @@ try {
     String number = request.getParameter("number");
     String longitude = request.getParameter("longitude");
     String latitude = request.getParameter("latitude");
+    String speed = request.getParameter("speed");
     String direction = request.getParameter("direction");
     String temperature = request.getParameter("temperature");
     String humidity = request.getParameter("humidity");
@@ -35,6 +36,7 @@ try {
     System.out.println("编号：" + number);
     System.out.println("经度：" + longitude);
     System.out.println("纬度：" + latitude);
+    System.out.println("速度：" + speed);
     System.out.println("方向：" + direction);
     System.out.println("温度：" + temperature);
     System.out.println("湿度：" + humidity);
@@ -43,9 +45,28 @@ try {
     System.out.println("电量：" + electricity);
     System.out.println("硬件上传数据完成");
 
+    // 海里公里换算
+    speed = Double.toString(Double.parseDouble(speed) * 1.852);
+
+    longitude = longitude.split("E")[0];
+    System.out.println(longitude);
+    longitude = Double.toString(Double.parseDouble(longitude) * 0.01);
+    System.out.println(longitude);
+    int lo = (int) Double.parseDouble(longitude);
+    System.out.println(lo);
+    longitude = Double.toString(lo + (Double.parseDouble(longitude) - lo) / 60 * 100);
+    System.out.println(longitude);
+
+    latitude = latitude.split("N")[0];
+    latitude = Double.toString(Double.parseDouble(latitude) * 0.01);
+    int la = (int) Double.parseDouble(latitude);
+    latitude = Double.toString(la + (Double.parseDouble(latitude) - la) / 60 * 100);
+
+
     String sql = "update vehicle set longitude='" + longitude
             + "', latitude='" + latitude
             + "', direction='" + direction
+            + "', speed='" + speed
             + "', temperature='" + temperature
             + "', humidity='" + humidity
             + "', voltage='" + voltage

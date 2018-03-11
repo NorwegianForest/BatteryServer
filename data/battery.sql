@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2018-03-11 13:10:58
+Date: 2018-03-11 15:10:13
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -334,6 +334,7 @@ CREATE TABLE `vehicle` (
   `latitude` double DEFAULT NULL,
   `date` datetime DEFAULT NULL,
   `direction` double(255,0) DEFAULT NULL,
+  `speed` double(255,0) DEFAULT NULL,
   `temperature` double DEFAULT NULL,
   `humidity` double DEFAULT NULL,
   `voltage` double DEFAULT NULL,
@@ -345,35 +346,35 @@ CREATE TABLE `vehicle` (
 -- ----------------------------
 -- Records of vehicle
 -- ----------------------------
-INSERT INTO `vehicle` VALUES ('1', 'V1000001', '特斯拉', 'Model-s', '川A53776', '1', '103', '30', '2018-01-01 17:04:45', '185', '26', '50', '1.5', '0.5', '2018-03-11 13:02:52');
-INSERT INTO `vehicle` VALUES ('2', 'V1000002', '凯迪拉克', 'CT6', '川A89374', '2', '103.6543', '30.3546', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('3', 'V1000003', '凯迪拉克', 'CT6', '川A45397', '3', '103.6577', '30.1357', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('4', 'V1000004', '凯迪拉克', 'CT6', '川A54379', '4', '103.5468', '30.5798', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('5', 'V1000005', '凯迪拉克', 'CT6', '川A96735', '5', '103.21654', '30.5482', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('6', 'V1000006', '凯迪拉克', 'CT6', '川A05723', '6', '103.1355', '30.5987', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('7', 'V1000007', '凯迪拉克', 'CT6', '川A57357', '7', '103.8979', '30.216', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('8', 'V1000008', '凯迪拉克', 'CT6', '川A52788', '8', '103.8432', '30.2135', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('9', 'V1000009', '凯迪拉克', 'CT6', '川A79973', '9', '103.6654', '30.21687', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('10', 'V1000010', '凯迪拉克', 'CT6', '川A24787', '10', '103.3151', '30.4897', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('11', 'V1000011', '凯迪拉克', 'CT6', '川A12877', '11', '103.1357', '30.84321', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('12', 'V1000012', '凯迪拉克', 'CT6', '川A78087', '12', '103.7466', '30.6546', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('13', 'V1000013', '凯迪拉克', 'CT6', '川A78786', '13', '103.4687', '30.5136', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('14', 'V1000014', '凯迪拉克', 'CT6', '川A45378', '14', '103.1358', '30.9843', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('15', 'V1000015', '凯迪拉克', 'CT6', '川A12097', '15', '103.5487', '30.5796', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('16', 'V1000016', '凯迪拉克', 'CT6', '川A78788', '16', '103.7839', '30.0687', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('17', 'V1000017', '凯迪拉克', 'CT6', '川A54347', '17', '103.4789', '30.65432', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('18', 'V1000018', '凯迪拉克', 'CT6', '川A79783', '18', '103.2694', '30.2498', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('19', 'V1000019', '凯迪拉克', 'CT6', '川A42024', '19', '103.2793', '30.54916', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('20', 'V1000020', '凯迪拉克', 'CT6', '川A12767', '20', '103.1863', '30.564', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('21', 'V1000021', '凯迪拉克', 'CT6', '川A87768', '21', '103.1148', '30.5466', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('22', 'V1000022', '凯迪拉克', 'CT6', '川A27507', '22', '103.1359', '30.2168', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('23', 'V1000023', '凯迪拉克', 'CT6', '川A02137', '23', '103.1768', '30.2468', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('24', 'V1000024', '凯迪拉克', 'CT6', '川A78673', '24', '103.4987', '30.4897', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('25', 'V1000025', '凯迪拉克', 'CT6', '川A05767', '25', '103.21387', '30.6843', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('26', 'V1000026', '凯迪拉克', 'CT6', '川A72873', '26', '103.4687', '30.6813', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('27', 'V1000027', '凯迪拉克', 'CT6', '川A42457', '27', '103.21357', '30.3546', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('28', 'V1000028', '凯迪拉克', 'CT6', '川A75387', '28', '103.2468', '30.6843', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('29', 'V1000029', '凯迪拉克', 'CT6', '川A43054', '29', '103.1687', '30.6873', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('30', 'V1000030', '凯迪拉克', 'CT6', '川A34837', '30', '103.2468', '30.1387', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('31', 'V1000031', '凯迪拉克', 'CT6', '川A98375', '31', '103.2168', '30.6681', '2018-01-01 17:04:45', null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('32', 'V1000032', '凯迪拉克', 'CT6', '川A40787', '32', '103.1587', '30.6813', '2018-01-01 17:04:45', null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('1', 'V1000001', '特斯拉', 'Model-s', '川A53776', '1', '103.98539', '30.516409999999993', '2018-01-01 17:04:45', '185', '11', '26', '50', '1.5', '0.5', '2018-03-11 15:07:26');
+INSERT INTO `vehicle` VALUES ('2', 'V1000002', '凯迪拉克', 'CT6', '川A89374', '2', '103.6543', '30.3546', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('3', 'V1000003', '凯迪拉克', 'CT6', '川A45397', '3', '103.6577', '30.1357', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('4', 'V1000004', '凯迪拉克', 'CT6', '川A54379', '4', '103.5468', '30.5798', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('5', 'V1000005', '凯迪拉克', 'CT6', '川A96735', '5', '103.21654', '30.5482', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('6', 'V1000006', '凯迪拉克', 'CT6', '川A05723', '6', '103.1355', '30.5987', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('7', 'V1000007', '凯迪拉克', 'CT6', '川A57357', '7', '103.8979', '30.216', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('8', 'V1000008', '凯迪拉克', 'CT6', '川A52788', '8', '103.8432', '30.2135', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('9', 'V1000009', '凯迪拉克', 'CT6', '川A79973', '9', '103.6654', '30.21687', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('10', 'V1000010', '凯迪拉克', 'CT6', '川A24787', '10', '103.3151', '30.4897', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('11', 'V1000011', '凯迪拉克', 'CT6', '川A12877', '11', '103.1357', '30.84321', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('12', 'V1000012', '凯迪拉克', 'CT6', '川A78087', '12', '103.7466', '30.6546', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('13', 'V1000013', '凯迪拉克', 'CT6', '川A78786', '13', '103.4687', '30.5136', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('14', 'V1000014', '凯迪拉克', 'CT6', '川A45378', '14', '103.1358', '30.9843', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('15', 'V1000015', '凯迪拉克', 'CT6', '川A12097', '15', '103.5487', '30.5796', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('16', 'V1000016', '凯迪拉克', 'CT6', '川A78788', '16', '103.7839', '30.0687', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('17', 'V1000017', '凯迪拉克', 'CT6', '川A54347', '17', '103.4789', '30.65432', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('18', 'V1000018', '凯迪拉克', 'CT6', '川A79783', '18', '103.2694', '30.2498', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('19', 'V1000019', '凯迪拉克', 'CT6', '川A42024', '19', '103.2793', '30.54916', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('20', 'V1000020', '凯迪拉克', 'CT6', '川A12767', '20', '103.1863', '30.564', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('21', 'V1000021', '凯迪拉克', 'CT6', '川A87768', '21', '103.1148', '30.5466', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('22', 'V1000022', '凯迪拉克', 'CT6', '川A27507', '22', '103.1359', '30.2168', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('23', 'V1000023', '凯迪拉克', 'CT6', '川A02137', '23', '103.1768', '30.2468', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('24', 'V1000024', '凯迪拉克', 'CT6', '川A78673', '24', '103.4987', '30.4897', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('25', 'V1000025', '凯迪拉克', 'CT6', '川A05767', '25', '103.21387', '30.6843', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('26', 'V1000026', '凯迪拉克', 'CT6', '川A72873', '26', '103.4687', '30.6813', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('27', 'V1000027', '凯迪拉克', 'CT6', '川A42457', '27', '103.21357', '30.3546', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('28', 'V1000028', '凯迪拉克', 'CT6', '川A75387', '28', '103.2468', '30.6843', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('29', 'V1000029', '凯迪拉克', 'CT6', '川A43054', '29', '103.1687', '30.6873', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('30', 'V1000030', '凯迪拉克', 'CT6', '川A34837', '30', '103.2468', '30.1387', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('31', 'V1000031', '凯迪拉克', 'CT6', '川A98375', '31', '103.2168', '30.6681', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('32', 'V1000032', '凯迪拉克', 'CT6', '川A40787', '32', '103.1587', '30.6813', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
