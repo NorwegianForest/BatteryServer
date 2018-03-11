@@ -15,6 +15,60 @@ public class Vehicle {
     private double longitude; // 经度 *
     private double latitude; // 纬度 *
     private String date; // 硬件设备投入使用的日期 *
+    private double direction; // 行驶方向 *
+    private double temperature; // 温度 *
+    private double humidity; // 湿度 *
+    private double voltage; // 电压 *
+    private double current; // 电流 *
+    private String updateDate; // 更新时间 *
+
+    public double getDirection() {
+        return direction;
+    }
+
+    public void setDirection(double direction) {
+        this.direction = direction;
+    }
+
+    public double getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(double temperature) {
+        this.temperature = temperature;
+    }
+
+    public double getHumidity() {
+        return humidity;
+    }
+
+    public void setHumidity(double humidity) {
+        this.humidity = humidity;
+    }
+
+    public double getVoltage() {
+        return voltage;
+    }
+
+    public void setVoltage(double voltage) {
+        this.voltage = voltage;
+    }
+
+    public double getCurrent() {
+        return current;
+    }
+
+    public void setCurrent(double current) {
+        this.current = current;
+    }
+
+    public String getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(String updateDate) {
+        this.updateDate = updateDate;
+    }
 
     public int getId() {
         return id;

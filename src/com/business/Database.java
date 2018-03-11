@@ -291,6 +291,34 @@ public class Database {
         return null;
     }
 
+    public static Vehicle findVehicle(String column, String value) {
+        String sql = "select * from vehicle where " + column + "='" + value + "'";
+        Connection connection = getConnection();
+        try {
+            assert connection != null;
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            resultSet.next();
+            Vehicle vehicle = new Vehicle();
+            vehicle.setId(resultSet.getInt("id"));
+            vehicle.setNumber(resultSet.getString("number"));
+            vehicle.setBrand(resultSet.getString("brand"));
+            vehicle.setModel(resultSet.getString("model"));
+            vehicle.setPlate(resultSet.getString("plate"));
+            vehicle.setUserId(resultSet.getInt("user_id"));
+            vehicle.setLongitude(resultSet.getDouble("longitude"));
+            vehicle.setLatitude(resultSet.getDouble("latitude"));
+            vehicle.setDate(resultSet.getString("date"));
+            resultSet.close();
+            statement.close();
+            connection.close();
+            return vehicle;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     /**
      * 根据用户id，在数据库user_station表中查找所有收藏电站数据
      * @param userId 用户id
@@ -381,7 +409,7 @@ public class Database {
      * 执行一次sql更新语句
      * @param sql 要执行的语句
      */
-    private static void updateDatabase(String sql) {
+     public static void updateDatabase(String sql) {
         Connection con = getConnection();
         try {
             assert con != null;

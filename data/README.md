@@ -37,7 +37,13 @@
 |user_id|int| |硬件设备唯一管理员用户id|
 |longitude|double| |经度|
 |latitude|double| |纬度|
-|date|double| |该硬件设备投入使用的日期和时间，格式为yyyy-mm-dd hh:mm:ss|
+|date|datetime| |该硬件设备投入使用的日期和时间，格式为yyyy-mm-dd hh:mm:ss|
+|direction|double| |车辆行驶的方向，0-360|
+|temperature|double| |温度|
+|humidity|double| |湿度|
+|voltage|double| |电压|
+|current|double| |电流|
+|update_date|datetime| |更新时间|
 
 ## 表：battery
 - 保存电池信息

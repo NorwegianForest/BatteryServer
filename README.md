@@ -66,3 +66,8 @@
 - 新增控制台页面于dashboard目录，显示登录记录、预约记录、换电记录、电站列表、电池列表等信息
 - 完善预约机制：如果电站中的空闲电池都已经被预约，则该电站不能再接受预约
 - 增加用户测试硬件上传数据的vehicle.jsp页面，在url中加入数据，服务器的控制台将数据输出
+
+### 3月11日更新
+- 数据库vehicle数据表新增direction,temperature,humidity,voltage,current,update_date字段，详见data/README.md
+- Vehicle类增加相应属性
+- 硬件可通过url将参数上传至服务器，服务器更新数据库，并反馈success or error
