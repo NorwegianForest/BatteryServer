@@ -7,11 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea613f5b-98dd-4bec-a867-8340ae299352" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/complete.jsp" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/data/README.md" afterPath="$PROJECT_DIR$/data/README.md" />
-      <change beforePath="$PROJECT_DIR$/data/battery.sql" afterPath="$PROJECT_DIR$/data/battery.sql" />
-      <change beforePath="$PROJECT_DIR$/src/com/business/Vehicle.java" afterPath="$PROJECT_DIR$/src/com/business/Vehicle.java" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/unnamed/vehicle.jsp" afterPath="$PROJECT_DIR$/out/artifacts/unnamed/vehicle.jsp" />
       <change beforePath="$PROJECT_DIR$/web/vehicle.jsp" afterPath="$PROJECT_DIR$/web/vehicle.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -40,8 +39,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="277">
-                <caret line="73" column="23" lean-forward="false" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="23" />
+              <first_editor relative-caret-position="322">
+                <caret line="78" column="87" lean-forward="false" selection-start-line="78" selection-start-column="87" selection-end-line="78" selection-end-column="87" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -52,8 +51,18 @@
       <file leaf-file-name="vehicle.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/vehicle.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="69" column="32" lean-forward="false" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
+            <state relative-caret-position="209">
+              <caret line="64" column="45" lean-forward="false" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="complete.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/complete.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-261">
+              <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -62,8 +71,8 @@
       <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/business/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4245">
-              <caret line="287" column="13" lean-forward="false" selection-start-line="287" selection-start-column="13" selection-end-line="287" selection-end-column="13" />
+            <state relative-caret-position="83">
+              <caret line="293" column="26" lean-forward="false" selection-start-line="293" selection-start-column="26" selection-end-line="293" selection-end-column="26" />
               <folding>
                 <marker date="1520744008101" expanded="true" signature="1413:1491" ph="select * fro... user" />
                 <marker date="1520744008101" expanded="true" signature="2388:2409" ph="select * fro... station" />
@@ -90,6 +99,16 @@
                 <marker date="1520744008101" expanded="true" signature="25922:25966" ph="select * fro... appointment" />
                 <marker date="1520744008101" expanded="true" signature="27309:27355" ph="select count... battery" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HardwareCompleteServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/servlet/HardwareCompleteServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="39" column="17" lean-forward="false" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -158,6 +177,7 @@
         <option value="$PROJECT_DIR$/src/com/business/Vehicle.java" />
         <option value="$PROJECT_DIR$/data/README.md" />
         <option value="$PROJECT_DIR$/web/vehicle.jsp" />
+        <option value="$PROJECT_DIR$/web/complete.jsp" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -221,8 +241,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -249,20 +267,6 @@
             <path>
               <item name="BatteryServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="BatteryServer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="business" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BatteryServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BatteryServer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="servlet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BatteryServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BatteryServer" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -281,8 +285,10 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -642,11 +648,13 @@
       <workItem from="1520689183512" duration="1066000" />
       <workItem from="1520742853005" duration="2216000" />
       <workItem from="1520750140038" duration="2087000" />
+      <workItem from="1520783125453" duration="15000" />
+      <workItem from="1520905653154" duration="3903000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140518000" />
+    <option name="totallyTimeSpent" value="144436000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -669,7 +677,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36875" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.321875" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.49707174" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.7791563" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.22084367" order="5" side_tool="true" content_ui="tabs" />
@@ -695,7 +703,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/servlet/ConnectServlet.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/sql/Timestamp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7605">
@@ -730,13 +737,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/servlet/HardwareCompleteServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="29" column="85" lean-forward="false" selection-start-line="29" selection-start-column="85" selection-end-line="29" selection-end-column="85" />
         </state>
       </provider>
     </entry>
@@ -1066,39 +1066,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/vehicle.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/com/business/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4245">
-          <caret line="287" column="13" lean-forward="false" selection-start-line="287" selection-start-column="13" selection-end-line="287" selection-end-column="13" />
-          <folding>
-            <marker date="1520744008101" expanded="true" signature="1413:1491" ph="select * fro... user" />
-            <marker date="1520744008101" expanded="true" signature="2388:2409" ph="select * fro... station" />
-            <marker date="1520744008101" expanded="true" signature="3442:3485" ph="select * fro... battery" />
-            <marker date="1520744008101" expanded="true" signature="4904:4966" ph="select * fro... appointment" />
-            <marker date="1520744008101" expanded="true" signature="6183:6251" ph="select * fro... record" />
-            <marker date="1520744008101" expanded="true" signature="7443:7474" ph="select * fro... station" />
-            <marker date="1520744008101" expanded="true" signature="8542:8582" ph="select * fro... appointment" />
-            <marker date="1520744008101" expanded="true" signature="9908:9939" ph="select * fro... vehicle" />
-            <marker date="1520744008101" expanded="true" signature="11122:11165" ph="select * fro... vehicle" />
-            <marker date="1520744008101" expanded="true" signature="11122:11180" ph="select * fro... vehicle" />
-            <marker date="1520744008101" expanded="true" signature="12487:12528" ph="select * fro... user_station" />
-            <marker date="1520744008101" expanded="true" signature="13468:13530" ph="select * fro... appointment" />
-            <marker date="1520744008101" expanded="true" signature="14406:14488" ph="select * fro... battery" />
-            <marker date="1520744008101" expanded="true" signature="17920:17961" ph="select * fro... user_vehicle" />
-            <marker date="1520744008101" expanded="true" signature="18900:18928" ph="select * fro... user" />
-            <marker date="1520744008101" expanded="true" signature="19460:19542" ph="select count... appointment" />
-            <marker date="1520744008101" expanded="true" signature="20079:20181" ph="select * fro... appointment" />
-            <marker date="1520744008101" expanded="true" signature="20938:21009" ph="select * fro... user_station" />
-            <marker date="1520744008101" expanded="true" signature="22461:22504" ph="select * fro... login_record" />
-            <marker date="1520744008101" expanded="true" signature="23219:23256" ph="select * fro... record" />
-            <marker date="1520744008101" expanded="true" signature="24143:24171" ph="select * fro... user" />
-            <marker date="1520744008101" expanded="true" signature="24844:24865" ph="select * fro... battery" />
-            <marker date="1520744008101" expanded="true" signature="25922:25966" ph="select * fro... appointment" />
-            <marker date="1520744008101" expanded="true" signature="27309:27355" ph="select count... battery" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/servlet/HandleAppointmentServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
@@ -1112,7 +1079,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="360">
             <caret line="41" column="29" lean-forward="false" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1154,11 +1120,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/business/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="293" column="26" lean-forward="false" selection-start-line="293" selection-start-column="26" selection-end-line="293" selection-end-column="26" />
+          <folding>
+            <marker date="1520744008101" expanded="true" signature="1413:1491" ph="select * fro... user" />
+            <marker date="1520744008101" expanded="true" signature="2388:2409" ph="select * fro... station" />
+            <marker date="1520744008101" expanded="true" signature="3442:3485" ph="select * fro... battery" />
+            <marker date="1520744008101" expanded="true" signature="4904:4966" ph="select * fro... appointment" />
+            <marker date="1520744008101" expanded="true" signature="6183:6251" ph="select * fro... record" />
+            <marker date="1520744008101" expanded="true" signature="7443:7474" ph="select * fro... station" />
+            <marker date="1520744008101" expanded="true" signature="8542:8582" ph="select * fro... appointment" />
+            <marker date="1520744008101" expanded="true" signature="9908:9939" ph="select * fro... vehicle" />
+            <marker date="1520744008101" expanded="true" signature="11122:11165" ph="select * fro... vehicle" />
+            <marker date="1520744008101" expanded="true" signature="11122:11180" ph="select * fro... vehicle" />
+            <marker date="1520744008101" expanded="true" signature="12487:12528" ph="select * fro... user_station" />
+            <marker date="1520744008101" expanded="true" signature="13468:13530" ph="select * fro... appointment" />
+            <marker date="1520744008101" expanded="true" signature="14406:14488" ph="select * fro... battery" />
+            <marker date="1520744008101" expanded="true" signature="17920:17961" ph="select * fro... user_vehicle" />
+            <marker date="1520744008101" expanded="true" signature="18900:18928" ph="select * fro... user" />
+            <marker date="1520744008101" expanded="true" signature="19460:19542" ph="select count... appointment" />
+            <marker date="1520744008101" expanded="true" signature="20079:20181" ph="select * fro... appointment" />
+            <marker date="1520744008101" expanded="true" signature="20938:21009" ph="select * fro... user_station" />
+            <marker date="1520744008101" expanded="true" signature="22461:22504" ph="select * fro... login_record" />
+            <marker date="1520744008101" expanded="true" signature="23219:23256" ph="select * fro... record" />
+            <marker date="1520744008101" expanded="true" signature="24143:24171" ph="select * fro... user" />
+            <marker date="1520744008101" expanded="true" signature="24844:24865" ph="select * fro... battery" />
+            <marker date="1520744008101" expanded="true" signature="25922:25966" ph="select * fro... appointment" />
+            <marker date="1520744008101" expanded="true" signature="27309:27355" ph="select count... battery" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/servlet/HardwareCompleteServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="39" column="17" lean-forward="false" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/complete.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-261">
+          <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="277">
-            <caret line="73" column="23" lean-forward="false" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="23" />
+          <first_editor relative-caret-position="322">
+            <caret line="78" column="87" lean-forward="false" selection-start-line="78" selection-start-column="87" selection-end-line="78" selection-end-column="87" />
             <folding />
           </first_editor>
           <second_editor />
@@ -1167,8 +1182,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/vehicle.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="69" column="32" lean-forward="false" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
+        <state relative-caret-position="209">
+          <caret line="64" column="45" lean-forward="false" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="45" />
           <folding />
         </state>
       </provider>

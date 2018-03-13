@@ -72,3 +72,8 @@
 - Vehicle类增加相应属性
 - 硬件可通过url将参数上传至服务器，服务器更新数据库，并反馈success or error
 - 增加硬件上传速度参数，处理不同格式的经纬度
+
+### 3月13日更新
+- 简化vehicle.jsp中url的参数名
+- 增加了complete.jsp用于接受硬件换电完成信息，参数为编号，参数名为n
+- 如果数据库操作失败，异常会在Database类中捕获，而不会在complete.jsp中捕获，故可能出现即使数据库操作失败了，complete.jsp仍返回success

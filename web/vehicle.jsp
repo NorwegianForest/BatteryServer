@@ -9,24 +9,24 @@
   Time: 21:45
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-  <title>Title</title>
+  <title>Upload Parameters From Vehicle</title>
 </head>
 <body>
 <%
 try {
-    String number = request.getParameter("number");
-    String longitude = request.getParameter("longitude");
-    String latitude = request.getParameter("latitude");
-    String speed = request.getParameter("speed");
-    String direction = request.getParameter("direction");
-    String temperature = request.getParameter("temperature");
-    String humidity = request.getParameter("humidity");
-    String voltage = request.getParameter("voltage");
-    String current = request.getParameter("current");
-    String electricity = request.getParameter("electricity");
+    String number = request.getParameter("n");
+    String longitude = request.getParameter("lo");
+    String latitude = request.getParameter("la");
+    String speed = request.getParameter("s");
+    String direction = request.getParameter("d");
+    String temperature = request.getParameter("t");
+    String humidity = request.getParameter("h");
+    String voltage = request.getParameter("v");
+    String current = request.getParameter("c");
+    String electricity = request.getParameter("e");
 
     long currentTime = System.currentTimeMillis();
     Date currentDate = new Date(currentTime); // 当前时间
@@ -43,7 +43,6 @@ try {
     System.out.println("电压：" + voltage);
     System.out.println("电流：" + current);
     System.out.println("电量：" + electricity);
-    System.out.println("硬件上传数据完成");
 
     // 海里公里换算
     speed = Double.toString(Double.parseDouble(speed) * 1.852);
@@ -70,17 +69,21 @@ try {
     Database.updateDatabase(sql);
 
     Vehicle vehicle = Database.findVehicle("number", number);
+    assert vehicle != null;
     Battery battery = Database.findBattery(Database.VEHICLE_ID, Integer.toString(vehicle.getId()));
-    double elec = Integer.parseInt(electricity);
-    battery.setElectricity(elec);
-    battery.setResidualCapacity(battery.getActualCapacity() * elec * 0.01);
-    sql = "update battery set electricity=" + elec + ", residual_capacity=" + battery.getResidualCapacity()
+    double ele = Integer.parseInt(electricity);
+    assert battery != null;
+    battery.setElectricity(ele);
+    battery.setResidualCapacity(battery.getActualCapacity() * ele * 0.01);
+    sql = "update battery set electricity=" + ele + ", residual_capacity=" + battery.getResidualCapacity()
             + " where id=" + battery.getId();
     Database.updateDatabase(sql);
     response.getWriter().print("success");
+    System.out.println(number + " 硬件上传数据完成");
 } catch (Exception e) {
     e.printStackTrace();
     response.getWriter().print("error");
+    System.out.println("硬件上传数据失败");
 }
 %>
 </body>
