@@ -22,14 +22,14 @@ public class HandleAppointmentServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         String userId = request.getParameter("user_id");
-//        String vehicleId = request.getParameter("vehicle_id");
         String vehicleId = Database.getReferenceId(userId);
+        String batteryModel = Database.findBattery(Database.VEHICLE_ID, vehicleId).getModel();
         String stationId = request.getParameter("station_id");
         System.out.println("HandleAppointmentServlet:" + userId + "的" + vehicleId + "请求预约" + stationId);
 
         if (!Database.hasAppointment(Database.USER_ID, userId) && !Database.hasAppointment(Database.VEHICLE_ID, vehicleId)) {
             AppointmentJson a = new AppointmentJson();
-            a.setBatteryId(Database.matchBattery(stationId));
+            a.setBatteryId(Database.matchBattery(stationId, batteryModel));
             if (a.getBatteryId() == -1) {
                 out.print("预约失败");
                 System.out.println("HandleAppointmentServlet:" + userId + "的" + vehicleId + "请求预约" + stationId + "失败，无合适电池");
@@ -43,8 +43,10 @@ public class HandleAppointmentServlet extends HttpServlet {
                 Database.insertAppointment(userId, vehicleId, stationId, Integer.toString(a.getBatteryId()),
                         Integer.toString(time), sdf.format(currentDate));
 
+                a.setAppointment_id(Database.findAppointment(Database.USER_ID, userId).getId());
+
                 String jsonData = new Gson().toJson(a);
-                out.println(jsonData);
+                out.print(jsonData);
                 System.out.println("HandleAppointmentServlet:" + userId + "的" + vehicleId + "请求预约" + stationId + "成功");
             }
         } else {

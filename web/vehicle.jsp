@@ -1,8 +1,12 @@
-<%@ page import="java.util.Date" %>
-<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="com.business.Battery" %>
 <%@ page import="com.business.Database" %>
 <%@ page import="com.business.Vehicle" %>
-<%@ page import="com.business.Battery" %><%--
+<%@ page import="java.io.File" %>
+<%@ page import="java.io.FileWriter" %>
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Date" %>
+<%--
   Created by IntelliJ IDEA.
   User: szl
   Date: 2018/3/10
@@ -16,6 +20,7 @@
 </head>
 <body>
 <%
+StringBuilder log = new StringBuilder();
 try {
     String number = request.getParameter("n");
     String longitude = request.getParameter("lo");
@@ -43,6 +48,17 @@ try {
     System.out.println("电压：" + voltage);
     System.out.println("电流：" + current);
     System.out.println("电量：" + electricity);
+    log.append(sdf.format(currentDate)).append(" 硬件 ").append(number).append(" 上传数据\r\n")
+    .append("编号：").append(number)
+    .append("\r\n经度：").append(longitude)
+    .append("\r\n纬度：").append(latitude)
+    .append("\r\n速度：").append(speed)
+    .append("\r\n方向：").append(direction)
+    .append("\r\n温度：").append(temperature)
+    .append("\r\n湿度：").append(humidity)
+    .append("\r\n电压：").append(voltage)
+    .append("\r\n电流：").append(current)
+    .append("\r\n电量：").append(electricity);
 
     // 海里公里换算
     speed = Double.toString(Double.parseDouble(speed) * 1.852);
@@ -80,10 +96,26 @@ try {
     Database.updateDatabase(sql);
     response.getWriter().print("success");
     System.out.println(number + " 硬件上传数据完成");
+    log.append("\r\n").append(number).append(" 硬件上传数据完成");
 } catch (Exception e) {
     e.printStackTrace();
     response.getWriter().print("error");
     System.out.println("硬件上传数据失败");
+    log.append("\r\n硬件上传数据失败\r\n").append(e.toString()).append("\r\n\r\n\r\n");
+}
+
+try {
+    File file = new File("C:\\Users\\Administrator\\Desktop\\log.txt");
+    FileWriter fw = new FileWriter(file, true);
+    PrintWriter pw = new PrintWriter(fw);
+    pw.println(log.toString());
+    pw.flush();
+    fw.flush();
+    pw.close();
+    fw.close();
+} catch (Exception e) {
+    e.printStackTrace();
+    System.out.println("写入Log文件失败");
 }
 %>
 </body>

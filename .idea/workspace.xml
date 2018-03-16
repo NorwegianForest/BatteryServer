@@ -7,10 +7,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea613f5b-98dd-4bec-a867-8340ae299352" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/complete.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/servlet/ChangeReferenceServlet.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/servlet/ElectricityServlet.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/battery_details.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/station_details.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/web/dashboard/vehicle.jsp" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/data/README.md" afterPath="$PROJECT_DIR$/data/README.md" />
+      <change beforePath="$PROJECT_DIR$/data/battery.sql" afterPath="$PROJECT_DIR$/data/battery.sql" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/unnamed/WEB-INF/classes/com/business/AppointmentJson.class" afterPath="$PROJECT_DIR$/out/artifacts/unnamed/WEB-INF/classes/com/business/AppointmentJson.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/unnamed/WEB-INF/classes/com/business/Database.class" afterPath="$PROJECT_DIR$/out/artifacts/unnamed/WEB-INF/classes/com/business/Database.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/unnamed/WEB-INF/classes/com/business/Record.class" afterPath="$PROJECT_DIR$/out/artifacts/unnamed/WEB-INF/classes/com/business/Record.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/unnamed/WEB-INF/classes/com/business/Vehicle.class" afterPath="$PROJECT_DIR$/out/artifacts/unnamed/WEB-INF/classes/com/business/Vehicle.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/unnamed/WEB-INF/classes/com/servlet/CompleteServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/unnamed/WEB-INF/classes/com/servlet/CompleteServlet.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/unnamed/WEB-INF/classes/com/servlet/HandleAppointmentServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/unnamed/WEB-INF/classes/com/servlet/HandleAppointmentServlet.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/unnamed/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/unnamed/WEB-INF/web.xml" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/unnamed/complete.jsp" afterPath="$PROJECT_DIR$/out/artifacts/unnamed/complete.jsp" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/unnamed/dashboard/appointment.jsp" afterPath="$PROJECT_DIR$/out/artifacts/unnamed/dashboard/appointment.jsp" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/unnamed/dashboard/battery.jsp" afterPath="$PROJECT_DIR$/out/artifacts/unnamed/dashboard/battery.jsp" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/unnamed/dashboard/login_record.jsp" afterPath="$PROJECT_DIR$/out/artifacts/unnamed/dashboard/login_record.jsp" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/unnamed/dashboard/record.jsp" afterPath="$PROJECT_DIR$/out/artifacts/unnamed/dashboard/record.jsp" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/unnamed/dashboard/station.jsp" afterPath="$PROJECT_DIR$/out/artifacts/unnamed/dashboard/station.jsp" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/unnamed/vehicle.jsp" afterPath="$PROJECT_DIR$/out/artifacts/unnamed/vehicle.jsp" />
+      <change beforePath="$PROJECT_DIR$/out/production/BatteryServer/com/business/AppointmentJson.class" afterPath="$PROJECT_DIR$/out/production/BatteryServer/com/business/AppointmentJson.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/BatteryServer/com/business/Database.class" afterPath="$PROJECT_DIR$/out/production/BatteryServer/com/business/Database.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/BatteryServer/com/business/Record.class" afterPath="$PROJECT_DIR$/out/production/BatteryServer/com/business/Record.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/BatteryServer/com/business/Vehicle.class" afterPath="$PROJECT_DIR$/out/production/BatteryServer/com/business/Vehicle.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/BatteryServer/com/servlet/CompleteServlet.class" afterPath="$PROJECT_DIR$/out/production/BatteryServer/com/servlet/CompleteServlet.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/BatteryServer/com/servlet/HandleAppointmentServlet.class" afterPath="$PROJECT_DIR$/out/production/BatteryServer/com/servlet/HandleAppointmentServlet.class" />
+      <change beforePath="$PROJECT_DIR$/src/com/business/AppointmentJson.java" afterPath="$PROJECT_DIR$/src/com/business/AppointmentJson.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/business/Database.java" afterPath="$PROJECT_DIR$/src/com/business/Database.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/business/Record.java" afterPath="$PROJECT_DIR$/src/com/business/Record.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/business/Vehicle.java" afterPath="$PROJECT_DIR$/src/com/business/Vehicle.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/servlet/CompleteServlet.java" afterPath="$PROJECT_DIR$/src/com/servlet/CompleteServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/servlet/HandleAppointmentServlet.java" afterPath="$PROJECT_DIR$/src/com/servlet/HandleAppointmentServlet.java" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+      <change beforePath="$PROJECT_DIR$/web/complete.jsp" afterPath="$PROJECT_DIR$/web/complete.jsp" />
+      <change beforePath="$PROJECT_DIR$/web/dashboard/appointment.jsp" afterPath="$PROJECT_DIR$/web/dashboard/appointment.jsp" />
+      <change beforePath="$PROJECT_DIR$/web/dashboard/battery.jsp" afterPath="$PROJECT_DIR$/web/dashboard/battery.jsp" />
+      <change beforePath="$PROJECT_DIR$/web/dashboard/login_record.jsp" afterPath="$PROJECT_DIR$/web/dashboard/login_record.jsp" />
+      <change beforePath="$PROJECT_DIR$/web/dashboard/record.jsp" afterPath="$PROJECT_DIR$/web/dashboard/record.jsp" />
+      <change beforePath="$PROJECT_DIR$/web/dashboard/station.jsp" afterPath="$PROJECT_DIR$/web/dashboard/station.jsp" />
       <change beforePath="$PROJECT_DIR$/web/vehicle.jsp" afterPath="$PROJECT_DIR$/web/vehicle.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -35,12 +74,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="322">
-                <caret line="78" column="87" lean-forward="false" selection-start-line="78" selection-start-column="87" selection-end-line="78" selection-end-column="87" />
+              <first_editor relative-caret-position="285">
+                <caret line="89" column="36" lean-forward="true" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -48,21 +87,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vehicle.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/vehicle.jsp">
+      <file leaf-file-name="ChangeReferenceServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/servlet/ChangeReferenceServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="64" column="45" lean-forward="false" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="45" />
+            <state relative-caret-position="255">
+              <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="complete.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/complete.jsp">
+      <file leaf-file-name="ElectricityServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/servlet/ElectricityServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-261">
-              <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+            <state relative-caret-position="105">
+              <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -71,44 +110,40 @@
       <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/business/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="293" column="26" lean-forward="false" selection-start-line="293" selection-start-column="26" selection-end-line="293" selection-end-column="26" />
+            <state relative-caret-position="90">
+              <caret line="593" column="22" lean-forward="false" selection-start-line="593" selection-start-column="22" selection-end-line="593" selection-end-column="22" />
               <folding>
-                <marker date="1520744008101" expanded="true" signature="1413:1491" ph="select * fro... user" />
-                <marker date="1520744008101" expanded="true" signature="2388:2409" ph="select * fro... station" />
-                <marker date="1520744008101" expanded="true" signature="3442:3485" ph="select * fro... battery" />
-                <marker date="1520744008101" expanded="true" signature="4904:4966" ph="select * fro... appointment" />
-                <marker date="1520744008101" expanded="true" signature="6183:6251" ph="select * fro... record" />
-                <marker date="1520744008101" expanded="true" signature="7443:7474" ph="select * fro... station" />
-                <marker date="1520744008101" expanded="true" signature="8542:8582" ph="select * fro... appointment" />
-                <marker date="1520744008101" expanded="true" signature="9908:9939" ph="select * fro... vehicle" />
-                <marker date="1520744008101" expanded="true" signature="11122:11165" ph="select * fro... vehicle" />
-                <marker date="1520744008101" expanded="true" signature="11122:11180" ph="select * fro... vehicle" />
-                <marker date="1520744008101" expanded="true" signature="12487:12528" ph="select * fro... user_station" />
-                <marker date="1520744008101" expanded="true" signature="13468:13530" ph="select * fro... appointment" />
-                <marker date="1520744008101" expanded="true" signature="14406:14488" ph="select * fro... battery" />
-                <marker date="1520744008101" expanded="true" signature="17920:17961" ph="select * fro... user_vehicle" />
-                <marker date="1520744008101" expanded="true" signature="18900:18928" ph="select * fro... user" />
-                <marker date="1520744008101" expanded="true" signature="19460:19542" ph="select count... appointment" />
-                <marker date="1520744008101" expanded="true" signature="20079:20181" ph="select * fro... appointment" />
-                <marker date="1520744008101" expanded="true" signature="20938:21009" ph="select * fro... user_station" />
-                <marker date="1520744008101" expanded="true" signature="22461:22504" ph="select * fro... login_record" />
-                <marker date="1520744008101" expanded="true" signature="23219:23256" ph="select * fro... record" />
-                <marker date="1520744008101" expanded="true" signature="24143:24171" ph="select * fro... user" />
-                <marker date="1520744008101" expanded="true" signature="24844:24865" ph="select * fro... battery" />
-                <marker date="1520744008101" expanded="true" signature="25922:25966" ph="select * fro... appointment" />
-                <marker date="1520744008101" expanded="true" signature="27309:27355" ph="select count... battery" />
+                <marker date="1521203693837" expanded="true" signature="1479:1557" ph="select * fro... user" />
+                <marker date="1521203693837" expanded="true" signature="2454:2475" ph="select * fro... station" />
+                <marker date="1521203693837" expanded="true" signature="3508:3551" ph="select * fro... battery" />
+                <marker date="1521203693837" expanded="true" signature="4970:5032" ph="select * fro... appointment" />
+                <marker date="1521203693837" expanded="true" signature="6230:6306" ph="select * fro... appointment" />
+                <marker date="1521203693837" expanded="true" signature="7591:7659" ph="select * fro... record" />
+                <marker date="1521203693837" expanded="true" signature="8851:8882" ph="select * fro... station" />
+                <marker date="1521203693837" expanded="true" signature="9950:9990" ph="select * fro... appointment" />
+                <marker date="1521203693837" expanded="true" signature="11316:11347" ph="select * fro... vehicle" />
+                <marker date="1521203693837" expanded="true" signature="12530:12573" ph="select * fro... vehicle" />
+                <marker date="1521203693837" expanded="true" signature="12530:12588" ph="select * fro... vehicle" />
+                <marker date="1521203693837" expanded="true" signature="13895:13936" ph="select * fro... user_station" />
+                <marker date="1521203693837" expanded="true" signature="14876:14938" ph="select * fro... appointment" />
+                <marker date="1521203693837" expanded="true" signature="15835:15917" ph="select * fro... battery" />
+                <marker date="1521203693837" expanded="true" signature="19462:19503" ph="select * fro... user_vehicle" />
+                <marker date="1521203693837" expanded="true" signature="20442:20470" ph="select * fro... user" />
+                <marker date="1521203693837" expanded="true" signature="21002:21084" ph="select count... appointment" />
+                <marker date="1521203693837" expanded="true" signature="21621:21723" ph="select * fro... appointment" />
+                <marker date="1521203693837" expanded="true" signature="22480:22551" ph="select * fro... user_station" />
+                <marker date="1521203693837" expanded="true" signature="24003:24046" ph="select * fro... login_record" />
+                <marker date="1521203693837" expanded="true" signature="24761:24798" ph="select * fro... record" />
+                <marker date="1521203693837" expanded="true" signature="25745:25772" ph="select * fro... record" />
+                <marker date="1521203693837" expanded="true" signature="25745:25787" ph="select * fro... record" />
+                <marker date="1521203693837" expanded="true" signature="25745:25819" ph="select * fro... record" />
+                <marker date="1521203693837" expanded="true" signature="26706:26734" ph="select * fro... user" />
+                <marker date="1521203693837" expanded="true" signature="27407:27428" ph="select * fro... battery" />
+                <marker date="1521203693837" expanded="true" signature="28492:28531" ph="select * fro... battery" />
+                <marker date="1521203693837" expanded="true" signature="29600:29644" ph="select * fro... appointment" />
+                <marker date="1521203693837" expanded="true" signature="30987:31033" ph="select count... battery" />
+                <marker date="1521203693837" expanded="true" signature="31408:31429" ph="select * fro... vehicle" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HardwareCompleteServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/servlet/HardwareCompleteServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="39" column="17" lean-forward="false" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -136,14 +171,12 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/servlet/ConnectServlet.java" />
         <option value="$PROJECT_DIR$/src/com/business/Constants.java" />
-        <option value="$PROJECT_DIR$/src/com/business/AppointmentJson.java" />
         <option value="$PROJECT_DIR$/web/hardware.jsp" />
         <option value="$PROJECT_DIR$/src/com/business/UserVehicle.java" />
         <option value="$PROJECT_DIR$/src/com/servlet/UserVehicleServlet.java" />
         <option value="$PROJECT_DIR$/src/com/servlet/StationByIdServlet.java" />
         <option value="$PROJECT_DIR$/src/com/servlet/BatteryByIdServlet.java" />
         <option value="$PROJECT_DIR$/src/com/business/User.java" />
-        <option value="$PROJECT_DIR$/src/com/servlet/CompleteServlet.java" />
         <option value="$PROJECT_DIR$/src/com/servlet/BatteryServlet.java" />
         <option value="$PROJECT_DIR$/src/com/servlet/HardwareCompleteServlet.java" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
@@ -160,24 +193,31 @@
         <option value="$PROJECT_DIR$/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/com/servlet/HandleCollectionServlet.java" />
         <option value="$PROJECT_DIR$/src/com/servlet/LoginServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/com/business/LoginRecord.java" />
-        <option value="$PROJECT_DIR$/web/dashboard/login_record.jsp" />
-        <option value="$PROJECT_DIR$/src/com/business/Record.java" />
-        <option value="$PROJECT_DIR$/web/dashboard/record.jsp" />
         <option value="$PROJECT_DIR$/src/com/business/Battery.java" />
         <option value="$PROJECT_DIR$/src/com/business/Appointment.java" />
-        <option value="$PROJECT_DIR$/web/dashboard/appointment.jsp" />
-        <option value="$PROJECT_DIR$/web/dashboard/battery.jsp" />
-        <option value="$PROJECT_DIR$/src/com/servlet/HandleAppointmentServlet.java" />
-        <option value="$PROJECT_DIR$/web/dashboard/station.jsp" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/web/WEB-INF/vehicle.jsp" />
-        <option value="$PROJECT_DIR$/src/com/business/Database.java" />
+        <option value="$PROJECT_DIR$/src/com/business/Record.java" />
+        <option value="$PROJECT_DIR$/web/dashboard/appointment.jsp" />
+        <option value="$PROJECT_DIR$/web/dashboard/battery_details.jsp" />
+        <option value="$PROJECT_DIR$/web/dashboard/login_record.jsp" />
+        <option value="$PROJECT_DIR$/web/dashboard/record.jsp" />
+        <option value="$PROJECT_DIR$/web/dashboard/station.jsp" />
+        <option value="$PROJECT_DIR$/web/dashboard/station_details.jsp" />
         <option value="$PROJECT_DIR$/src/com/business/Vehicle.java" />
-        <option value="$PROJECT_DIR$/data/README.md" />
-        <option value="$PROJECT_DIR$/web/vehicle.jsp" />
+        <option value="$PROJECT_DIR$/web/dashboard/vehicle.jsp" />
+        <option value="$PROJECT_DIR$/web/dashboard/battery.jsp" />
         <option value="$PROJECT_DIR$/web/complete.jsp" />
+        <option value="$PROJECT_DIR$/src/com/business/AppointmentJson.java" />
+        <option value="$PROJECT_DIR$/src/com/servlet/HandleAppointmentServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/business/Database.java" />
+        <option value="$PROJECT_DIR$/src/com/servlet/CompleteServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/servlet/ElectricityServlet.java" />
+        <option value="$PROJECT_DIR$/web/vehicle.jsp" />
+        <option value="$PROJECT_DIR$/data/README.md" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/com/servlet/ChangeReferenceServlet.java" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -241,6 +281,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -267,6 +309,20 @@
             <path>
               <item name="BatteryServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="BatteryServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="business" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BatteryServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BatteryServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BatteryServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BatteryServer" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -286,8 +342,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -650,14 +704,16 @@
       <workItem from="1520750140038" duration="2087000" />
       <workItem from="1520783125453" duration="15000" />
       <workItem from="1520905653154" duration="3903000" />
+      <workItem from="1521166121410" duration="26365000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144436000" />
+    <option name="totallyTimeSpent" value="170801000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4203125" sideWeight="0.5058565" order="7" side_tool="true" content_ui="tabs" />
@@ -676,11 +732,11 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35625" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.321875" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.49707174" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.7791563" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.22084367" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.7703125" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.2296875" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -703,35 +759,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/sql/Timestamp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7605">
-          <caret line="576" column="0" lean-forward="false" selection-start-line="576" selection-start-column="0" selection-end-line="576" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/business/UserVehicle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/hardware.jsp" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/Comparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="149" column="8" lean-forward="false" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/servlet-api.jar!/javax/servlet/ServletResponse.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="26" column="18" lean-forward="true" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/business/Constants.java" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3a20441e-86ed-4a1c-8a81-4b244cda7985/console.sql">
       <provider selected="true" editor-type-id="text-editor">
@@ -747,24 +774,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/servlet/BatteryByIdServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="21" column="57" lean-forward="false" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/servlet/BatteryServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="23" column="64" lean-forward="false" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/servlet/CompleteServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="22" column="50" lean-forward="false" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -825,13 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/servlet/ReferenceServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="21" column="48" lean-forward="true" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/servlet/StationToUserServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="359">
@@ -840,22 +846,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/META-INF/MANIFEST.MF" />
-    <entry file="file://$PROJECT_DIR$/src/com/servlet/AppointmentServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2220">
-          <caret line="148" column="22" lean-forward="false" selection-start-line="148" selection-start-column="22" selection-end-line="148" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
@@ -875,14 +865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/servlet/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -919,85 +901,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/business/Record.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="59" column="68" lean-forward="false" selection-start-line="59" selection-start-column="68" selection-end-line="59" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1268#1269#0" expanded="false" />
-            <element signature="e#1345#1346#0" expanded="false" />
-            <element signature="e#1385#1386#0" expanded="false" />
-            <element signature="e#1469#1470#0" expanded="false" />
-            <element signature="e#1507#1508#0" expanded="false" />
-            <element signature="e#1589#1590#0" expanded="false" />
-            <element signature="e#1901#1902#0" expanded="false" />
-            <element signature="e#1926#1927#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/dashboard/login_record.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="107" column="11" lean-forward="false" selection-start-line="107" selection-start-column="11" selection-end-line="107" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/dashboard/record.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="116" column="6" lean-forward="false" selection-start-line="116" selection-start-column="6" selection-end-line="116" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/business/Battery.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="48" column="79" lean-forward="false" selection-start-line="48" selection-start-column="79" selection-end-line="48" selection-end-column="79" />
           <folding>
-            <element signature="e#1572#1573#0" expanded="true" />
-            <element signature="e#1597#1598#0" expanded="true" />
-            <element signature="e#1630#1631#0" expanded="true" />
-            <element signature="e#1658#1659#0" expanded="true" />
-            <element signature="e#1691#1692#0" expanded="true" />
-            <element signature="e#1720#1721#0" expanded="true" />
-            <element signature="e#1764#1765#0" expanded="true" />
-            <element signature="e#1800#1801#0" expanded="true" />
-            <element signature="e#1832#1833#0" expanded="true" />
-            <element signature="e#1860#1861#0" expanded="true" />
-            <element signature="e#1902#1903#0" expanded="true" />
-            <element signature="e#1936#1937#0" expanded="true" />
-            <element signature="e#1969#1970#0" expanded="true" />
-            <element signature="e#2001#2002#0" expanded="true" />
-            <element signature="e#2048#2049#0" expanded="true" />
-            <element signature="e#2090#2091#0" expanded="true" />
-            <element signature="e#2123#2124#0" expanded="true" />
-            <element signature="e#2155#2156#0" expanded="true" />
-            <element signature="e#2202#2203#0" expanded="true" />
-            <element signature="e#2244#2245#0" expanded="true" />
-            <element signature="e#2282#2283#0" expanded="true" />
-            <element signature="e#2316#2317#0" expanded="true" />
-            <element signature="e#2370#2371#0" expanded="true" />
-            <element signature="e#2416#2417#0" expanded="true" />
-            <element signature="e#2456#2457#0" expanded="true" />
-            <element signature="e#2492#2493#0" expanded="true" />
-            <element signature="e#2550#2551#0" expanded="true" />
-            <element signature="e#2600#2601#0" expanded="true" />
-            <element signature="e#2641#2642#0" expanded="true" />
-            <element signature="e#2678#2679#0" expanded="true" />
-            <element signature="e#2738#2739#0" expanded="true" />
-            <element signature="e#2790#2791#0" expanded="true" />
-            <element signature="e#2833#2834#0" expanded="true" />
-            <element signature="e#2872#2873#0" expanded="true" />
-            <element signature="e#2936#2937#0" expanded="true" />
-            <element signature="e#2992#2993#0" expanded="true" />
-            <element signature="e#3023#3024#0" expanded="true" />
-            <element signature="e#3050#3051#0" expanded="true" />
-            <element signature="e#3090#3091#0" expanded="true" />
-            <element signature="e#3122#3123#0" expanded="true" />
+            <element signature="e#1572#1573#0" expanded="false" />
+            <element signature="e#1597#1598#0" expanded="false" />
+            <element signature="e#1630#1631#0" expanded="false" />
+            <element signature="e#1658#1659#0" expanded="false" />
+            <element signature="e#1691#1692#0" expanded="false" />
+            <element signature="e#1720#1721#0" expanded="false" />
+            <element signature="e#1764#1765#0" expanded="false" />
+            <element signature="e#1800#1801#0" expanded="false" />
+            <element signature="e#1832#1833#0" expanded="false" />
+            <element signature="e#1860#1861#0" expanded="false" />
+            <element signature="e#1902#1903#0" expanded="false" />
+            <element signature="e#1936#1937#0" expanded="false" />
+            <element signature="e#1969#1970#0" expanded="false" />
+            <element signature="e#2001#2002#0" expanded="false" />
+            <element signature="e#2048#2049#0" expanded="false" />
+            <element signature="e#2090#2091#0" expanded="false" />
+            <element signature="e#2123#2124#0" expanded="false" />
+            <element signature="e#2155#2156#0" expanded="false" />
+            <element signature="e#2202#2203#0" expanded="false" />
+            <element signature="e#2244#2245#0" expanded="false" />
+            <element signature="e#2282#2283#0" expanded="false" />
+            <element signature="e#2316#2317#0" expanded="false" />
+            <element signature="e#2370#2371#0" expanded="false" />
+            <element signature="e#2416#2417#0" expanded="false" />
+            <element signature="e#2456#2457#0" expanded="false" />
+            <element signature="e#2492#2493#0" expanded="false" />
+            <element signature="e#2550#2551#0" expanded="false" />
+            <element signature="e#2600#2601#0" expanded="false" />
+            <element signature="e#2641#2642#0" expanded="false" />
+            <element signature="e#2678#2679#0" expanded="false" />
+            <element signature="e#2738#2739#0" expanded="false" />
+            <element signature="e#2790#2791#0" expanded="false" />
+            <element signature="e#2833#2834#0" expanded="false" />
+            <element signature="e#2872#2873#0" expanded="false" />
+            <element signature="e#2936#2937#0" expanded="false" />
+            <element signature="e#2992#2993#0" expanded="false" />
+            <element signature="e#3023#3024#0" expanded="false" />
+            <element signature="e#3050#3051#0" expanded="false" />
+            <element signature="e#3090#3091#0" expanded="false" />
+            <element signature="e#3122#3123#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1019,29 +967,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/dashboard/appointment.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="98" column="22" lean-forward="false" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/business/AppointmentJson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/dashboard/battery.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="110" column="73" lean-forward="true" selection-start-line="110" selection-start-column="73" selection-end-line="110" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/business/Station.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -1057,114 +982,243 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/vehicle.jsp" />
+    <entry file="file://$PROJECT_DIR$/src/com/servlet/HardwareCompleteServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="39" column="17" lean-forward="false" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/servlet/ReferenceServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="21" column="48" lean-forward="true" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/servlet/AppointmentServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/business/Record.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="47" column="24" lean-forward="false" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
+          <folding>
+            <element signature="method#getOldBatteryNumber#0;class#Record#0" expanded="false" />
+            <element signature="method#getNewBatteryNumber#0;class#Record#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/dashboard/battery_details.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="91" column="6" lean-forward="false" selection-start-line="91" selection-start-column="6" selection-end-line="91" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/dashboard/login_record.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="92" column="6" lean-forward="false" selection-start-line="92" selection-start-column="6" selection-end-line="92" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/dashboard/record.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="92" column="6" lean-forward="false" selection-start-line="92" selection-start-column="6" selection-end-line="92" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/dashboard/station.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1875">
-          <caret line="125" column="47" lean-forward="false" selection-start-line="125" selection-start-column="47" selection-end-line="125" selection-end-column="47" />
+        <state relative-caret-position="183">
+          <caret line="93" column="6" lean-forward="false" selection-start-line="93" selection-start-column="6" selection-end-line="93" selection-end-column="6" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/vehicle.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/com/servlet/HandleAppointmentServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="42" column="39" lean-forward="false" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="360">
-            <caret line="41" column="29" lean-forward="false" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/business/Vehicle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="25" column="30" lean-forward="false" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        <state relative-caret-position="165">
+          <caret line="26" column="70" lean-forward="false" selection-start-line="26" selection-start-column="70" selection-end-line="26" selection-end-column="70" />
           <folding>
-            <element signature="e#775#776#0" expanded="true" />
-            <element signature="e#817#818#0" expanded="true" />
-            <element signature="e#851#852#0" expanded="true" />
-            <element signature="e#887#888#0" expanded="true" />
-            <element signature="e#919#920#0" expanded="true" />
-            <element signature="e#969#970#0" expanded="true" />
-            <element signature="e#1011#1012#0" expanded="true" />
-            <element signature="e#1049#1050#0" expanded="true" />
-            <element signature="e#1083#1084#0" expanded="true" />
-            <element signature="e#1137#1138#0" expanded="true" />
-            <element signature="e#1183#1184#0" expanded="true" />
-            <element signature="e#1218#1219#0" expanded="true" />
-            <element signature="e#1249#1250#0" expanded="true" />
-            <element signature="e#1297#1298#0" expanded="true" />
-            <element signature="e#1337#1338#0" expanded="true" />
-            <element signature="e#1371#1372#0" expanded="true" />
-            <element signature="e#1401#1402#0" expanded="true" />
-            <element signature="e#1447#1448#0" expanded="true" />
-            <element signature="e#1485#1486#0" expanded="true" />
-            <element signature="e#1519#1520#0" expanded="true" />
-            <element signature="e#1549#1550#0" expanded="true" />
-            <element signature="e#1595#1596#0" expanded="true" />
-            <element signature="e#1633#1634#0" expanded="true" />
-            <element signature="e#1670#1671#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1755#1756#0" expanded="true" />
-            <element signature="e#1799#1800#0" expanded="true" />
+            <element signature="e#751#752#0" expanded="false" />
+            <element signature="e#828#829#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/business/Database.java">
+    <entry file="file://$PROJECT_DIR$/web/dashboard/appointment.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="293" column="26" lean-forward="false" selection-start-line="293" selection-start-column="26" selection-end-line="293" selection-end-column="26" />
-          <folding>
-            <marker date="1520744008101" expanded="true" signature="1413:1491" ph="select * fro... user" />
-            <marker date="1520744008101" expanded="true" signature="2388:2409" ph="select * fro... station" />
-            <marker date="1520744008101" expanded="true" signature="3442:3485" ph="select * fro... battery" />
-            <marker date="1520744008101" expanded="true" signature="4904:4966" ph="select * fro... appointment" />
-            <marker date="1520744008101" expanded="true" signature="6183:6251" ph="select * fro... record" />
-            <marker date="1520744008101" expanded="true" signature="7443:7474" ph="select * fro... station" />
-            <marker date="1520744008101" expanded="true" signature="8542:8582" ph="select * fro... appointment" />
-            <marker date="1520744008101" expanded="true" signature="9908:9939" ph="select * fro... vehicle" />
-            <marker date="1520744008101" expanded="true" signature="11122:11165" ph="select * fro... vehicle" />
-            <marker date="1520744008101" expanded="true" signature="11122:11180" ph="select * fro... vehicle" />
-            <marker date="1520744008101" expanded="true" signature="12487:12528" ph="select * fro... user_station" />
-            <marker date="1520744008101" expanded="true" signature="13468:13530" ph="select * fro... appointment" />
-            <marker date="1520744008101" expanded="true" signature="14406:14488" ph="select * fro... battery" />
-            <marker date="1520744008101" expanded="true" signature="17920:17961" ph="select * fro... user_vehicle" />
-            <marker date="1520744008101" expanded="true" signature="18900:18928" ph="select * fro... user" />
-            <marker date="1520744008101" expanded="true" signature="19460:19542" ph="select count... appointment" />
-            <marker date="1520744008101" expanded="true" signature="20079:20181" ph="select * fro... appointment" />
-            <marker date="1520744008101" expanded="true" signature="20938:21009" ph="select * fro... user_station" />
-            <marker date="1520744008101" expanded="true" signature="22461:22504" ph="select * fro... login_record" />
-            <marker date="1520744008101" expanded="true" signature="23219:23256" ph="select * fro... record" />
-            <marker date="1520744008101" expanded="true" signature="24143:24171" ph="select * fro... user" />
-            <marker date="1520744008101" expanded="true" signature="24844:24865" ph="select * fro... battery" />
-            <marker date="1520744008101" expanded="true" signature="25922:25966" ph="select * fro... appointment" />
-            <marker date="1520744008101" expanded="true" signature="27309:27355" ph="select count... battery" />
-          </folding>
+        <state relative-caret-position="15">
+          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/servlet/HardwareCompleteServlet.java">
+    <entry file="file://$PROJECT_DIR$/web/dashboard/battery.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="39" column="17" lean-forward="false" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+        <state relative-caret-position="630">
+          <caret line="149" column="40" lean-forward="false" selection-start-line="149" selection-start-column="40" selection-end-line="149" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/dashboard/station_details.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="137" column="50" lean-forward="false" selection-start-line="137" selection-start-column="50" selection-end-line="137" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/business/AppointmentJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/servlet/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/complete.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-261">
-          <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+        <state relative-caret-position="295">
+          <caret line="36" column="56" lean-forward="false" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/servlet/HandleAppointmentServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="42" column="38" lean-forward="false" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/servlet/BatteryByIdServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/dashboard/vehicle.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="134" column="40" lean-forward="false" selection-start-line="134" selection-start-column="40" selection-end-line="134" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="138">
+            <caret line="91" column="79" lean-forward="false" selection-start-line="91" selection-start-column="79" selection-end-line="91" selection-end-column="79" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/servlet/CompleteServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="35" column="45" lean-forward="true" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/vehicle.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="46" lean-forward="false" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="161" column="21" lean-forward="true" selection-start-line="161" selection-start-column="21" selection-end-line="161" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/servlet/ElectricityServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/business/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="593" column="22" lean-forward="false" selection-start-line="593" selection-start-column="22" selection-end-line="593" selection-end-column="22" />
+          <folding>
+            <marker date="1521203693837" expanded="true" signature="1479:1557" ph="select * fro... user" />
+            <marker date="1521203693837" expanded="true" signature="2454:2475" ph="select * fro... station" />
+            <marker date="1521203693837" expanded="true" signature="3508:3551" ph="select * fro... battery" />
+            <marker date="1521203693837" expanded="true" signature="4970:5032" ph="select * fro... appointment" />
+            <marker date="1521203693837" expanded="true" signature="6230:6306" ph="select * fro... appointment" />
+            <marker date="1521203693837" expanded="true" signature="7591:7659" ph="select * fro... record" />
+            <marker date="1521203693837" expanded="true" signature="8851:8882" ph="select * fro... station" />
+            <marker date="1521203693837" expanded="true" signature="9950:9990" ph="select * fro... appointment" />
+            <marker date="1521203693837" expanded="true" signature="11316:11347" ph="select * fro... vehicle" />
+            <marker date="1521203693837" expanded="true" signature="12530:12573" ph="select * fro... vehicle" />
+            <marker date="1521203693837" expanded="true" signature="12530:12588" ph="select * fro... vehicle" />
+            <marker date="1521203693837" expanded="true" signature="13895:13936" ph="select * fro... user_station" />
+            <marker date="1521203693837" expanded="true" signature="14876:14938" ph="select * fro... appointment" />
+            <marker date="1521203693837" expanded="true" signature="15835:15917" ph="select * fro... battery" />
+            <marker date="1521203693837" expanded="true" signature="19462:19503" ph="select * fro... user_vehicle" />
+            <marker date="1521203693837" expanded="true" signature="20442:20470" ph="select * fro... user" />
+            <marker date="1521203693837" expanded="true" signature="21002:21084" ph="select count... appointment" />
+            <marker date="1521203693837" expanded="true" signature="21621:21723" ph="select * fro... appointment" />
+            <marker date="1521203693837" expanded="true" signature="22480:22551" ph="select * fro... user_station" />
+            <marker date="1521203693837" expanded="true" signature="24003:24046" ph="select * fro... login_record" />
+            <marker date="1521203693837" expanded="true" signature="24761:24798" ph="select * fro... record" />
+            <marker date="1521203693837" expanded="true" signature="25745:25772" ph="select * fro... record" />
+            <marker date="1521203693837" expanded="true" signature="25745:25787" ph="select * fro... record" />
+            <marker date="1521203693837" expanded="true" signature="25745:25819" ph="select * fro... record" />
+            <marker date="1521203693837" expanded="true" signature="26706:26734" ph="select * fro... user" />
+            <marker date="1521203693837" expanded="true" signature="27407:27428" ph="select * fro... battery" />
+            <marker date="1521203693837" expanded="true" signature="28492:28531" ph="select * fro... battery" />
+            <marker date="1521203693837" expanded="true" signature="29600:29644" ph="select * fro... appointment" />
+            <marker date="1521203693837" expanded="true" signature="30987:31033" ph="select count... battery" />
+            <marker date="1521203693837" expanded="true" signature="31408:31429" ph="select * fro... vehicle" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/servlet/ChangeReferenceServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1172,19 +1226,11 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="322">
-            <caret line="78" column="87" lean-forward="false" selection-start-line="78" selection-start-column="87" selection-end-line="78" selection-end-column="87" />
+          <first_editor relative-caret-position="285">
+            <caret line="89" column="36" lean-forward="true" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
             <folding />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/vehicle.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="64" column="45" lean-forward="false" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>

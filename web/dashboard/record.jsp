@@ -90,6 +90,9 @@
       <a class="mdl-navigation__link" href="battery.jsp">
         <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">battery_charging_full</i>电池列表
       </a>
+      <a class="mdl-navigation__link" href="vehicle.jsp">
+        <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">directions_car</i>车辆列表
+      </a>
       <div class="mdl-layout-spacer"></div>
       <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
     </nav>
@@ -105,6 +108,7 @@
         <th class="mdl-data-table__cell--non-numeric">序号</th>
         <th class="mdl-data-table__cell--non-numeric">手机号码</th>
         <th class="mdl-data-table__cell--non-numeric">车辆编号</th>
+        <th class="mdl-data-table__cell--non-numeric">车辆车牌号</th>
         <th class="mdl-data-table__cell--non-numeric">预约电站名称</th>
         <th class="mdl-data-table__cell--non-numeric">费用(CNY)</th>
         <th class="mdl-data-table__cell--non-numeric">旧电池编号</th>
@@ -120,6 +124,7 @@
         <td><%=orderNumber++%></td>
         <td><%=record.getUserPhone()%></td>
         <td><%=record.getVehicleNumber()%></td>
+        <td><%=record.getVehiclePlate()%></td>
         <td class="mdl-data-table__cell--non-numeric"><%=record.getStationName()%></td>
         <td><%=record.getMoney()%></td>
         <td><%=record.getOldBatteryNumber()%></td>

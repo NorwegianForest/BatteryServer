@@ -1,18 +1,16 @@
-<%@ page import="java.util.Base64" %>
-<%@ page import="com.business.Battery" %>
 <%@ page import="com.business.Database" %>
-<%@ page import="java.util.List" %>
-<%@ page import="com.business.Appointment" %><%--
+<%@ page import="com.business.Record" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: szl
-  Date: 2018/3/10
-  Time: 13:43
+  Date: 2018/3/16
+  Time: 15:33
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-  <title>寻电后台管理 | 电池列表</title>
+  <title>寻电后台管理 | 电池详情</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
@@ -39,7 +37,7 @@
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
   <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">电池列表</span>
+      <span class="mdl-layout-title">电池详情</span>
       <div class="mdl-layout-spacer"></div>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
         <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
@@ -100,64 +98,74 @@
   </div>
   <main class="mdl-layout__content mdl-color--grey-100" style="overflow-x: scroll;">
 
-    <div style="margin: 20px;">
-      <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-        <thead>
-          <tr>
-            <th class="mdl-data-table__cell--non-numeric">序号</th>
-            <th class="mdl-data-table__cell--non-numeric">编号</th>
-            <th class="mdl-data-table__cell--non-numeric">电池型号</th>
-            <th class="mdl-data-table__cell--non-numeric">所在车辆编号</th>
-            <th>所在电站名称</th>
-            <th class="mdl-data-table__cell--non-numeric">电量(%)</th>
-            <th class="mdl-data-table__cell--non-numeric">额定容量(kW/h)</th>
-            <th class="mdl-data-table__cell--non-numeric">实际容量(kW/h)</th>
-            <th class="mdl-data-table__cell--non-numeric">剩余容量(kW/h)</th>
-            <th class="mdl-data-table__cell--non-numeric">预约情况</th>
-            <th class="mdl-data-table__cell--non-numeric">预约用户</th>
-            <th class="mdl-data-table__cell--non-numeric">预约车辆车牌号</th>
-            <th class="mdl-data-table__cell--non-numeric">预约车辆编号</th>
-            <th class="mdl-data-table__cell--non-numeric">投入使用日期</th>
-          </tr>
-        </thead>
+    <%String batteryId = request.getParameter("battery_id");%>
 
-        <%int orderNumber = 1;%>
-        <%List<Battery> batteryList = Database.getAllBattery();%>
+    <div style="margin: 20px">
+
+      <div style="text-align: center; padding: 10px;">换上记录</div>
+
+      <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="margin: auto;">
+        <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">序号</th>
+          <th class="mdl-data-table__cell--non-numeric">用户</th>
+          <th class="mdl-data-table__cell--non-numeric">电站名称(From)</th>
+          <th class="mdl-data-table__cell--non-numeric">车辆车牌号(To)</th>
+          <th class="mdl-data-table__cell--non-numeric">车辆编号(To)</th>
+          <th class="mdl-data-table__cell--non-numeric">完成日期</th>
+        </tr>
+        </thead>
         <tbody>
-        <%for (Battery battery : batteryList) {%>
+        <%int orderNumber = 1;%>
+        <%List<Record> recordList = Database.getBatteryAllRecord(Database.NEW_BATTERY_ID, batteryId);%>
+        <%for (Record record : recordList) {%>
         <tr>
           <td><%=orderNumber++%></td>
-          <td><a href="battery_details.jsp?battery_id=<%=battery.getId()%>"><%=battery.getNumber()%></a></td>
-          <td><%=battery.getModel()%></td>
-          <td><%=battery.getVehicleNumber()%></td>
-          <td><%=battery.getStationName()%></td>
-          <td><%=battery.getElectricity()%></td>
-          <td><%=battery.getRatedCapacity()%></td>
-          <td><%=battery.getActualCapacity()%></td>
-          <td><%=battery.getResidualCapacity()%></td>
-          <%Appointment appointment = Database.findAppointment(Database.NEW_BATTERY_ID, Integer.toString(battery.getId()));%>
-          <%if (appointment == null) {%>
-          <td>无预约</td>
-          <td>/</td>
-          <td>/</td>
-          <td>/</td>
-          <%} else {%>
-          <td>已预约</td>
-          <td><%=appointment.getUserPhone()%></td>
-          <td><%=appointment.getVehiclePlate()%></td>
-          <td><%=appointment.getVehicleNumber()%></td>
-          <%}%>
-          <td><%=battery.getDate()%></td>
+          <td><%=record.getUserPhone()%></td>
+          <td><%=record.getStationName()%></td>
+          <td><%=record.getVehiclePlate()%></td>
+          <td><%=record.getVehicleNumber()%></td>
+          <td><%=record.getDate()%></td>
         </tr>
         <%}%>
         </tbody>
       </table>
+
+      <div style="height: 1px; background-color: #AAAAAA;margin-top: 20px;margin-bottom: 20px;"></div>
+
+      <div style="text-align: center; padding: 10px;">换下记录</div>
+
+      <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="margin: auto;">
+        <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">序号</th>
+          <th class="mdl-data-table__cell--non-numeric">用户</th>
+          <th class="mdl-data-table__cell--non-numeric">车辆车牌号(From)</th>
+          <th class="mdl-data-table__cell--non-numeric">车辆编号(From)</th>
+          <th class="mdl-data-table__cell--non-numeric">电站名称(To)</th>
+          <th class="mdl-data-table__cell--non-numeric">完成日期</th>
+        </tr>
+        </thead>
+        <tbody>
+        <%orderNumber = 1;%>
+        <%recordList = Database.getBatteryAllRecord(Database.OLD_BATTERY_ID, batteryId);%>
+        <%for (Record record : recordList) {%>
+        <tr>
+          <td><%=orderNumber++%></td>
+          <td><%=record.getUserPhone()%></td>
+          <td><%=record.getVehiclePlate()%></td>
+          <td><%=record.getVehicleNumber()%></td>
+          <td><%=record.getStationName()%></td>
+          <td><%=record.getDate()%></td>
+        </tr>
+        <%}%>
+        </tbody>
+      </table>
+
     </div>
 
   </main>
 </div>
-
 <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </body>
 </html>
-

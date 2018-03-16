@@ -23,6 +23,10 @@ public class Vehicle {
     private double current; // 电流 *
     private String updateDate; // 更新时间 *
 
+    public String getUserPhone() {
+        return Database.findUser(Integer.toString(userId)).getPhone();
+    }
+
     public double getSpeed() {
         return speed;
     }

@@ -21,6 +21,7 @@ public class Database {
     public static final String VEHICLE_ID = "vehicle_id";
     public static final String ID = "id";
     public static final String NEW_BATTERY_ID = "new_battery_id";
+    public static final String OLD_BATTERY_ID = "old_battery_id";
 
     /**
      * 获取数据库连接，数据库名、用户名、密码
@@ -145,19 +146,47 @@ public class Database {
             assert connection != null;
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
-            resultSet.next();
-            Appointment appointment = new Appointment();
-            appointment.setId(resultSet.getInt("id"));
-            appointment.setUserId(resultSet.getInt("user_id"));
-            appointment.setVehicleId(resultSet.getInt("vehicle_id"));
-            appointment.setStationId(resultSet.getInt("station_id"));
-            appointment.setNewBatteryId(resultSet.getInt("new_battery_id"));
-            appointment.setDate(resultSet.getString("date"));
-            appointment.setComplete(resultSet.getInt("complete"));
-            resultSet.close();
-            statement.close();
-            connection.close();
-            return appointment;
+            if (resultSet.next()) {
+                Appointment appointment = new Appointment();
+                appointment.setId(resultSet.getInt("id"));
+                appointment.setUserId(resultSet.getInt("user_id"));
+                appointment.setVehicleId(resultSet.getInt("vehicle_id"));
+                appointment.setStationId(resultSet.getInt("station_id"));
+                appointment.setNewBatteryId(resultSet.getInt("new_battery_id"));
+                appointment.setDate(resultSet.getString("date"));
+                appointment.setComplete(resultSet.getInt("complete"));
+                resultSet.close();
+                statement.close();
+                connection.close();
+                return appointment;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static Appointment findFromAllAppointment(String column, String value) {
+        String sql = "select * from appointment where complete<>'-1' and ask=0 and " + column + "=" + value;
+        Connection connection = getConnection();
+        try {
+            assert connection != null;
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            if (resultSet.next()) {
+                Appointment appointment = new Appointment();
+                appointment.setId(resultSet.getInt("id"));
+                appointment.setUserId(resultSet.getInt("user_id"));
+                appointment.setVehicleId(resultSet.getInt("vehicle_id"));
+                appointment.setStationId(resultSet.getInt("station_id"));
+                appointment.setNewBatteryId(resultSet.getInt("new_battery_id"));
+                appointment.setDate(resultSet.getString("date"));
+                appointment.setComplete(resultSet.getInt("complete"));
+                resultSet.close();
+                statement.close();
+                connection.close();
+                return appointment;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -381,7 +410,7 @@ public class Database {
      * @param stationId 电站id
      * @return 电池id，若未匹配到符合要求的电池则返回-1
      */
-    public static int matchBattery(String stationId) {
+    public static int matchBattery(String stationId, String batteryModel) {
         int batteryId = -1;
         String sql = "select * from battery where station_id=" + stationId + " order by electricity desc";
         Connection connection = getConnection();
@@ -391,8 +420,10 @@ public class Database {
             ResultSet resultSet = statement.executeQuery(sql);
             while (resultSet.next()) {
                 if (!hasAppointment(NEW_BATTERY_ID, resultSet.getString("id"))) {
-                    batteryId = resultSet.getInt("id");
-                    break;
+                    if (batteryModel.equals(resultSet.getString("model"))) {
+                        batteryId = resultSet.getInt("id");
+                        break;
+                    }
                 }
             }
             resultSet.close();
@@ -433,8 +464,8 @@ public class Database {
      */
     public static void insertAppointment(String userId, String vehicleId, String stationId, String batteryId,
                                          String time, String date) {
-        String sql = "insert into appointment(user_id,vehicle_id,station_id,new_battery_id,time,date,complete)values("
-                + userId + "," + vehicleId + "," + stationId + "," + batteryId + "," + time + ",'" + date + "',0)";
+        String sql = "insert into appointment(user_id,vehicle_id,station_id,new_battery_id,time,date,complete,ask)values("
+                + userId + "," + vehicleId + "," + stationId + "," + batteryId + "," + time + ",'" + date + "',0,0)";
         updateDatabase(sql);
     }
 
@@ -651,6 +682,32 @@ public class Database {
         return recordList;
     }
 
+    public static List<Record> getBatteryAllRecord(String column, String value) {
+        List<Record> recordList = new ArrayList<>();
+        String sql = "select * from record where " + column + "='" + value + "' order by id desc";
+        Connection con = getConnection();
+        try {
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery(sql);
+            while (rs.next()) {
+                recordList.add(new Record(rs.getInt("id"),
+                        rs.getInt("user_id"),
+                        rs.getInt("vehicle_id"),
+                        rs.getInt("station_id"),
+                        rs.getDouble("money"),
+                        rs.getInt("old_battery_id"),
+                        rs.getInt("new_battery_id"),
+                        rs.getString("date")));
+            }
+            rs.close();
+            s.close();
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return recordList;
+    }
+
     public static User findUser(String userId) {
         User user = null;
         String sql = "select * from user where id=" + userId;
@@ -675,6 +732,34 @@ public class Database {
     public static List<Battery> getAllBattery() {
         List<Battery> batteryList = new ArrayList<>();
         String sql = "select * from battery";
+        Connection con = getConnection();
+        try {
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery(sql);
+            while (rs.next()) {
+                batteryList.add(new Battery(rs.getInt("id"),
+                        rs.getString("number"),
+                        rs.getString("model"),
+                        rs.getInt("vehicle_id"),
+                        rs.getInt("station_id"),
+                        rs.getDouble("electricity"),
+                        rs.getDouble("rated_capacity"),
+                        rs.getDouble("actual_capacity"),
+                        rs.getDouble("residual_capacity"),
+                        rs.getString("date")));
+            }
+            rs.close();
+            s.close();
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return batteryList;
+    }
+
+    public static List<Battery> getStationAllBattery(String stationId) {
+        List<Battery> batteryList = new ArrayList<>();
+        String sql = "select * from battery where station_id=" + stationId;
         Connection con = getConnection();
         try {
             Statement s = con.createStatement();
@@ -751,5 +836,42 @@ public class Database {
     public static int getAppointmentBatteryAmount(String stationId) {
         String sql = "select count(*) from appointment where complete=0 and station_id=" + stationId;
         return getCount(sql);
+    }
+
+    public static List<Vehicle> getAllVehicle() {
+        List<Vehicle> vehicleList = null;
+        String sql = "select * from vehicle";
+        Connection con = getConnection();
+        try {
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery(sql);
+            vehicleList = new ArrayList<>();
+            while (rs.next()) {
+                Vehicle vehicle = new Vehicle();
+                vehicle.setId(rs.getInt("id"));
+                vehicle.setNumber(rs.getString("number"));
+                vehicle.setBrand(rs.getString("brand"));
+                vehicle.setModel(rs.getString("model"));
+                vehicle.setPlate(rs.getString("plate"));
+                vehicle.setUserId(rs.getInt("user_id"));
+                vehicle.setLongitude(rs.getDouble("longitude"));
+                vehicle.setLatitude(rs.getDouble("latitude"));
+                vehicle.setDate(rs.getString("date"));
+                vehicle.setDirection(rs.getDouble("direction"));
+                vehicle.setSpeed(rs.getDouble("speed"));
+                vehicle.setTemperature(rs.getDouble("temperature"));
+                vehicle.setHumidity(rs.getDouble("humidity"));
+                vehicle.setVoltage(rs.getDouble("voltage"));
+                vehicle.setCurrent(rs.getDouble("current"));
+                vehicle.setUpdateDate(rs.getString("update_date"));
+                vehicleList.add(vehicle);
+            }
+            rs.close();
+            s.close();
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return vehicleList;
     }
 }

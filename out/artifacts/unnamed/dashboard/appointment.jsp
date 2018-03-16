@@ -7,7 +7,7 @@
   Time: 13:43
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -89,6 +89,9 @@
       </a>
       <a class="mdl-navigation__link" href="battery.jsp">
         <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">battery_charging_full</i>电池列表
+      </a>
+      <a class="mdl-navigation__link" href="vehicle.jsp">
+        <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">directions_car</i>车辆列表
       </a>
       <div class="mdl-layout-spacer"></div>
       <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>

@@ -27,32 +27,36 @@
       Vehicle vehicle = Database.findVehicle("number", number);
 
       Appointment appointment = Database.findAppointment(Database.VEHICLE_ID, Integer.toString(vehicle.getId()));
-      Battery oldBattery = Database.findBattery(Database.VEHICLE_ID, Integer.toString(vehicle.getId()));
-      int money = 50; // 预设费用为50
+      if (appointment == null) {
+          System.out.println("硬件 " + number + "没有未完成的预约，无预约更换电池，换电数据将不会保存");
+      } else {
+        Battery oldBattery = Database.findBattery(Database.VEHICLE_ID, Integer.toString(vehicle.getId()));
+        int money = 50; // 预设费用为50
 
-      // 预约完成
-      String sql = "update appointment set complete=1 where id=" + appointment.getId();
-      Database.updateDatabase(sql);
+        // 预约完成
+        String sql = "update appointment set complete=1 where id=" + appointment.getId();
+        Database.updateDatabase(sql);
 
-      // 添加换电记录
-      sql = "insert into record(user_id,vehicle_id,station_id,money,old_battery_id,new_battery_id,date)values('"
-              + appointment.getUserId() + "','"
-              + vehicle.getId() + "','"
-              + appointment.getStationId() + "','"
-              + money + "','"
-              + oldBattery.getId() + "','"
-              + appointment.getNewBatteryId() + "','"
-              + sdf.format(currentDate) + "')";
-      Database.updateDatabase(sql);
+        // 添加换电记录
+        sql = "insert into record(user_id,vehicle_id,station_id,money,old_battery_id,new_battery_id,date)values('"
+                + appointment.getUserId() + "','"
+                + vehicle.getId() + "','"
+                + appointment.getStationId() + "','"
+                + money + "','"
+                + oldBattery.getId() + "','"
+                + appointment.getNewBatteryId() + "','"
+                + sdf.format(currentDate) + "')";
+        Database.updateDatabase(sql);
 
-      // 更新电池位置
-      sql = "update battery set vehicle_id=" + vehicle.getId() + ", station_id=-1 where id=" + appointment.getNewBatteryId();
-      Database.updateDatabase(sql);
-      sql = "update battery set vehicle_id=-1, station_id=" + appointment.getStationId() + " where id=" + oldBattery.getId();
-      Database.updateDatabase(sql);
+        // 更新电池位置
+        sql = "update battery set vehicle_id=" + vehicle.getId() + ", station_id=-1 where id=" + appointment.getNewBatteryId();
+        Database.updateDatabase(sql);
+        sql = "update battery set vehicle_id=-1, station_id=" + appointment.getStationId() + " where id=" + oldBattery.getId();
+        Database.updateDatabase(sql);
 
-      response.getWriter().print("success");
-      System.out.println(number + " 换电数据保存成功");
+        response.getWriter().print("success");
+        System.out.println(number + " 换电数据保存成功");
+      }
     } catch (Exception e) {
       e.printStackTrace();
       response.getWriter().print("error");

@@ -2,6 +2,7 @@ package com.business;
 
 import org.omg.PortableInterceptor.INACTIVE;
 
+import javax.xml.crypto.Data;
 import java.util.Date;
 
 /**
@@ -46,6 +47,10 @@ public class Record {
 
     public String getVehicleNumber() {
         return Database.findVehicle(Integer.toString(vehicleId)).getNumber();
+    }
+
+    public String getVehiclePlate() {
+        return Database.findVehicle(Integer.toString(vehicleId)).getPlate();
     }
 
     public String getStationName() {

@@ -147,4 +147,20 @@
         <servlet-name>HandleCollectionServlet</servlet-name>
         <url-pattern>/handle_collection</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ElectricityServlet</servlet-name>
+        <servlet-class>com.servlet.ElectricityServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ElectricityServlet</servlet-name>
+        <url-pattern>/electricity</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ChangeReferenceServlet</servlet-name>
+        <servlet-class>com.servlet.ChangeReferenceServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChangeReferenceServlet</servlet-name>
+        <url-pattern>/change_reference</url-pattern>
+    </servlet-mapping>
 </web-app>

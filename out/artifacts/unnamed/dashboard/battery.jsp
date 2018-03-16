@@ -1,7 +1,8 @@
 <%@ page import="java.util.Base64" %>
 <%@ page import="com.business.Battery" %>
 <%@ page import="com.business.Database" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="com.business.Appointment" %><%--
   Created by IntelliJ IDEA.
   User: szl
   Date: 2018/3/10
@@ -90,6 +91,9 @@
       <a class="mdl-navigation__link" href="battery.jsp">
         <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">battery_charging_full</i>电池列表
       </a>
+      <a class="mdl-navigation__link" href="vehicle.jsp">
+        <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">directions_car</i>车辆列表
+      </a>
       <div class="mdl-layout-spacer"></div>
       <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
     </nav>
@@ -104,11 +108,15 @@
             <th class="mdl-data-table__cell--non-numeric">编号</th>
             <th class="mdl-data-table__cell--non-numeric">电池型号</th>
             <th class="mdl-data-table__cell--non-numeric">所在车辆编号</th>
-            <th class="mdl-data-table__cell--non-numeric">所在电站名称</th>
+            <th>所在电站名称</th>
             <th class="mdl-data-table__cell--non-numeric">电量(%)</th>
             <th class="mdl-data-table__cell--non-numeric">额定容量(kW/h)</th>
             <th class="mdl-data-table__cell--non-numeric">实际容量(kW/h)</th>
             <th class="mdl-data-table__cell--non-numeric">剩余容量(kW/h)</th>
+            <th class="mdl-data-table__cell--non-numeric">预约情况</th>
+            <th class="mdl-data-table__cell--non-numeric">预约用户</th>
+            <th class="mdl-data-table__cell--non-numeric">预约车辆车牌号</th>
+            <th class="mdl-data-table__cell--non-numeric">预约车辆编号</th>
             <th class="mdl-data-table__cell--non-numeric">投入使用日期</th>
           </tr>
         </thead>
@@ -119,7 +127,7 @@
         <%for (Battery battery : batteryList) {%>
         <tr>
           <td><%=orderNumber++%></td>
-          <td><%=battery.getNumber()%></td>
+          <td><a href="battery_details.jsp?battery_id=<%=battery.getId()%>"><%=battery.getNumber()%></a></td>
           <td><%=battery.getModel()%></td>
           <td><%=battery.getVehicleNumber()%></td>
           <td><%=battery.getStationName()%></td>
@@ -127,6 +135,18 @@
           <td><%=battery.getRatedCapacity()%></td>
           <td><%=battery.getActualCapacity()%></td>
           <td><%=battery.getResidualCapacity()%></td>
+          <%Appointment appointment = Database.findAppointment(Database.NEW_BATTERY_ID, Integer.toString(battery.getId()));%>
+          <%if (appointment == null) {%>
+          <td>无预约</td>
+          <td>/</td>
+          <td>/</td>
+          <td>/</td>
+          <%} else {%>
+          <td>已预约</td>
+          <td><%=appointment.getUserPhone()%></td>
+          <td><%=appointment.getVehiclePlate()%></td>
+          <td><%=appointment.getVehicleNumber()%></td>
+          <%}%>
           <td><%=battery.getDate()%></td>
         </tr>
         <%}%>

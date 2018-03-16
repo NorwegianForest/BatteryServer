@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2018-03-11 15:10:13
+Date: 2018-03-16 21:54:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -28,54 +28,61 @@ CREATE TABLE `appointment` (
   `time` int(255) DEFAULT NULL,
   `date` datetime DEFAULT NULL,
   `complete` smallint(6) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
+  `ask` smallint(6) DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of appointment
 -- ----------------------------
-INSERT INTO `appointment` VALUES ('1', '1', '1', '1', '1', '12', '2018-02-10 16:47:29', '1');
-INSERT INTO `appointment` VALUES ('3', '1', '1', '1', '3', '14', '2018-02-10 16:47:31', '-1');
-INSERT INTO `appointment` VALUES ('4', '3', '3', '2', '3', '0', '2018-03-01 17:10:11', '0');
-INSERT INTO `appointment` VALUES ('5', '4', '4', '2', '4', '2', '2018-03-01 17:10:15', '0');
-INSERT INTO `appointment` VALUES ('6', '5', '5', '2', '5', '4', '2018-03-01 17:10:16', '0');
-INSERT INTO `appointment` VALUES ('7', '6', '6', '2', '6', '6', '2018-03-01 17:10:18', '0');
-INSERT INTO `appointment` VALUES ('8', '7', '7', '2', '7', '8', '2018-03-01 17:10:19', '0');
-INSERT INTO `appointment` VALUES ('9', '8', '8', '2', '8', '10', '2018-03-01 17:10:22', '0');
-INSERT INTO `appointment` VALUES ('10', '9', '9', '2', '9', '12', '2018-03-01 17:10:24', '0');
-INSERT INTO `appointment` VALUES ('11', '10', '10', '2', '10', '14', '2018-03-01 17:10:26', '0');
-INSERT INTO `appointment` VALUES ('12', '11', '11', '2', '11', '16', '2018-03-01 17:10:27', '0');
-INSERT INTO `appointment` VALUES ('13', '12', '12', '1', '12', '0', '2018-03-01 17:10:29', '0');
-INSERT INTO `appointment` VALUES ('14', '13', '13', '1', '13', '2', '2018-03-01 17:10:30', '0');
-INSERT INTO `appointment` VALUES ('15', '14', '14', '3', '14', '0', '2018-03-01 17:10:32', '0');
-INSERT INTO `appointment` VALUES ('16', '15', '15', '3', '15', '2', '2018-03-01 17:10:33', '0');
-INSERT INTO `appointment` VALUES ('17', '16', '16', '4', '16', '0', '2018-03-01 17:10:35', '0');
-INSERT INTO `appointment` VALUES ('18', '17', '17', '4', '17', '2', '2018-03-01 17:10:37', '0');
-INSERT INTO `appointment` VALUES ('19', '18', '18', '5', '18', '0', '2018-03-01 17:10:39', '0');
-INSERT INTO `appointment` VALUES ('20', '19', '19', '5', '19', '2', '2018-03-01 17:10:41', '0');
-INSERT INTO `appointment` VALUES ('21', '20', '20', '5', '20', '4', '2018-03-01 17:10:42', '0');
-INSERT INTO `appointment` VALUES ('22', '21', '21', '5', '21', '6', '2018-03-01 17:10:43', '0');
-INSERT INTO `appointment` VALUES ('23', '22', '22', '6', '22', '0', '2018-03-01 17:10:45', '0');
-INSERT INTO `appointment` VALUES ('24', '23', '23', '6', '23', '2', '2018-03-01 17:10:47', '0');
-INSERT INTO `appointment` VALUES ('25', '24', '24', '6', '24', '4', '2018-03-01 17:10:48', '0');
-INSERT INTO `appointment` VALUES ('26', '25', '25', '6', '25', '6', '2018-03-01 17:10:50', '0');
-INSERT INTO `appointment` VALUES ('27', '26', '26', '6', '26', '8', '2018-03-01 17:10:52', '0');
-INSERT INTO `appointment` VALUES ('28', '27', '27', '6', '27', '10', '2018-03-01 17:10:53', '0');
-INSERT INTO `appointment` VALUES ('29', '28', '28', '7', '28', '0', '2018-03-01 17:10:55', '0');
-INSERT INTO `appointment` VALUES ('30', '29', '29', '7', '29', '2', '2018-03-01 17:10:57', '0');
-INSERT INTO `appointment` VALUES ('31', '30', '30', '7', '30', '4', '2018-03-01 17:10:59', '0');
-INSERT INTO `appointment` VALUES ('32', '31', '31', '7', '31', '6', '2018-03-01 17:11:01', '0');
-INSERT INTO `appointment` VALUES ('33', '32', '32', '7', '32', '8', '2018-03-01 17:11:04', '0');
-INSERT INTO `appointment` VALUES ('38', '1', '1', '1', '3', '4', '2018-03-02 19:56:17', '-1');
-INSERT INTO `appointment` VALUES ('39', '1', '1', '1', '3', '4', '2018-03-02 19:56:25', '-1');
-INSERT INTO `appointment` VALUES ('40', '1', '1', '1', '3', '4', '2018-03-02 19:56:28', '-1');
-INSERT INTO `appointment` VALUES ('41', '1', '1', '1', '3', '4', '2018-03-02 19:56:30', '-1');
-INSERT INTO `appointment` VALUES ('42', '1', '1', '1', '3', '4', '2018-03-02 19:56:33', '-1');
-INSERT INTO `appointment` VALUES ('43', '1', '1', '1', '3', '4', '2018-03-02 19:57:04', '-1');
-INSERT INTO `appointment` VALUES ('44', '1', '1', '1', '3', '4', '2018-03-02 20:06:59', '-1');
-INSERT INTO `appointment` VALUES ('45', '1', '1', '2', '5', '18', '2018-03-02 20:08:42', '-1');
-INSERT INTO `appointment` VALUES ('46', '1', '1', '2', '5', '18', '2018-03-02 21:00:46', '-1');
-INSERT INTO `appointment` VALUES ('47', '1', '1', '1', '33', '4', '2018-03-10 17:51:25', '-1');
+INSERT INTO `appointment` VALUES ('1', '1', '1', '1', '1', '12', '2018-02-10 16:47:29', '1', '1');
+INSERT INTO `appointment` VALUES ('3', '1', '1', '1', '3', '14', '2018-02-10 16:47:31', '-1', '0');
+INSERT INTO `appointment` VALUES ('4', '3', '3', '2', '3', '0', '2018-03-01 17:10:11', '0', '0');
+INSERT INTO `appointment` VALUES ('5', '4', '4', '2', '4', '2', '2018-03-01 17:10:15', '0', '0');
+INSERT INTO `appointment` VALUES ('6', '5', '5', '2', '5', '4', '2018-03-01 17:10:16', '0', '0');
+INSERT INTO `appointment` VALUES ('7', '6', '6', '2', '6', '6', '2018-03-01 17:10:18', '0', '0');
+INSERT INTO `appointment` VALUES ('8', '7', '7', '2', '7', '8', '2018-03-01 17:10:19', '0', '0');
+INSERT INTO `appointment` VALUES ('9', '8', '8', '2', '8', '10', '2018-03-01 17:10:22', '0', '0');
+INSERT INTO `appointment` VALUES ('10', '9', '9', '2', '9', '12', '2018-03-01 17:10:24', '0', '0');
+INSERT INTO `appointment` VALUES ('11', '10', '10', '2', '10', '14', '2018-03-01 17:10:26', '0', '0');
+INSERT INTO `appointment` VALUES ('12', '11', '11', '2', '11', '16', '2018-03-01 17:10:27', '0', '0');
+INSERT INTO `appointment` VALUES ('13', '12', '12', '1', '12', '0', '2018-03-01 17:10:29', '0', '0');
+INSERT INTO `appointment` VALUES ('14', '13', '13', '1', '13', '2', '2018-03-01 17:10:30', '0', '0');
+INSERT INTO `appointment` VALUES ('15', '14', '14', '3', '14', '0', '2018-03-01 17:10:32', '0', '0');
+INSERT INTO `appointment` VALUES ('16', '15', '15', '3', '15', '2', '2018-03-01 17:10:33', '0', '0');
+INSERT INTO `appointment` VALUES ('17', '16', '16', '4', '16', '0', '2018-03-01 17:10:35', '0', '0');
+INSERT INTO `appointment` VALUES ('18', '17', '17', '4', '17', '2', '2018-03-01 17:10:37', '0', '0');
+INSERT INTO `appointment` VALUES ('19', '18', '18', '5', '18', '0', '2018-03-01 17:10:39', '0', '0');
+INSERT INTO `appointment` VALUES ('20', '19', '19', '5', '19', '2', '2018-03-01 17:10:41', '0', '0');
+INSERT INTO `appointment` VALUES ('21', '20', '20', '5', '20', '4', '2018-03-01 17:10:42', '0', '0');
+INSERT INTO `appointment` VALUES ('22', '21', '21', '5', '21', '6', '2018-03-01 17:10:43', '0', '0');
+INSERT INTO `appointment` VALUES ('23', '22', '22', '6', '22', '0', '2018-03-01 17:10:45', '0', '0');
+INSERT INTO `appointment` VALUES ('24', '23', '23', '6', '23', '2', '2018-03-01 17:10:47', '0', '0');
+INSERT INTO `appointment` VALUES ('25', '24', '24', '6', '24', '4', '2018-03-01 17:10:48', '0', '0');
+INSERT INTO `appointment` VALUES ('26', '25', '25', '6', '25', '6', '2018-03-01 17:10:50', '0', '0');
+INSERT INTO `appointment` VALUES ('27', '26', '26', '6', '26', '8', '2018-03-01 17:10:52', '0', '0');
+INSERT INTO `appointment` VALUES ('28', '27', '27', '6', '27', '10', '2018-03-01 17:10:53', '0', '0');
+INSERT INTO `appointment` VALUES ('29', '28', '28', '7', '28', '0', '2018-03-01 17:10:55', '0', '0');
+INSERT INTO `appointment` VALUES ('30', '29', '29', '7', '29', '2', '2018-03-01 17:10:57', '0', '0');
+INSERT INTO `appointment` VALUES ('31', '30', '30', '7', '30', '4', '2018-03-01 17:10:59', '0', '0');
+INSERT INTO `appointment` VALUES ('32', '31', '31', '7', '31', '6', '2018-03-01 17:11:01', '0', '0');
+INSERT INTO `appointment` VALUES ('33', '32', '32', '7', '32', '8', '2018-03-01 17:11:04', '0', '0');
+INSERT INTO `appointment` VALUES ('38', '1', '1', '1', '3', '4', '2018-03-02 19:56:17', '-1', '0');
+INSERT INTO `appointment` VALUES ('39', '1', '1', '1', '3', '4', '2018-03-02 19:56:25', '-1', '0');
+INSERT INTO `appointment` VALUES ('40', '1', '1', '1', '3', '4', '2018-03-02 19:56:28', '-1', '0');
+INSERT INTO `appointment` VALUES ('41', '1', '1', '1', '3', '4', '2018-03-02 19:56:30', '-1', '0');
+INSERT INTO `appointment` VALUES ('42', '1', '1', '1', '3', '4', '2018-03-02 19:56:33', '-1', '0');
+INSERT INTO `appointment` VALUES ('43', '1', '1', '1', '3', '4', '2018-03-02 19:57:04', '-1', '0');
+INSERT INTO `appointment` VALUES ('44', '1', '1', '1', '3', '4', '2018-03-02 20:06:59', '-1', '0');
+INSERT INTO `appointment` VALUES ('45', '1', '1', '2', '5', '18', '2018-03-02 20:08:42', '-1', '0');
+INSERT INTO `appointment` VALUES ('46', '1', '1', '2', '5', '18', '2018-03-02 21:00:46', '-1', '0');
+INSERT INTO `appointment` VALUES ('47', '1', '1', '1', '33', '4', '2018-03-10 17:51:25', '-1', '0');
+INSERT INTO `appointment` VALUES ('48', '1', '1', '4', '37', '4', '2018-03-15 17:06:18', '-1', '0');
+INSERT INTO `appointment` VALUES ('49', '1', '1', '4', '37', '4', '2018-03-15 18:31:05', '-1', '0');
+INSERT INTO `appointment` VALUES ('50', '1', '1', '2', '35', '18', '2018-03-16 11:58:27', '-1', '0');
+INSERT INTO `appointment` VALUES ('52', '1', '1', '4', '37', '4', '2018-03-16 20:32:49', '-1', '0');
+INSERT INTO `appointment` VALUES ('53', '1', '1', '4', '37', '4', '2018-03-16 20:35:47', '-1', '0');
+INSERT INTO `appointment` VALUES ('56', '1', '1', '4', '37', '4', '2018-03-16 21:19:27', '-1', '0');
 
 -- ----------------------------
 -- Table structure for battery
@@ -92,14 +99,14 @@ CREATE TABLE `battery` (
   `actual_capacity` double DEFAULT NULL,
   `residual_capacity` double DEFAULT NULL,
   `date` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of battery
 -- ----------------------------
 INSERT INTO `battery` VALUES ('1', 'B1000001', 'NCR18650A', '1', '-1', '85', '85', '85', '72.25', '2018-02-04 22:40:15');
-INSERT INTO `battery` VALUES ('2', 'B1000002', 'NCR18650A', '2', '-1', '70.6', '85', '85', '60', '2018-01-01 15:05:29');
+INSERT INTO `battery` VALUES ('2', 'B1000002', 'NCR18650B', '2', '-1', '50', '60', '60', '30', '2018-01-01 15:05:29');
 INSERT INTO `battery` VALUES ('3', 'B1000003', 'NCR18650A', '-1', '2', '100', '85', '85', '85', '2018-01-01 16:43:33');
 INSERT INTO `battery` VALUES ('4', 'B1000004', 'NCR18650A', '-1', '2', '50', '85', '85', '42.5', '2018-01-01 16:43:33');
 INSERT INTO `battery` VALUES ('5', 'B1000005', 'NCR18650A', '-1', '2', '100', '85', '70', '70', '2018-01-01 16:43:33');
@@ -134,7 +141,7 @@ INSERT INTO `battery` VALUES ('33', 'B1000033', 'NCR18650B', '-1', '1', '50', '6
 INSERT INTO `battery` VALUES ('34', 'B1000034', 'NCR18650B', '-1', '1', '50', '60', '60', '30', '2018-01-01 16:43:33');
 INSERT INTO `battery` VALUES ('35', 'B1000035', 'NCR18650B', '-1', '2', '50', '60', '60', '30', '2018-01-01 16:43:33');
 INSERT INTO `battery` VALUES ('36', 'B1000036', 'NCR18650B', '-1', '3', '50', '60', '60', '30', '2018-01-01 16:43:33');
-INSERT INTO `battery` VALUES ('37', 'B1000037', 'NCR18650B', '-1', '4', '50', '60', '60', '30', '2018-01-01 16:43:33');
+INSERT INTO `battery` VALUES ('37', 'B1000037', 'NCR18650A', '-1', '4', '50', '60', '60', '30', '2018-01-01 16:43:33');
 
 -- ----------------------------
 -- Table structure for login_record
@@ -146,14 +153,90 @@ CREATE TABLE `login_record` (
   `phone` varchar(255) DEFAULT NULL,
   `status` int(11) DEFAULT NULL,
   `date` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of login_record
 -- ----------------------------
 INSERT INTO `login_record` VALUES ('1', '1', '18402884427', '1', '2018-03-10 15:05:33');
 INSERT INTO `login_record` VALUES ('2', null, '18402884427', '1', '2018-03-10 17:49:36');
+INSERT INTO `login_record` VALUES ('3', null, '18402884427', '1', '2018-03-13 21:02:53');
+INSERT INTO `login_record` VALUES ('4', null, '18402884427', '1', '2018-03-13 21:03:43');
+INSERT INTO `login_record` VALUES ('5', null, '18402884427', '1', '2018-03-13 21:43:46');
+INSERT INTO `login_record` VALUES ('6', null, '18402884427', '1', '2018-03-13 21:44:07');
+INSERT INTO `login_record` VALUES ('7', null, '18402884427', '1', '2018-03-13 21:44:24');
+INSERT INTO `login_record` VALUES ('8', null, '18402884427', '1', '2018-03-13 21:47:16');
+INSERT INTO `login_record` VALUES ('9', null, '18402884427', '1', '2018-03-13 22:02:23');
+INSERT INTO `login_record` VALUES ('10', null, '18402884427', '1', '2018-03-13 22:05:50');
+INSERT INTO `login_record` VALUES ('11', null, '18402884427', '1', '2018-03-13 22:17:54');
+INSERT INTO `login_record` VALUES ('12', null, '18402884427', '1', '2018-03-13 22:20:15');
+INSERT INTO `login_record` VALUES ('13', null, '18402884427', '1', '2018-03-13 22:24:29');
+INSERT INTO `login_record` VALUES ('14', null, '18402884427', '1', '2018-03-13 22:24:59');
+INSERT INTO `login_record` VALUES ('15', null, '18402884427', '1', '2018-03-13 22:26:22');
+INSERT INTO `login_record` VALUES ('16', null, '18402884427', '1', '2018-03-13 22:26:31');
+INSERT INTO `login_record` VALUES ('17', null, '18402884427', '1', '2018-03-13 22:28:38');
+INSERT INTO `login_record` VALUES ('18', null, '18402884427', '1', '2018-03-13 22:29:02');
+INSERT INTO `login_record` VALUES ('19', null, '18402884427', '1', '2018-03-13 22:32:09');
+INSERT INTO `login_record` VALUES ('20', null, '18402884427', '1', '2018-03-13 22:41:35');
+INSERT INTO `login_record` VALUES ('21', null, '18402884427', '1', '2018-03-13 22:44:56');
+INSERT INTO `login_record` VALUES ('22', null, '18402884427', '1', '2018-03-13 23:38:56');
+INSERT INTO `login_record` VALUES ('23', null, '18402884427', '1', '2018-03-14 08:15:29');
+INSERT INTO `login_record` VALUES ('24', null, '18402884427', '1', '2018-03-14 08:34:47');
+INSERT INTO `login_record` VALUES ('25', null, '18402884427', '1', '2018-03-14 08:55:43');
+INSERT INTO `login_record` VALUES ('26', null, '18402884427', '1', '2018-03-14 09:11:58');
+INSERT INTO `login_record` VALUES ('27', null, '18402884427', '1', '2018-03-14 09:28:20');
+INSERT INTO `login_record` VALUES ('28', null, '18402884427', '1', '2018-03-14 09:29:05');
+INSERT INTO `login_record` VALUES ('29', null, '18402884427', '1', '2018-03-14 09:30:44');
+INSERT INTO `login_record` VALUES ('30', null, '18402884427', '1', '2018-03-14 09:49:12');
+INSERT INTO `login_record` VALUES ('31', null, '18402884427', '1', '2018-03-14 14:34:03');
+INSERT INTO `login_record` VALUES ('32', null, '18402884427', '1', '2018-03-14 14:34:11');
+INSERT INTO `login_record` VALUES ('33', null, '18402884427', '1', '2018-03-14 15:23:59');
+INSERT INTO `login_record` VALUES ('34', null, '18402884427', '1', '2018-03-15 17:04:06');
+INSERT INTO `login_record` VALUES ('35', null, '18402884427', '1', '2018-03-15 17:09:59');
+INSERT INTO `login_record` VALUES ('36', null, '18402884427', '1', '2018-03-15 18:24:26');
+INSERT INTO `login_record` VALUES ('37', null, '18402884427', '1', '2018-03-15 18:28:35');
+INSERT INTO `login_record` VALUES ('38', null, '18402884427', '1', '2018-03-15 18:33:42');
+INSERT INTO `login_record` VALUES ('39', null, '18402884427', '1', '2018-03-15 18:49:10');
+INSERT INTO `login_record` VALUES ('40', null, '18402884427', '1', '2018-03-15 18:50:32');
+INSERT INTO `login_record` VALUES ('41', null, '18402884427', '1', '2018-03-15 21:03:31');
+INSERT INTO `login_record` VALUES ('42', null, '18402884427', '1', '2018-03-15 21:11:55');
+INSERT INTO `login_record` VALUES ('43', null, '18402884427', '1', '2018-03-15 21:15:53');
+INSERT INTO `login_record` VALUES ('44', null, '18402884427', '1', '2018-03-15 21:23:36');
+INSERT INTO `login_record` VALUES ('45', null, '18402884427', '1', '2018-03-15 21:45:15');
+INSERT INTO `login_record` VALUES ('46', null, '18402884427', '1', '2018-03-15 21:50:38');
+INSERT INTO `login_record` VALUES ('47', null, '18402884427', '1', '2018-03-15 21:59:47');
+INSERT INTO `login_record` VALUES ('48', null, '18402884427', '1', '2018-03-15 23:45:37');
+INSERT INTO `login_record` VALUES ('49', null, '18402884427', '1', '2018-03-15 23:45:51');
+INSERT INTO `login_record` VALUES ('50', null, '18402884427', '1', '2018-03-16 00:07:32');
+INSERT INTO `login_record` VALUES ('51', null, '18402884427', '1', '2018-03-16 00:08:40');
+INSERT INTO `login_record` VALUES ('52', null, '18402884427', '1', '2018-03-16 09:46:29');
+INSERT INTO `login_record` VALUES ('53', null, '18402884427', '1', '2018-03-16 09:52:28');
+INSERT INTO `login_record` VALUES ('54', null, '18402884427', '1', '2018-03-16 09:58:59');
+INSERT INTO `login_record` VALUES ('55', null, '18402884427', '1', '2018-03-16 10:15:59');
+INSERT INTO `login_record` VALUES ('56', null, '18402884427', '1', '2018-03-16 10:19:36');
+INSERT INTO `login_record` VALUES ('57', null, '18402884427', '1', '2018-03-16 10:43:39');
+INSERT INTO `login_record` VALUES ('58', null, '18402884427', '1', '2018-03-16 11:15:27');
+INSERT INTO `login_record` VALUES ('59', null, '18402884427', '1', '2018-03-16 11:37:53');
+INSERT INTO `login_record` VALUES ('60', null, '18402884427', '1', '2018-03-16 11:42:06');
+INSERT INTO `login_record` VALUES ('61', null, '18402884427', '1', '2018-03-16 11:54:30');
+INSERT INTO `login_record` VALUES ('62', null, '18402884427', '1', '2018-03-16 11:55:33');
+INSERT INTO `login_record` VALUES ('63', null, '18402884427', '1', '2018-03-16 11:57:56');
+INSERT INTO `login_record` VALUES ('64', null, '18402884427', '1', '2018-03-16 12:00:40');
+INSERT INTO `login_record` VALUES ('65', null, '18402884427', '1', '2018-03-16 12:01:52');
+INSERT INTO `login_record` VALUES ('66', null, '18402884427', '1', '2018-03-16 12:17:28');
+INSERT INTO `login_record` VALUES ('67', null, '18402884427', '1', '2018-03-16 12:39:12');
+INSERT INTO `login_record` VALUES ('68', null, '18402884427', '1', '2018-03-16 13:05:02');
+INSERT INTO `login_record` VALUES ('69', null, '18402884427', '1', '2018-03-16 20:27:16');
+INSERT INTO `login_record` VALUES ('70', null, '18402884427', '1', '2018-03-16 20:28:09');
+INSERT INTO `login_record` VALUES ('71', null, '18402884427', '1', '2018-03-16 20:32:07');
+INSERT INTO `login_record` VALUES ('72', null, '18402884427', '1', '2018-03-16 20:35:27');
+INSERT INTO `login_record` VALUES ('73', null, '18402884427', '1', '2018-03-16 20:38:01');
+INSERT INTO `login_record` VALUES ('74', null, '18402884427', '1', '2018-03-16 20:40:14');
+INSERT INTO `login_record` VALUES ('75', null, '18402884427', '1', '2018-03-16 21:09:08');
+INSERT INTO `login_record` VALUES ('76', null, '18402884427', '1', '2018-03-16 21:10:20');
+INSERT INTO `login_record` VALUES ('77', null, '18402884427', '1', '2018-03-16 21:14:58');
+INSERT INTO `login_record` VALUES ('78', null, '18402884427', '1', '2018-03-16 21:18:06');
 
 -- ----------------------------
 -- Table structure for record
@@ -168,8 +251,8 @@ CREATE TABLE `record` (
   `old_battery_id` int(255) DEFAULT NULL,
   `new_battery_id` int(255) DEFAULT NULL,
   `date` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of record
@@ -186,19 +269,19 @@ CREATE TABLE `station` (
   `address` varchar(255) DEFAULT NULL,
   `longitude` double DEFAULT NULL,
   `latitude` double DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of station
 -- ----------------------------
-INSERT INTO `station` VALUES ('1', '天府广场充换电站', '四川省成都市天府广场', '104.06', '30.67');
-INSERT INTO `station` VALUES ('2', '犀浦地铁站充换电站', '四川省成都犀浦地铁站', '103.52', '31.01');
-INSERT INTO `station` VALUES ('3', '成都春秋名邸充换电站', '四川省成都市龙泉驿区龙都北路39号成都春秋名邸', '103.88', '30.99');
-INSERT INTO `station` VALUES ('4', '成都龙域龙湾二期充换电站', '四川省成都市龙泉驿区燃灯寺南路', '104.55', '31.55');
-INSERT INTO `station` VALUES ('5', '成都景华苑充换电站', '四川省成都市龙泉驿区董郎路226号景华苑', '104.33', '31.33');
-INSERT INTO `station` VALUES ('6', '成都伊顿小镇充换电站', '四川省成都市金堂县S101', '104.22', '31.44');
-INSERT INTO `station` VALUES ('7', '成都太平镇政府充换电站', '四川省成都市双流区太平镇政府街999号', '103.22', '30.22');
+INSERT INTO `station` VALUES ('1', '国家电网充换电站', '四川省成都市锦江区人民东路66号成都经信委停车场', '104.073536', '30.664913');
+INSERT INTO `station` VALUES ('2', '犀浦地铁站充换电站', '四川省成都郫都区犀浦地铁口', '103.979022', '30.762011');
+INSERT INTO `station` VALUES ('3', '成都芙蓉饭店充换电站', '四川省成都市青羊区过街楼街99号成都市芙蓉饭店(地下停车场内)', '104.065338', '30.676251');
+INSERT INTO `station` VALUES ('4', '成都电视台第二频道充换电站', '四川省成都市武侯区大石路1号(成都电视台-2院内停车位)', '104.045571', '30.65746');
+INSERT INTO `station` VALUES ('5', '中国电信成都分公司充换电站', '四川省成都市成华区双林北支路473号中国电信大厦(室外停车场进门50米右侧)', '104.110009', '30.66327');
+INSERT INTO `station` VALUES ('6', '成都公交群星路口站充换电站', '四川省成都市金牛区群星路22-24号', '104.061524', '30.710564');
+INSERT INTO `station` VALUES ('7', '成都中铁玛塞城充换电站', '四川省成都市成华区府青路玛塞城(地下停车场2号通道)', '104.108696', '30.689566');
 
 -- ----------------------------
 -- Table structure for user
@@ -210,8 +293,8 @@ CREATE TABLE `user` (
   `password` varchar(255) DEFAULT NULL,
   `balance` double DEFAULT NULL,
   `vehicle_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of user
@@ -260,8 +343,8 @@ CREATE TABLE `user_station` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `user_id` int(255) DEFAULT NULL,
   `station_id` int(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of user_station
@@ -279,8 +362,8 @@ CREATE TABLE `user_vehicle` (
   `user_id` int(255) DEFAULT NULL,
   `vehicle_id` int(255) DEFAULT NULL,
   `admin` smallint(6) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of user_vehicle
@@ -340,15 +423,15 @@ CREATE TABLE `vehicle` (
   `voltage` double DEFAULT NULL,
   `current` double DEFAULT NULL,
   `update_date` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of vehicle
 -- ----------------------------
-INSERT INTO `vehicle` VALUES ('1', 'V1000001', '特斯拉', 'Model-s', '川A53776', '1', '103.98539', '30.516409999999993', '2018-01-01 17:04:45', '185', '11', '26', '50', '1.5', '0.5', '2018-03-11 15:07:26');
-INSERT INTO `vehicle` VALUES ('2', 'V1000002', '凯迪拉克', 'CT6', '川A89374', '2', '103.6543', '30.3546', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
-INSERT INTO `vehicle` VALUES ('3', 'V1000003', '凯迪拉克', 'CT6', '川A45397', '3', '103.6577', '30.1357', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
+INSERT INTO `vehicle` VALUES ('1', 'V1000001', '特斯拉', 'Model-s', '川A53776', '1', '103.98539', '30.516409999999993', '2018-01-01 17:04:45', '185', '11', '26', '50', '1.5', '0.5', '2018-03-16 12:38:53');
+INSERT INTO `vehicle` VALUES ('2', 'V1000002', '凯迪拉克', 'CT6', '川A89374', '2', '103.98539', '30.516409999999993', '2018-01-01 17:04:45', '185', '11', '26', '50', '1.5', '0.5', '2018-03-11 15:42:28');
+INSERT INTO `vehicle` VALUES ('3', 'V1000003', '凯迪拉克', 'CT6', '川A45397', '3', '103.98539', '30.516409999999993', '2018-01-01 17:04:45', '185', '11', '26', '50', '1.5', '0.5', '2018-03-11 16:11:52');
 INSERT INTO `vehicle` VALUES ('4', 'V1000004', '凯迪拉克', 'CT6', '川A54379', '4', '103.5468', '30.5798', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
 INSERT INTO `vehicle` VALUES ('5', 'V1000005', '凯迪拉克', 'CT6', '川A96735', '5', '103.21654', '30.5482', '2018-01-01 17:04:45', null, null, null, null, null, null, null);
 INSERT INTO `vehicle` VALUES ('6', 'V1000006', '凯迪拉克', 'CT6', '川A05723', '6', '103.1355', '30.5987', '2018-01-01 17:04:45', null, null, null, null, null, null, null);

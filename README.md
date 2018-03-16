@@ -77,3 +77,14 @@
 - 简化vehicle.jsp中url的参数名
 - 增加了complete.jsp用于接受硬件换电完成信息，参数为编号，参数名为n
 - 如果数据库操作失败，异常会在Database类中捕获，而不会在complete.jsp中捕获，故可能出现即使数据库操作失败了，complete.jsp仍返回success
+
+### 3月16日更新
+- 更换电池需要匹配相同的电池型号
+- 新增battery_details.jsp展示某一电池的历史使用数据
+- 新增station_details.jsp展示某一电站内的所有电池数据
+- 新增vehicle.jsp展示所有车辆的数据
+- 数据库appointment数据表中添加ask字段，表示预约完成是否通知用户
+- 改写CompleteServlet，以用户上传id，判断此id下是否有已完成的预约但未通知用户的方式，觉得是否通知用户
+- 新增ElectricityServlet用于用户获取参考车辆的电量
+- 新增vehicle.jsp页面的控制台输出内容，同时转存桌面log.txt，保证日志信息不丢失
+- 新增ChangeReferenceServlet用于用户改变参考车辆

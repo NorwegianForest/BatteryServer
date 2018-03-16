@@ -8,7 +8,7 @@
   Time: 13:43
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
 <head>
@@ -91,15 +91,18 @@
       <a class="mdl-navigation__link" href="battery.jsp">
         <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">battery_charging_full</i>电池列表
       </a>
+      <a class="mdl-navigation__link" href="vehicle.jsp">
+        <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">directions_car</i>车辆列表
+      </a>
       <div class="mdl-layout-spacer"></div>
       <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
     </nav>
   </div>
-  <main class="mdl-layout__content mdl-color--grey-100">
+  <main class="mdl-layout__content mdl-color--grey-100" style="overflow-x: scroll;">
 
     <%List<Station> stationList = new ArrayList<>();%>
     <%Database.loadStation(stationList);%>
-    <div style="margin-top: 20px; display: flex; justify-content: center;">
+    <div style="margin: 20px;">
       <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
         <thead>
           <tr>
@@ -118,7 +121,9 @@
         <%for (Station station : stationList) {%>
           <tr>
             <td><%=orderNumber++%></td>
-            <td class="mdl-data-table__cell--non-numeric"><%=station.getName()%></td>
+            <td class="mdl-data-table__cell--non-numeric">
+              <a href="station_details.jsp?station_id=<%=station.getId()%>"><%=station.getName()%></a>
+            </td>
             <td class="mdl-data-table__cell--non-numeric"><%=station.getAddress()%></td>
             <td><%=Database.getAppointmentBatteryAmount(Integer.toString(station.getId()))%></td>
             <td><%=Database.getBatteryAmount(Integer.toString(station.getId()))%></td>

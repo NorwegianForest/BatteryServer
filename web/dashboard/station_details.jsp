@@ -1,18 +1,16 @@
-<%@ page import="java.util.Base64" %>
-<%@ page import="com.business.Battery" %>
-<%@ page import="com.business.Database" %>
+<%@ page import="javax.xml.crypto.Data" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.business.Appointment" %><%--
+<%@ page import="com.business.*" %><%--
   Created by IntelliJ IDEA.
   User: szl
-  Date: 2018/3/10
-  Time: 13:43
+  Date: 2018/3/16
+  Time: 13:19
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-  <title>寻电后台管理 | 电池列表</title>
+  <title>寻电后台管理 | 电站详情</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
@@ -36,10 +34,11 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
   <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">电池列表</span>
+      <span class="mdl-layout-title">电站详情</span>
       <div class="mdl-layout-spacer"></div>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
         <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
@@ -100,15 +99,21 @@
   </div>
   <main class="mdl-layout__content mdl-color--grey-100" style="overflow-x: scroll;">
 
-    <div style="margin: 20px;">
+    <div style="margin: 20px">
+      <%String stationId = request.getParameter("station_id");%>
+      <%Station station = Database.findStation(stationId);%>
+      <h4><%=station.getName()%></h4>
+      <h5>地址：<%=station.getAddress()%></h5>
+
+      <div style="height: 1px; background-color: #AAAAAA;margin-top: 20px;margin-bottom: 20px;"></div>
+
+      <div style="text-align: center; padding: 10px;">站内电池</div>
       <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
         <thead>
           <tr>
             <th class="mdl-data-table__cell--non-numeric">序号</th>
             <th class="mdl-data-table__cell--non-numeric">编号</th>
             <th class="mdl-data-table__cell--non-numeric">电池型号</th>
-            <th class="mdl-data-table__cell--non-numeric">所在车辆编号</th>
-            <th>所在电站名称</th>
             <th class="mdl-data-table__cell--non-numeric">电量(%)</th>
             <th class="mdl-data-table__cell--non-numeric">额定容量(kW/h)</th>
             <th class="mdl-data-table__cell--non-numeric">实际容量(kW/h)</th>
@@ -120,17 +125,14 @@
             <th class="mdl-data-table__cell--non-numeric">投入使用日期</th>
           </tr>
         </thead>
-
-        <%int orderNumber = 1;%>
-        <%List<Battery> batteryList = Database.getAllBattery();%>
         <tbody>
+        <%int orderNumber = 1;%>
+        <%List<Battery> batteryList = Database.getStationAllBattery(stationId);%>
         <%for (Battery battery : batteryList) {%>
         <tr>
           <td><%=orderNumber++%></td>
           <td><a href="battery_details.jsp?battery_id=<%=battery.getId()%>"><%=battery.getNumber()%></a></td>
           <td><%=battery.getModel()%></td>
-          <td><%=battery.getVehicleNumber()%></td>
-          <td><%=battery.getStationName()%></td>
           <td><%=battery.getElectricity()%></td>
           <td><%=battery.getRatedCapacity()%></td>
           <td><%=battery.getActualCapacity()%></td>
@@ -152,12 +154,11 @@
         <%}%>
         </tbody>
       </table>
+
     </div>
 
   </main>
 </div>
-
 <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </body>
 </html>
-
