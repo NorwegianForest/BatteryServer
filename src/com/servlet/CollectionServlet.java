@@ -28,15 +28,20 @@ public class CollectionServlet extends HttpServlet {
         List<Station> stationList = new ArrayList<>();
         Database.loadCollection(userId, stationList);
 
-        Vehicle vehicle = Database.findVehicle(vehicleId); // 默认取用户的第一辆车来计算距离
-        for (Station station : stationList) {
-            station.setDistance(StationServlet.getDistance(vehicle, station)); // 计算车辆与电站的距离
-            station.setQueueTime(Database.getAppointmentCount(Integer.toString(station.getId())) * 2); // 排队时间
-        }
+        if (stationList.isEmpty()) {
+            out.print("无结果");
+            System.out.println("StationServlet" + userId + "请求收藏电站数据无结果");
+        } else {
+            Vehicle vehicle = Database.findVehicle(vehicleId); // 默认取用户的第一辆车来计算距离
+            for (Station station : stationList) {
+                station.setDistance(StationServlet.getDistance(vehicle, station)); // 计算车辆与电站的距离
+                station.setQueueTime(Database.getAppointmentCount(Integer.toString(station.getId())) * 2); // 排队时间
+            }
 
-        String jsonData = new Gson().toJson(stationList);
-        out.println(jsonData);
-        System.out.println("StationServlet" + userId + "请求收藏电站数据响应完成");
+            String jsonData = new Gson().toJson(stationList);
+            out.print(jsonData);
+            System.out.println("StationServlet" + userId + "请求收藏电站数据响应完成");
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

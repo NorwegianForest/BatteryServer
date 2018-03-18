@@ -88,3 +88,7 @@
 - 新增ElectricityServlet用于用户获取参考车辆的电量
 - 新增vehicle.jsp页面的控制台输出内容，同时转存桌面log.txt，保证日志信息不丢失
 - 新增ChangeReferenceServlet用于用户改变参考车辆
+
+### 3月18日更新
+- 约定硬件上传的无效数据，不做记录
+- 完善后台链接

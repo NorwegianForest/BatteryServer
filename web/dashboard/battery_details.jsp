@@ -155,7 +155,11 @@
           <td><%=record.getUserPhone()%></td>
           <td><%=record.getVehiclePlate()%></td>
           <td><%=record.getVehicleNumber()%></td>
-          <td><%=record.getStationName()%></td>
+          <td>
+            <a href="station_details.jsp?station_id=<%=record.getStationId()%>">
+            <%=record.getStationName()%>
+            </a>
+          </td>
           <td><%=record.getDate()%></td>
         </tr>
         <%}%>

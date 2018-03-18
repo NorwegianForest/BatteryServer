@@ -125,10 +125,18 @@
         <td><%=record.getUserPhone()%></td>
         <td><%=record.getVehicleNumber()%></td>
         <td><%=record.getVehiclePlate()%></td>
-        <td class="mdl-data-table__cell--non-numeric"><%=record.getStationName()%></td>
+        <td class="mdl-data-table__cell--non-numeric">
+          <a href="station_details.jsp?station_id=<%=record.getStationId()%>">
+            <%=record.getStationName()%>
+          </a>
+        </td>
         <td><%=record.getMoney()%></td>
-        <td><%=record.getOldBatteryNumber()%></td>
-        <td><%=record.getNewBatteryNumber()%></td>
+        <td><a href="battery_details.jsp?battery_id=<%=record.getOldBatteryId()%>">
+          <%=record.getOldBatteryNumber()%>
+        </a></td>
+        <td><a href="battery_details.jsp?battery_id=<%=record.getNewBatteryId()%>">
+          <%=record.getNewBatteryNumber()%>
+        </a></td>
         <td><%=record.getDate()%></td>
       </tr>
       <%}%>

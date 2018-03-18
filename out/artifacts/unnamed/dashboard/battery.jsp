@@ -130,7 +130,13 @@
           <td><a href="battery_details.jsp?battery_id=<%=battery.getId()%>"><%=battery.getNumber()%></a></td>
           <td><%=battery.getModel()%></td>
           <td><%=battery.getVehicleNumber()%></td>
+          <%if (battery.getStationId() == -1) {%>
           <td><%=battery.getStationName()%></td>
+          <%} else {%>
+          <td><a href="station_details.jsp?station_id=<%=battery.getStationId()%>">
+            <%=battery.getStationName()%>
+          </a></td>
+          <%}%>
           <td><%=battery.getElectricity()%></td>
           <td><%=battery.getRatedCapacity()%></td>
           <td><%=battery.getActualCapacity()%></td>

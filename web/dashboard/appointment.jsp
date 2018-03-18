@@ -124,8 +124,14 @@
             <td><%=appointment.getUserPhone()%></td>
             <td><%=appointment.getVehicleNumber()%></td>
             <td><%=appointment.getVehiclePlate()%></td>
-            <td class="mdl-data-table__cell--non-numeric"><%=appointment.getStationName()%></td>
-            <td><%=appointment.getNewBatteryNumber()%></td>
+            <td class="mdl-data-table__cell--non-numeric">
+              <a href="station_details.jsp?station_id=<%=appointment.getStationId()%>">
+                <%=appointment.getStationName()%>
+              </a>
+            </td>
+            <td><a href="battery_details.jsp?battery_id=<%=appointment.getNewBatteryId()%>">
+              <%=appointment.getNewBatteryNumber()%>
+            </a></td>
             <td><%=appointment.getTime()%></td>
             <td><%=appointment.getDate()%></td>
             <td><%=appointment.getStrComplete()%></td>

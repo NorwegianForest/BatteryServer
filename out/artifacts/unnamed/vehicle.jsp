@@ -60,43 +60,48 @@ try {
     .append("\r\n电流：").append(current)
     .append("\r\n电量：").append(electricity);
 
-    // 海里公里换算
-    speed = Double.toString(Double.parseDouble(speed) * 1.852);
+    if (Double.parseDouble(voltage) == 0.0) {
+        log.append("\r\n无效数据，不存入数据库");
+    } else {
 
-    longitude = longitude.split("E")[0];
-    longitude = Double.toString(Double.parseDouble(longitude) * 0.01);
-    int lo = (int) Double.parseDouble(longitude);
-    longitude = Double.toString(lo + (Double.parseDouble(longitude) - lo) / 60 * 100);
+        // 海里公里换算
+        speed = Double.toString(Double.parseDouble(speed) * 1.852);
 
-    latitude = latitude.split("N")[0];
-    latitude = Double.toString(Double.parseDouble(latitude) * 0.01);
-    int la = (int) Double.parseDouble(latitude);
-    latitude = Double.toString(la + (Double.parseDouble(latitude) - la) / 60 * 100);
+        longitude = longitude.split("E")[0];
+        longitude = Double.toString(Double.parseDouble(longitude) * 0.01);
+        int lo = (int) Double.parseDouble(longitude);
+        longitude = Double.toString(lo + (Double.parseDouble(longitude) - lo) / 60 * 100);
+
+        latitude = latitude.split("N")[0];
+        latitude = Double.toString(Double.parseDouble(latitude) * 0.01);
+        int la = (int) Double.parseDouble(latitude);
+        latitude = Double.toString(la + (Double.parseDouble(latitude) - la) / 60 * 100);
 
 
-    String sql = "update vehicle set longitude='" + longitude
-            + "', latitude='" + latitude
-            + "', direction='" + direction
-            + "', speed='" + speed
-            + "', temperature='" + temperature
-            + "', humidity='" + humidity
-            + "', voltage='" + voltage
-            + "', current='" + current + "' where number='" + number + "'";
-    Database.updateDatabase(sql);
+        String sql = "update vehicle set longitude='" + longitude
+                + "', latitude='" + latitude
+                + "', direction='" + direction
+                + "', speed='" + speed
+                + "', temperature='" + temperature
+                + "', humidity='" + humidity
+                + "', voltage='" + voltage
+                + "', current='" + current + "' where number='" + number + "'";
+        Database.updateDatabase(sql);
 
-    Vehicle vehicle = Database.findVehicle("number", number);
-    assert vehicle != null;
-    Battery battery = Database.findBattery(Database.VEHICLE_ID, Integer.toString(vehicle.getId()));
-    double ele = Integer.parseInt(electricity);
-    assert battery != null;
-    battery.setElectricity(ele);
-    battery.setResidualCapacity(battery.getActualCapacity() * ele * 0.01);
-    sql = "update battery set electricity=" + ele + ", residual_capacity=" + battery.getResidualCapacity()
-            + " where id=" + battery.getId();
-    Database.updateDatabase(sql);
-    response.getWriter().print("success");
-    System.out.println(number + " 硬件上传数据完成");
-    log.append("\r\n").append(number).append(" 硬件上传数据完成");
+        Vehicle vehicle = Database.findVehicle("number", number);
+        assert vehicle != null;
+        Battery battery = Database.findBattery(Database.VEHICLE_ID, Integer.toString(vehicle.getId()));
+        double ele = Integer.parseInt(electricity);
+        assert battery != null;
+        battery.setElectricity(ele);
+        battery.setResidualCapacity(battery.getActualCapacity() * ele * 0.01);
+        sql = "update battery set electricity=" + ele + ", residual_capacity=" + battery.getResidualCapacity()
+                + " where id=" + battery.getId();
+        Database.updateDatabase(sql);
+        response.getWriter().print("success");
+        System.out.println(number + " 硬件上传数据完成");
+        log.append("\r\n").append(number).append(" 硬件上传数据完成");
+    }
 } catch (Exception e) {
     e.printStackTrace();
     response.getWriter().print("error");
