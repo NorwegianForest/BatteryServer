@@ -21,20 +21,22 @@ public class CompleteServlet extends HttpServlet {
         String userId = request.getParameter("id");
         System.out.println("CompleteServlet:" + userId + "询问预约是否完成");
 
-        Appointment appointment = Database.findFromAllAppointment(Database.USER_ID, userId);
+        if (!userId.equals("-1")) {
+            Appointment appointment = Database.findFromAllAppointment(Database.USER_ID, userId);
 
-        if (appointment == null) {
-            out.print("无预约");
-            System.out.println("CompleteServlet:" + userId + "无预约");
-        } else {
-            if (appointment.getComplete() == 0) {
-                out.print("未完成");
-                System.out.println("CompleteServlet:" + userId + "预约未完成");
-            } else if (appointment.getComplete() == 1) {
-                out.print("已完成");
-                String sql = "update appointment set ask=1 where id=" + appointment.getId();
-                Database.updateDatabase(sql);
-                System.out.println("CompleteServlet:" + userId + "预约已完成");
+            if (appointment == null) {
+                out.print("无预约");
+                System.out.println("CompleteServlet:" + userId + "无预约");
+            } else {
+                if (appointment.getComplete() == 0) {
+                    out.print("未完成");
+                    System.out.println("CompleteServlet:" + userId + "预约未完成");
+                } else if (appointment.getComplete() == 1) {
+                    out.print("已完成");
+                    String sql = "update appointment set ask=1 where id=" + appointment.getId();
+                    Database.updateDatabase(sql);
+                    System.out.println("CompleteServlet:" + userId + "预约已完成");
+                }
             }
         }
     }

@@ -293,23 +293,25 @@ public class Database {
      * @return Vehicle对象
      */
     public static Vehicle findVehicle(String vehicleId) {
+        Vehicle vehicle = null;
         String sql = "select * from vehicle where id=" + vehicleId;
         Connection connection = getConnection();
         try {
             assert connection != null;
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
-            resultSet.next();
-            Vehicle vehicle = new Vehicle();
-            vehicle.setId(resultSet.getInt("id"));
-            vehicle.setNumber(resultSet.getString("number"));
-            vehicle.setBrand(resultSet.getString("brand"));
-            vehicle.setModel(resultSet.getString("model"));
-            vehicle.setPlate(resultSet.getString("plate"));
-            vehicle.setUserId(resultSet.getInt("user_id"));
-            vehicle.setLongitude(resultSet.getDouble("longitude"));
-            vehicle.setLatitude(resultSet.getDouble("latitude"));
-            vehicle.setDate(resultSet.getString("date"));
+            if (resultSet.next()) {
+                vehicle = new Vehicle();
+                vehicle.setId(resultSet.getInt("id"));
+                vehicle.setNumber(resultSet.getString("number"));
+                vehicle.setBrand(resultSet.getString("brand"));
+                vehicle.setModel(resultSet.getString("model"));
+                vehicle.setPlate(resultSet.getString("plate"));
+                vehicle.setUserId(resultSet.getInt("user_id"));
+                vehicle.setLongitude(resultSet.getDouble("longitude"));
+                vehicle.setLatitude(resultSet.getDouble("latitude"));
+                vehicle.setDate(resultSet.getString("date"));
+            }
             resultSet.close();
             statement.close();
             connection.close();
@@ -440,15 +442,24 @@ public class Database {
      * 执行一次sql更新语句
      * @param sql 要执行的语句
      */
-     public static void updateDatabase(String sql) {
+    public static void updateDatabase(String sql) {
         Connection con = getConnection();
+        Statement state = null;
         try {
-            assert con != null;
-            Statement state;
-            state = con.createStatement();
-            state.executeUpdate(sql);
-            state.close();
-            con.close();
+            if (con != null) {
+                state = con.createStatement();
+                state.executeUpdate(sql);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            if (state != null) {
+                state.close();
+            }
+            if (con != null) {
+                con.close();
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -536,6 +547,9 @@ public class Database {
     }
 
     public static String getReferenceId(String userId) {
+        if (userId.equals("-1")) {
+            return null;
+        }
         String vehicleId = null;
         String sql = "select * from user where id=" + userId;
         Connection con = getConnection();

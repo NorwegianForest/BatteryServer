@@ -61,7 +61,7 @@ try {
     .append("\r\n电量：").append(electricity);
 
     if (Double.parseDouble(voltage) == 0.0) {
-        log.append("\r\n无效数据，不存入数据库");
+        log.append("\r\n无效数据，不存入数据库\r\n\r\n\r\n");
     } else {
 
         // 海里公里换算
