@@ -4,7 +4,6 @@
 - 为寻电APP提供服务
 - 基本上仅通过IP+servlet访问本服务器
 - 公网IP为118.24.0.184，项目文件名BatteryServer，使用腾讯云服务器
-- **粗糙开发，各路大神请勿攻击漏洞和服务器，本人在此谢过**
 - <img src="showImages/splash.png" width=360 height=640 />
 - <img src="showImages/first.png" width=360 height=640 />
 
